@@ -2,7 +2,11 @@ import './App.css';
 
 function App() {
   return (
-    <div> Wild Magic School </div>
+    <div>
+    <Home />
+    <Houses />
+    <SpellPotion />
+     </div>
   );
 }
 
