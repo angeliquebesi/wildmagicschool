@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function CarDeck() {
+export default function SpellPotion() {
   return <div></div>;
 }
