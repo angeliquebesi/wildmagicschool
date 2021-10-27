@@ -5,9 +5,7 @@ module.exports = {
   },
   extends: ["plugin:react/recommended", "airbnb"],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: { jsx: true },
     ecmaVersion: 12,
     sourceType: "module",
   },
@@ -15,6 +13,6 @@ module.exports = {
   rules: {
     "prettier/prettier": ["error"],
     quotes: ["error", "double"],
-    "comma-dangle": ["never"],
+    "comma-dangle": [0, "error"],
   },
 };
