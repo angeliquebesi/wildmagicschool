@@ -1,7 +1,41 @@
-
 @font-face {
   font-family: 'Harry P';
   src: local('Harry P'), url('../../fonts/Harryp/HARRYP__.ttf') format("truetype");
   font-family: 'dum1';
   src: local('dum1'), url('../../fonts/Dumbledor/dum1.ttf') format("truetype");
+}
+
+.texthero {
+  background-color: rgba(248, 248, 248, 0.884);
+  padding : 2%;
+  display: flex;
+  margin : auto;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  font-family: 'dum1';
+  font-size: 24px;
+}
+
+.heropresentation {
+  align-self: auto;
+}
+
+.buttonstart {
+  align-self: flex-end;
+  color: #f7f7f7 !important;
+  font-size: 32px;
+  text-shadow: 0px 0px 0px #000000;
+  box-shadow: 0px 0px 0px #ffffff;
+  background: #000000;
+  padding: 2px 10px;
+  font-family: 'Harry P';
+}
+
+.buttonstart:hover {
+  color: #000000 !important;
+  border: 1px solid #000000;
+  background: #ffffff;
 }
