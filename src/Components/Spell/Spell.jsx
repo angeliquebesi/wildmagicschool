@@ -9,27 +9,28 @@ export default function Spell() {
 
       <h3 className="h3Text">Hover over the spells to see how they are casted.</h3>
 
-      <body className="spellPotionbackground">
-        <main>
-          <div className="spell-card">
-            <div className="spell-card__inner">
-              <div className="spell-card__shape">
-                <div className="spell-card__trace" style={{ backgroundImage: "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/accio.svg')" }} />
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 73.89">
-                  <clipPath id="clip-accio">
-                    <path className="cls-1" d="M125,89c43.91,0,80.83,27.11,91.58,63.89C210.25,111.13,171.66,79,125,79s-85.25,32.13-91.58,73.89C44.17,116.11,81.09,89,125,89Z" />
-                  </clipPath>
-                  <path clipPath="url(#clip-accio)" className="trace-motion cls-2" fill="none" stroke="#ddfffb" strokeMiterlimit="10" strokeWidth="14" d="M33,150s20-64,92-64,92,64,92,64" transform="translate(-33 -79)" />
-                </svg>
+      <div className="spellPotionbackground">
+        <div className="main">
+          <div>
+            <div className="spell-card">
+              <div className="spell-card__inner">
+                <div className="spell-card__shape">
+                  <div className="spell-card__trace" style={{ backgroundImage: "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/accio.svg')" }} />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 73.89">
+                    <clipPath id="clip-accio">
+                      <path className="cls-1" d="M125,89c43.91,0,80.83,27.11,91.58,63.89C210.25,111.13,171.66,79,125,79s-85.25,32.13-91.58,73.89C44.17,116.11,81.09,89,125,89Z" />
+                    </clipPath>
+                    <path clipPath="url(#clip-accio)" className="trace-motion cls-2" fill="none" stroke="#ddfffb" strokeMiterlimit="10" strokeWidth="14" d="M33,150s20-64,92-64,92,64,92,64" transform="translate(-33 -79)" />
+                  </svg>
 
-              </div>
-              <div className="spell-card__name">
-                <h5>Accio</h5>
-                <p>Summons an object towards the caster</p>
+                </div>
+                <div className="spell-card__name">
+                  <h5>Accio</h5>
+                  <p>Summons an object towards the caster</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
           <div className="spell-card">
             <div className="spell-card__inner">
@@ -128,9 +129,8 @@ export default function Spell() {
               </div>
             </div>
           </div>
-        </main>
-      </body>
+        </div>
+      </div>
     </div>
-
   );
 }
