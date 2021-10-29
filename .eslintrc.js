@@ -11,7 +11,6 @@ module.exports = {
   },
   plugins: ["react", "prettier"],
   rules: {
-    "prettier/prettier": ["error"],
     quotes: ["error", "double"],
     "comma-dangle": [0, "error"],
     "linebreak-style": 0,
