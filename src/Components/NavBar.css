@@ -1,0 +1,24 @@
+.logo{
+  width: 100px;
+}
+
+ul{
+  align-items: flex-end;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  color: white;
+  margin: 0;
+}
+
+header{
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+body{
+  background-image: url(../background.png);
+  background-size: 100%;
+}
