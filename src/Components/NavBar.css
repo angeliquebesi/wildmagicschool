@@ -22,3 +22,8 @@ body{
   background-image: url(../background.png);
   background-size: 100%;
 }
+
+.NavLink{
+  text-decoration: none;
+  color: white;
+}
