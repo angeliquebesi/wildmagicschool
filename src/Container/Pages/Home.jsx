@@ -4,7 +4,7 @@ import Footer from "../../Components/Footer";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="hometext">
       <div className="texthero">
         <p className="heropresentation text-center">
           Welcome on the website of The Wild Magic School, we propose you an
