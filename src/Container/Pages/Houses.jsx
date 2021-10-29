@@ -2,7 +2,7 @@ import React from "react";
 import CardDeck from "../../Components/CardDeck";
 import "./Houses.css";
 import logo from "./Blason_de_Gryffondor.png";
-import SearchBar from "../../Components/Search";
+// import SearchBar from "../../Components/Search";
 
 export default function Houses() {
   return (
@@ -64,7 +64,6 @@ export default function Houses() {
             </div>
           </section>
         </div>
-        <SearchBar />
         <CardDeck />
       </div>
     </div>
