@@ -1,11 +1,58 @@
 body {
-  font-family: 'Comfortaa', sans-serif;
   background-image: url("bg-paper.jpg");
   background-size: contain;
   color: #FFFFFF;
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   text-align: center;
 
+}
+.housechoice {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.house {
+ 
+  height: 300px;
+  flex-grow: 1;
+  font-family: Harry Potter, Arial;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110px 150px;
+
+  border-bottom: 30px solid transparent;
+  border-image: url(https://raw.githubusercontent.com/NestorPlasencia/img/master/border-triangle.png) 0% 0% 100% 0% stretch;
+  transition:  0.75s;
+}
+
+.house:hover {
+  height: 370px;
+  font-size: 30px;
+}
+
+#Gryffindor {
+  background-color: #A80102;
+  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Gryffindor.png");
+}
+
+#Hufflepuff {
+  background-color: #786254;
+  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Hufflepuff.png");
+}
+
+#Ravenclaw {
+  background-color: #31446F;
+  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Ravenclaw.png");
+}
+
+#Slytherin {
+  background-color: #097146;
+  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Slytherin.png");
 }
 
 .hero{
@@ -23,10 +70,7 @@ body {
   max-width: 100%;
   height: 450px;
 }
-.navbar {
-  background-color: black;
-  height: 20em;
-}
+
 
 
 .embleme {
@@ -35,9 +79,80 @@ body {
   height: 450px;
   
 }
-.description {
 
-  background-color: rgb(204, 30, 30);
-padding: 1em;
+
+gryffindor-gold{color: #c6a513};
+gryffindor-red{color: #6d0000};
+slytherin-grey{color: #7a7a7a};
+slytherin-green{color: #0b3a07};
+ravenclaw-grey{color: #7a7a7a};
+ravenclaw-blue{color: #191c68};
+hufflepuff-black{color: #161616};
+hufflepuff-gold{color: #c6a513};
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gryffindor {
+
+  background: repeating-linear-gradient(
+    45deg,
+    #c6a513,
+    #c6a513 3px,
+    #6d0000 3px,
+    #6d0000 9px,
+    #c6a513 9px,
+    #c6a513 10px,
+    #6d0000 10px,
+    #6d0000 30px);
 }
 
+.slytherin {
+
+  background: repeating-linear-gradient(
+    45deg,
+    slytherin-grey,
+    slytherin-grey 3px,
+    slytherin-green 3px,
+    slytherin-green 9px,
+    slytherin-grey 9px,
+    slytherin-grey 10px,
+    slytherin-green 10px,
+    slytherin-green 30px,
+  );
+}
+
+.ravenclaw {
+
+  background: repeating-linear-gradient(
+    45deg,
+    ravenclaw-grey,
+    ravenclaw-grey 3px,
+    ravenclaw-blue 3px,
+    ravenclaw-blue 9px,
+    ravenclaw-grey 9px,
+    ravenclaw-grey 10px,
+    ravenclaw-blue 10px,
+    ravenclaw-blue 30px,
+  );
+}
+
+.hufflepuff {
+
+  background: repeating-linear-gradient(
+    45deg,
+    hufflepuff-black,
+    hufflepuff-black 3px,
+    hufflepuff-gold 3px,
+    hufflepuff-gold 9px,
+    hufflepuff-black 9px,
+    hufflepuff-black 10px,
+    hufflepuff-gold 10px,
+    hufflepuff-gold 30px,
+  );
+}

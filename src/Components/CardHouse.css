@@ -1,4 +1,4 @@
-.card {
+.card,.card-stretch {
   background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
   flex: 0 0 300px;
   padding: 5px;
@@ -11,11 +11,14 @@
   transition:all 0.3s ease;
 }
 
-.card:hover
+
+
+.card.card-stretch:hover
 {
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+       
 }
 
 
