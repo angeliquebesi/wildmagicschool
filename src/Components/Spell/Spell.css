@@ -115,3 +115,8 @@ main {
 .spell-card:hover .trace-motion {
   animation: draw 0.7s linear forwards;
 }
+
+.h3Text{
+  color: black;
+  font-weight: bolder;
+}
