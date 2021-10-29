@@ -5,7 +5,7 @@ export default function Spell() {
   return (
 
     <div>
-      <h3>Hover over the spells to see how they are casted.</h3>
+      <h3 className="h3Text">Hover over the spells to see how they are casted.</h3>
       <main>
         <div className="spell-card">
           <div className="spell-card__inner">

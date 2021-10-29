@@ -28,5 +28,13 @@ button:active {
   color: black;
 }
 
+.buttonDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+}
+
 
 
