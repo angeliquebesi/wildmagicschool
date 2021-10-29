@@ -7,7 +7,7 @@ import SearchBar from "../../Components/Search";
 export default function Houses() {
   return (
     <div>
-      <body>
+      <body className="houses">
         <nav className="navbar" />
         <div className="description text-center  ">
           <h1 className="welcomeHouse">WELCOME TO GRYFFONDOR</h1>

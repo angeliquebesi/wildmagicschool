@@ -1,8 +1,6 @@
 import React from "react";
 import "./Home.css";
 import Footer from "../../Components/Footer";
-import "../../fonts/Harryp/HARRYP__.ttf";
-import "../../fonts/Dumbledor/dum1.ttf";
 
 export default function Home() {
   return (
