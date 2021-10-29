@@ -1,6 +1,6 @@
 .potionbackground {
   font-family: "Comfortaa", sans-serif;
-  background: #111;
+  background-image: url('../../images/Library.jpg');
   color: #FFFFFF;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   text-align: center;

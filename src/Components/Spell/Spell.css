@@ -1,3 +1,7 @@
+.spellPotionbackground {
+  background-image: url('../../images/Library.jpg');
+}
+
 .spellbackground {
   font-family: "Comfortaa", sans-serif;
   background: #111;
@@ -76,6 +80,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: white;
 }
 .spell-card p {
   font-family: "Cinzel", "Alice";
@@ -83,6 +88,7 @@ main {
   width: 90%;
   margin: 0 auto 20px;
   min-height: 45px;
+  color: white;
 }
 .spell-card__shape {
   width: 100%;
@@ -117,6 +123,10 @@ main {
 }
 
 .h3Text{
-  color: black;
+  padding-top: 20px;
+  text-align: center;
+  color: white;
   font-weight: bolder;
+  font-family: "Dum1";
+  font-size: 30px;
 }
