@@ -25,6 +25,7 @@ export default function Spell() {
               <p>Summons an object towards the caster</p>
             </div>
           </div>
+        </div>
 
           <div className="spell-card">
             <div className="spell-card__inner">
