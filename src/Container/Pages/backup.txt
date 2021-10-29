@@ -1,16 +1,4 @@
-import React from "react";
-import CardDeck from "../../Components/CardDeck";
-import "./Houses.css";
-import logo from "./Blason_de_Gryffondor.png";
-import SearchBar from "../../Components/Search";
-
-export default function Houses() {
-  return (
-    <div>
-      <body>
-        <nav className="navbar" />
-        <div className="description text-center  ">
-          <h1 className="welcomeHouse">WELCOME TO GRYFFONDOR</h1>
+ <h1 className="welcomeHouse">WELCOME TO GRYFFONDOR</h1>
         </div>
         <div className="hero">
           <section className="Embleme-president">
@@ -47,10 +35,3 @@ export default function Houses() {
               </div>
             </div>
           </section>
-        </div>
-        <SearchBar />
-        <CardDeck />
-      </body>
-    </div>
-  );
-}

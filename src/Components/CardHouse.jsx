@@ -25,7 +25,7 @@ const CardHouse = ({ pers, id }) => {
               {pers.house}
             </div>
             <a className="btn btn-dark" target="_blank" href="">
-              Know More
+              Select
             </a>
           </div>
         </div>

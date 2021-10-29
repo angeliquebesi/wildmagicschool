@@ -8,6 +8,14 @@
   text-align: center;
   position: relative;
   image-rendering: auto;
+  transition:all 0.3s ease;
+}
+
+.card:hover
+{
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
 }
 
 
