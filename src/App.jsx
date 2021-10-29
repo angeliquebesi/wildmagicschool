@@ -1,15 +1,11 @@
 import "./App.css";
 import React from "react";
-import Home from "./Container/Pages/Home";
-import Houses from "./Container/Pages/Houses";
-import SpellPotion from "./Container/SpellPotion/SpellPotion";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
     <div>
-      <Home />
-      <Houses />
-      <SpellPotion />
+      <NavBar />
     </div>
   );
 }
