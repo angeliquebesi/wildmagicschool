@@ -1,8 +1,8 @@
-body {
-  background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1980&q=80")
+.spellPotionbackground {
+  background-image: url('../../images/Library.jpg');
 }
 
-button {
+.spellpotionbutton {
   padding: 10px 40px;
   float: left;
   border-radius: 10px;
@@ -17,7 +17,7 @@ button {
   -webkit-transition: all 0.1s;
 }
 
-button:active {
+.spellpotionbutton:active {
   transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
   border-bottom: 1px solid;
@@ -27,6 +27,3 @@ button:active {
   text-decoration: none;
   color: black;
 }
-
-
-
