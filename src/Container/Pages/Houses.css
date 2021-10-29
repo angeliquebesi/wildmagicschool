@@ -1,0 +1,43 @@
+body {
+  font-family: 'Comfortaa', sans-serif;
+  background-image: url("bg-paper.jpg");
+  background-size: contain;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  text-align: center;
+
+}
+
+.hero{
+  background-image: url("harry-potter-2240526_1280.jpg");
+  background-size: cover;
+}
+
+.Embleme-president{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.card img {
+  max-width: 100%;
+  height: 450px;
+}
+.navbar {
+  background-color: black;
+  height: 20em;
+}
+
+
+.embleme {
+  margin-top: 50px;
+  width: 75%;
+  height: 450px;
+  
+}
+.description {
+
+  background-color: rgb(204, 30, 30);
+padding: 1em;
+}
+

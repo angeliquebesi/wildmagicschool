@@ -16,6 +16,7 @@ module.exports = {
     "linebreak-style": 0,
     endOfLine: 0,
     "object-curly-newline": ["error", { consistent: true }],
+
     "react/prop-types": 0,
     "jsx-a11y/anchor-is-valid": [
       0,
