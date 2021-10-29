@@ -7,24 +7,40 @@ import SearchBar from "../../Components/Search";
 export default function Houses() {
   return (
     <div>
-      <body className="houses">
-        <nav className="navbar" />
-        <div className="description text-center  ">
+      <body>
+        <section className="housechoice">
+          <div className="house" id="Gryffindor">
+            Gryffindor
+          </div>
+          <div className="house" id="Hufflepuff">
+            Hufflepuff
+          </div>
+          <div className="house" id="Ravenclaw">
+            Ravenclaw
+          </div>
+          <div className="house" id="Slytherin">
+            Slytherin
+          </div>
+        </section>
+        <div className="description gryffindor text-center  ">
           <h1 className="welcomeHouse">WELCOME TO GRYFFONDOR</h1>
         </div>
         <div className="hero">
           <section className="Embleme-president">
             <div className="col-2 ">
               <div id="">
-                <div className="card  card-stretch text-center mx-auto">
+                <h2 className="card-title ">President</h2>
+                <div className=" card  text-center mx-auto">
                   <img
                     src="http://hp-api.herokuapp.com/images/mcgonagall.jpg"
                     alt="president"
                     className="card-img-top img-fluid "
                   />
                   <div className="card-body">
-                    <h2 className="card-title ">president</h2>
                     <div className="card-text ">
+                      <strong>Name: </strong>
+                      ***********
+                      <br />
                       <strong>Patronus: </strong>
                       ***********
                       <br />
@@ -38,10 +54,10 @@ export default function Houses() {
             <div className="col-4">
               <div>
                 <img className="embleme" src={logo} alt="logo" />
-                <h4 className="PresentationHouse text-center text-secondary fs-1 fw-bold   ">
+                <h4 className="PresentationHouse text-center text-light fs-1 fw-bold   ">
                   Most important traits:
                 </h4>
-                <p className="PresentationHouse text-center text-secondary fs-1 fw-bold   ">
+                <p className="PresentationHouse text-center text-black fs-1 fw-bold   ">
                   Bravery, Nerve, Chivalry, Courage and Daring.
                 </p>
               </div>

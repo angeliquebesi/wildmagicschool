@@ -29,8 +29,6 @@ export default function Spell() {
               </div>
             </div>
           </div>
-        </div>
-
           <div className="spell-card">
             <div className="spell-card__inner">
               <div className="spell-card__shape">

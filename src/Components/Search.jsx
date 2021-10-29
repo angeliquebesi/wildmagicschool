@@ -8,7 +8,12 @@ export default function SearchBar() {
         <div className="search">
           <h4>Click on search icon, then type your keyword.</h4>
           <div>
-            <input type="text" placeholder="Search . . ." required />
+            <input
+              type="text"
+              placeholder="Search"
+              value=""
+              onChange=""
+            />
           </div>
         </div>
       </div>
