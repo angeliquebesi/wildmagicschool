@@ -29,7 +29,6 @@ export default function SpellPotion() {
             <Potion />
           </Route>
         </Switch>
-
       </div>
     </Router>
   );

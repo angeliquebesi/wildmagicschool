@@ -7,7 +7,7 @@ import SearchBar from "../../Components/Search";
 export default function Houses() {
   return (
     <div>
-      <body>
+      <div className="body">
         <section className="housechoice">
           <div className="house" id="Gryffindor">
             Gryffindor
@@ -66,7 +66,7 @@ export default function Houses() {
         </div>
         <SearchBar />
         <CardDeck />
-      </body>
+      </div>
     </div>
   );
 }
