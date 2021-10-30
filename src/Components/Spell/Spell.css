@@ -30,7 +30,7 @@ h3 {
   font: 24px "Cinzel";
 }
 
-main {
+.main {
   margin: 4em auto 8em;
   max-width: 1200px;
   display: flex;
