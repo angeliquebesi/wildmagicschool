@@ -10,7 +10,7 @@ export default function CardDeck() {
     setFiltervalue(newvalue);
   };
   React.useEffect(() => {
-    fetch("http://hp-api.herokuapp.com/api/characters")
+    fetch("http://hp-api.herokuapp.com/api/characters/")
       .then((res) => res.json())
       .then((data) => {
         setPersonnages(data);
@@ -19,7 +19,7 @@ export default function CardDeck() {
   }, [filtervalue]);
   console.log(personnages);
   return (
-    <div className="container">
+    <div className="container body">
       <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} />
       {personnages && (
         <div className="card-group">

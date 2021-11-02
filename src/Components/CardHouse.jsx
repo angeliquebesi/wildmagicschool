@@ -4,7 +4,7 @@ import "./CardHouse.css";
 const CardHouse = ({ pers, id }) => {
   console.log(pers);
   return (
-    <div className="col-4 p-4">
+    <div className="col-4 px-4">
       <div id={`harry-${id}`}>
         <div className="card  card-stretch text-center mx-auto">
           <img
@@ -21,8 +21,8 @@ const CardHouse = ({ pers, id }) => {
               <strong>birth: </strong>
               {pers.dateOfBirth}
               <br />
-              <strong>House: </strong>
-              {pers.house}
+              <strong>Ancestry: </strong>
+              {pers.ancestry}
             </div>
             <a className="btn btn-dark" target="_blank" href="">
               Select
