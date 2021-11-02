@@ -1,10 +1,20 @@
 import React from "react";
+import axios from "axios";
 import CardDeck from "../CardDeck";
 import "./Slytherin.css";
 import logo from "./pngegg.png";
 // import SearchBar from "../../Components/Search";
 
 export default function Slytherin() {
+  const [personnages, setPersonnages] = React.useState(null);
+  const [filtervalue, setFiltervalue] = React.useState("");
+  React.useEffect(() => {
+    axios
+      .get("http://hp-api.herokuapp.com/api/characters/house/Slytherin")
+      .then((response) => {
+        setPersonnages(response.data);
+      });
+  }, [filtervalue]);
   return (
     <div>
       <div>
@@ -50,7 +60,7 @@ export default function Slytherin() {
             </div>
           </section>
         </div>
-        <CardDeck />
+        <CardDeck personnages={personnages} filtervalue={filtervalue} setFiltervalue={setFiltervalue} />
       </div>
     </div>
   );
