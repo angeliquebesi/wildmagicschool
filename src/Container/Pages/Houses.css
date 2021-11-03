@@ -25,6 +25,7 @@
   border-bottom: 30px solid transparent;
   border-image: url(https://raw.githubusercontent.com/NestorPlasencia/img/master/border-triangle.png) 0% 0% 100% 0% stretch;
   transition:  0.75s;
+  width: 220px;
 }
 
 .house:hover {

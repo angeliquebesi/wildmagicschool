@@ -1,6 +1,8 @@
 import React from "react";
 import "./CardHouse.css";
+import defautAvatar from "./Image/defautAvatar.png";
 
+const item = "";
 const CardHouse = ({ pers, id }) => {
   console.log(pers);
   return (
@@ -8,7 +10,7 @@ const CardHouse = ({ pers, id }) => {
       <div id={`harry-${id}`}>
         <div className="card  card-stretch text-center mx-auto">
           <img
-            src={pers.image}
+            src={pers.image || defautAvatar}
             alt={pers.name}
             className="card-img-top img-fluid "
           />
@@ -24,9 +26,7 @@ const CardHouse = ({ pers, id }) => {
               <strong>Ancestry: </strong>
               {pers.ancestry}
             </div>
-            <a className="btn btn-dark" target="_blank" href="">
-              Select
-            </a>
+            {item !== "" ? (<a className="btn btn-dark" target="_blank" href="">Select </a>) : null}
           </div>
         </div>
       </div>
