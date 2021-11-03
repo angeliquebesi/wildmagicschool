@@ -26,7 +26,9 @@ export default function Gryffindor() {
           <section className="Embleme-president">
             <div className="col-2 ">
               <div id="">
-                <h2 className="card-title mt-2 text-center text-light fs-1 fw-bold ">Director</h2>
+                <h2 className="card-title mt-2 text-center text-light fs-1 fw-bold text-uppercase ">
+                  Director
+                </h2>
                 <div className=" card  text-center mx-auto">
                   <img
                     src="http://hp-api.herokuapp.com/images/mcgonagall.jpg"
@@ -51,17 +53,23 @@ export default function Gryffindor() {
             <div className="col-4">
               <div>
                 <img className="embleme" src={logo} alt="logo" />
-                <h4 className="PresentationHouse text-center text-light fs-1 fw-bold   ">
+                <h4 className="PresentationHouse text-uppercase text-center text-light fs-1 fw-bold border border-white  ">
                   Most important traits:
                 </h4>
-                <p className="PresentationHouse text-center text-black fs-1 fw-bold   ">
+                <p className="PresentationHouse text-center text-light fs-1    ">
                   Bravery, Nerve, Chivalry, Courage and Daring.
                 </p>
               </div>
             </div>
           </section>
         </div>
-        <CardDeck personnages={personnages} filtervalue={filtervalue} setFiltervalue={setFiltervalue} />
+        <div className="selectPersonnage">
+          <CardDeck
+            personnages={personnages}
+            filtervalue={filtervalue}
+            setFiltervalue={setFiltervalue}
+          />
+        </div>
       </div>
     </div>
   );

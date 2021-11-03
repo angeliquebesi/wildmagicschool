@@ -3,6 +3,7 @@ import axios from "axios";
 import CardDeck from "../CardDeck";
 import "./Ravenclaw.css";
 import logo from "./ravenclow.png";
+import imageFilius from "./imageFilius.jpeg";
 // import SearchBar from "../../Components/Search";
 
 export default function Ravenclaw() {
@@ -25,10 +26,10 @@ export default function Ravenclaw() {
           <section className="Embleme-president">
             <div className="col-2 ">
               <div id="">
-                <h2 className="card-title mt-2 text-center text-light fs-1 fw-bold ">Director</h2>
+                <h2 className="card-title mt-2 text-center text-light fs-1 fw-bold text-uppercase ">Director</h2>
                 <div className=" card  text-center mx-auto">
                   <img
-                    src="http://hp-api.herokuapp.com/images/mcgonagall.jpg"
+                    src={imageFilius}
                     alt="president"
                     className="card-img-top img-fluid "
                   />
@@ -50,17 +51,23 @@ export default function Ravenclaw() {
             <div className="col-4">
               <div>
                 <img className="embleme" src={logo} alt="logo" />
-                <h4 className="PresentationHouse text-center text-light fs-1 fw-bold   ">
+                <h4 className="PresentationHouse  text-uppercase text-center text-light fs-1 fw-bold border border-white  ">
                   Most important traits:
                 </h4>
-                <p className="PresentationHouse text-center text-black fs-1 fw-bold   ">
+                <p className="PresentationHouse text-center text-light fs-1    ">
                   Intelligence, Wisdom, Creativity and Originality.
                 </p>
               </div>
             </div>
           </section>
         </div>
-        <CardDeck personnages={personnages} filtervalue={filtervalue} setFiltervalue={setFiltervalue} />
+        <div className="selectPersonnage">
+          <CardDeck
+            personnages={personnages}
+            filtervalue={filtervalue}
+            setFiltervalue={setFiltervalue}
+          />
+        </div>
       </div>
     </div>
   );

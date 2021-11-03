@@ -1,5 +1,4 @@
 import React from "react";
-// import axios from "axios";
 import CardHouse from "./CardHouse";
 import SearchBar from "./Search";
 
@@ -8,7 +7,6 @@ export default function CardDeck({ personnages, filtervalue, setFiltervalue }) {
     const newvalue = event.target.value;
     setFiltervalue(newvalue);
   };
-  console.log(personnages);
   return (
     <div className="container body">
       <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} />
