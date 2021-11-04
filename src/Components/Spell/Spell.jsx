@@ -6,7 +6,6 @@ export default function Spell() {
   return (
 
     <div>
-
       <h3 className="h3Text">Hover over the spells to see how they are casted.</h3>
 
       <div className="spellPotionbackground">
@@ -49,7 +48,6 @@ export default function Spell() {
               </div>
             </div>
           </div>
-
           <div className="spell-card">
             <div className="spell-card__inner">
               <div className="spell-card__shape">
@@ -69,7 +67,6 @@ export default function Spell() {
               </div>
             </div>
           </div>
-
           <div className="spell-card">
             <div className="spell-card__inner">
               <div className="spell-card__shape">
@@ -89,7 +86,6 @@ export default function Spell() {
               </div>
             </div>
           </div>
-
           <div className="spell-card">
             <div className="spell-card__inner">
               <div className="spell-card__shape">
@@ -109,7 +105,6 @@ export default function Spell() {
               </div>
             </div>
           </div>
-
           <div className="spell-card">
             <div className="spell-card__inner">
               <div className="spell-card__shape">
