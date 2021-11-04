@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Home.css";
 import Footer from "../../Components/Footer";
 
@@ -12,11 +14,13 @@ export default function Home() {
           and the hat will chose your house. When your house is finally chosen,
           you will have to make multiple choices to stay in the aventure.
         </p>
-        <button type="button" className="buttonstart">
-          {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
-          Start game
-        </button>
+        <Link to="/hat">
+          <button type="button" className="buttonstart">
+            Start game
+          </button>
+        </Link>
       </div>
+
       <Footer />
     </div>
   );

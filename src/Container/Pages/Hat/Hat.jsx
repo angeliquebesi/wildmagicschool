@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from "react";
 import "./Hat.css";
-import "../../../fonts/Harryp/HARRYP__.ttf";
-import "../../../fonts/Dumbledor/dum1.ttf";
 
 const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
@@ -40,7 +38,6 @@ export default function Hat() {
               <p>
                 You belong to
               </p>
-
             </div>
           )}
         </div>
