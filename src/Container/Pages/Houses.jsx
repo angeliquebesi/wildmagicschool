@@ -11,7 +11,7 @@ export default function Houses() {
     <Router>
       <div>
         <section className="housechoice">
-          <Link to="/Gryffindor" className="linkStyle link-light  ">
+          <Link to="/Gryffindor" className="linkStyle  link-light  ">
             <div className="house" id="Gryffindor">
               Gryffindor
             </div>

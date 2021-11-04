@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import SpellPotion from "../Container/SpellPotion/SpellPotion";
+// import SpellPotion from "../Container/SpellPotion/SpellPotion";
 import Houses from "../Container/Pages/Houses";
 import Home from "../Container/Pages/Home";
 import Logo from "../logo-final.png";
 import "./NavBar.css";
+import Marauder from "../Container/Pages/Marauder";
 
 export default function NavBar() {
   return (
@@ -19,7 +20,7 @@ export default function NavBar() {
             <Link to="/houses" className="NavLink">Houses</Link>
           </li>
           <li>
-            <Link to="/spellpotion" className="NavLink">Spell and Potion</Link>
+            <Link to="/Marauder" className="NavLink">Spell and Potion</Link>
           </li>
           <li>
             Start the Game
@@ -34,8 +35,8 @@ export default function NavBar() {
         <Route exact path="/houses">
           <Houses />
         </Route>
-        <Route exact path="/spellpotion">
-          <SpellPotion />
+        <Route exact path="/Marauder">
+          <Marauder />
         </Route>
 
       </Switch>
