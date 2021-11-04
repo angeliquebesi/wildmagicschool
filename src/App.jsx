@@ -8,6 +8,7 @@ import Home from "./Container/Pages/Home";
 import Hat from "./Container/Pages/Hat/Hat";
 import "./fonts/Harryp/HARRYP__.ttf";
 import "./fonts/Dumbledor/dum1.ttf";
+import Gryffindor from "./Components/gryffondor/gryffindor";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/houses" component={Houses} />
         <Route exact path="/spellpotion" component={SpellPotion} />
         <Route exact path="/hat" component={Hat} />
+        <Route exact path="/hat/Gryffindor" component={Gryffindor} />
       </Switch>
 
     </>

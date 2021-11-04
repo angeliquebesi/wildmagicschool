@@ -11,38 +11,38 @@ export default function Houses() {
     <Router>
       <div>
         <section className="housechoice">
-          <Link to="/Gryffindor" className="linkStyle  link-light  ">
+          <Link to="/Houses/Gryffindor" className="linkStyle  link-light  ">
             <div className="house" id="Gryffindor">
               Gryffindor
             </div>
           </Link>
-          <Link to="/Hufflepuff" className="linkStyle link-light">
+          <Link to="/Houses/Hufflepuff" className="linkStyle link-light">
             <div className="house" id="Hufflepuff">
               Hufflepuff
             </div>
           </Link>
-          <Link to="/Ravenclaw" className="linkStyle link-light">
+          <Link to="/Houses/Ravenclaw" className="linkStyle link-light">
             <div className="house" id="Ravenclaw">
               Ravenclaw
             </div>
           </Link>
-          <Link to="/Slytherin" className="linkStyle link-light">
+          <Link to="/Houses/Slytherin" className="linkStyle link-light">
             <div className="house" id="Slytherin">
               Slytherin
             </div>
           </Link>
         </section>
         <Switch>
-          <Route path="/Gryffindor">
+          <Route path="/Houses/Gryffindor">
             <Gryffindor />
           </Route>
-          <Route path="/Hufflepuff">
+          <Route path="/Houses/Hufflepuff">
             <Hufflepuff />
           </Route>
-          <Route path="/Ravenclaw">
+          <Route path="/Houses/Ravenclaw">
             <Ravenclaw />
           </Route>
-          <Route path="/Slytherin">
+          <Route path="/Houses/Slytherin">
             <Slytherin />
           </Route>
         </Switch>
