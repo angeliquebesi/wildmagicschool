@@ -1,26 +1,22 @@
 import React from "react";
 import CardHouse from "./CardHouse";
+import SearchBar from "./Search";
 
-export default function CardDeck() {
-  const [personnages, setPersonnages] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("http://hp-api.herokuapp.com/api/characters")
-      .then((res) => res.json())
-      .then((data) => {
-        setPersonnages(data);
-
-        console.log(data);
-      });
-  }, []);
-
+export default function CardDeck({ personnages, filtervalue, setFiltervalue }) {
+  const onChangefilter = (event) => {
+    const newvalue = event.target.value;
+    setFiltervalue(newvalue);
+  };
   return (
-    <div className="container">
+    <div className="container body">
+      <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} />
       {personnages && (
         <div className="card-group">
-          {personnages.map((pers, index) => (
-            <CardHouse pers={pers} id={index + 1} />
-          ))}
+          {personnages
+            .filter((pers) => pers.name.toLowerCase().includes(filtervalue))
+            .map((pers, index) => (
+              <CardHouse pers={pers} id={index + 1} />
+            ))}
         </div>
       )}
     </div>
