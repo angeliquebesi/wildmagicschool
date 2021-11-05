@@ -5,7 +5,7 @@ export default function SearchBar({ filtervalue, onChangefilter }) {
   return (
     <div>
       <div className="flexbox">
-        <div className="search">
+        <div className="search text-center">
           <h4>Click on search icon, then type your keyword.</h4>
           <div>
             <input
