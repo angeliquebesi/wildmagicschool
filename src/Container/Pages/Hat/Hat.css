@@ -56,7 +56,15 @@
   background-position: center;
   height: 400px;
   border-radius: 10px;
+  transition: transform 1s;
 }
+.Gryffindor  {
+-ms-transform: scale(3.5); /* IE 9 */
+-webkit-transform: scale(3.5); /* Safari 3-8 */
+transform: scale(3.5);
+}
+
+
 
 .Hufflepuff {
   background-image: url("../../../images/wallpaperhouse/hufflepuff-banner.jpg");
@@ -64,7 +72,14 @@
   background-position: center;
   height: 400px;
   border-radius: 10px;
+  transition: transform 1s;
 }
+.Hufflepuff  {
+-ms-transform: scale(3.5); /* IE 9 */
+-webkit-transform: scale(3.5); /* Safari 3-8 */
+transform: scale(3.5);
+}
+
 
 .Ravenclaw {
   background-image: url("../../../images/wallpaperhouse/ravenclaw-banner.jpg");
@@ -72,7 +87,14 @@
   background-position: center;
   height: 400px;
   border-radius: 10px;
+  transition: transform 1s;
 }
+.Ravenclaw {
+-ms-transform: scale(3.5); /* IE 9 */
+-webkit-transform: scale(3.5); /* Safari 3-8 */
+transform: scale(3.5);
+}
+
 
 .Slytherin {
   background-image: url("../../../images/wallpaperhouse/slytherin-banner.jpg");
@@ -81,7 +103,14 @@
   height: 400px;
   border-radius: 10px;
   padding : auto 10px;
+  transition: transform 2s;
 }
+.Slytherin {
+-ms-transform: scale(3.5); /* IE 9 */
+-webkit-transform: scale(3.5); /* Safari 3-8 */
+transform: scale(3.5);
+}
+
 
 .messageHouse{
   display :flex;
