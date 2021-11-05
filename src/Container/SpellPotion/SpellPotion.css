@@ -22,7 +22,11 @@
 .linkStyle{
   text-decoration: none;
   color: white;
+}
 
+.linkStyle:hover{
+  text-decoration: none;
+  color: rgb(212, 158, 41);
 }
 .buttonDiv{
   display: flex;

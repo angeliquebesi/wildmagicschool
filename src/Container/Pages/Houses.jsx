@@ -11,7 +11,7 @@ export default function Houses() {
     <Router>
       <div>
         <section className="housechoice">
-          <Link to="/Houses/Gryffindor" className="linkStyle link-light  ">
+          <Link to="/Houses/Gryffindor" className="linkStyle  link-light  ">
             <div className="house" id="Gryffindor">
               Gryffindor
             </div>
@@ -33,16 +33,16 @@ export default function Houses() {
           </Link>
         </section>
         <Switch>
-          <Route path="/Gryffindor">
+          <Route path="/Houses/Gryffindor">
             <Gryffindor />
           </Route>
-          <Route path="/Hufflepuff">
+          <Route path="/Houses/Hufflepuff">
             <Hufflepuff />
           </Route>
-          <Route path="/Ravenclaw">
+          <Route path="/Houses/Ravenclaw">
             <Ravenclaw />
           </Route>
-          <Route path="/Slytherin">
+          <Route path="/Houses/Slytherin">
             <Slytherin />
           </Route>
         </Switch>

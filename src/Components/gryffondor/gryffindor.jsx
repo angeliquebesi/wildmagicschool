@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CardDeck from "../CardDeck";
 import "./gryffindor.css";
@@ -6,9 +6,9 @@ import logo from "./Blason_de_Gryffondor.png";
 // import SearchBar from "../../Components/Search";
 
 export default function Gryffindor() {
-  const [personnages, setPersonnages] = React.useState(null);
-  const [filtervalue, setFiltervalue] = React.useState("");
-  React.useEffect(() => {
+  const [personnages, setPersonnages] = useState(null);
+  const [filtervalue, setFiltervalue] = useState("");
+  useEffect(() => {
     axios
       .get("http://hp-api.herokuapp.com/api/characters/house/gryffindor")
       .then((response) => {
