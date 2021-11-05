@@ -9,6 +9,10 @@ import Hat from "./Container/Pages/Hat/Hat";
 import "./fonts/Harryp/HARRYP__.ttf";
 import "./fonts/Dumbledor/dum1.ttf";
 import Gryffindor from "./Components/gryffondor/gryffindor";
+import Ravenclaw from "./Components/Ravenclaw/Ravenclaw";
+import Hufflepuff from "./Components/Hufflepuff/Hufflepuff";
+import Slytherin from "./Components/Slytherin/Slytherin";
+import Marauder from "./Container/Pages/Marauder";
 
 function App() {
   return (
@@ -22,6 +26,13 @@ function App() {
         <Route exact path="/spellpotion" component={SpellPotion} />
         <Route exact path="/hat" component={Hat} />
         <Route exact path="/hat/Gryffindor" component={Gryffindor} />
+        <Route exact path="/hat/Ravenclaw" component={Ravenclaw} />
+        <Route exact path="/hat/Hufflepuff" component={Hufflepuff} />
+        <Route exact path="/hat/Slytherin" component={Slytherin} />
+        <Route exact path="/hat/Gryffindor/Marauder" component={Marauder} />
+        <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
+        <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
+        <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
       </Switch>
 
     </>

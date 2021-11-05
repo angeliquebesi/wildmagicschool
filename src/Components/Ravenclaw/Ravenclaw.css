@@ -61,6 +61,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  font-family: "Dum1";
 }
 
 .card img {
@@ -70,6 +71,8 @@
 
 .welcomeHouse{
   margin: 0;
+  font-family: 'Harry P',serif;
+  padding: .5em 0;
 }
 
 .embleme {

@@ -17,7 +17,7 @@ export default function Marauder() {
           </p>
         </div>
         <div className="MarauderButton ">
-          <button type="button" className="buttonstart">
+          <button type="button" className="buttonspell">
             {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
             POTION
           </button>
@@ -25,7 +25,7 @@ export default function Marauder() {
             {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
             FIGHT
           </button>
-          <button type="button" className="buttonstart">
+          <button type="button" className="buttonspell">
             {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
             SPELL
           </button>

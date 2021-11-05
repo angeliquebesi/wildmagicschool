@@ -15,11 +15,12 @@ export default function Hat() {
    * SetVisibility (Boolean)
    */
   function handleClick() {
-    setItem(houses[Math.floor(Math.random() * houses.length)]);
+    const myHouse = houses[Math.floor(Math.random() * houses.length)];
+    setItem(myHouse);
     setVisibility(false);
     setTimeout(() => {
-      history.push("/hat/Gryffindor");
-    }, 2000);
+      history.push(`/hat/${myHouse}`);
+    }, 1500);
   }
 
   return (
