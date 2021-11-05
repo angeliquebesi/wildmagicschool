@@ -1,6 +1,5 @@
 import React from "react";
 import "./Marauder.css";
-import Footer from "../../Components/Footer";
 
 export default function Marauder() {
   return (
@@ -31,7 +30,6 @@ export default function Marauder() {
           </button>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }
