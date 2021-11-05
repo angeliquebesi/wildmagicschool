@@ -16,7 +16,6 @@ import Hufflepuff from "./Components/Hufflepuff/Hufflepuff";
 import Slytherin from "./Components/Slytherin/Slytherin";
 import Marauder from "./Container/Pages/Marauder";
 
-
 function App() {
   return (
     <>
