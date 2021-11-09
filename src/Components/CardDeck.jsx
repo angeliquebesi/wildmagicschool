@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import CardHouse from "./CardHouse";
 import SearchBar from "./Search";
 
-export default function CardDeck({ personnages, filtervalue, setFiltervalue }) {
+export default function CardDeck({ personnages }) {
+  const [filtervalue, setFiltervalue] = useState("");
+  /**
+   *Fonction pour filtrer les carttes des personnages grace à la search bar
+   */
   const onChangefilter = (event) => {
     const newvalue = event.target.value;
     setFiltervalue(newvalue);
@@ -10,6 +14,9 @@ export default function CardDeck({ personnages, filtervalue, setFiltervalue }) {
   return (
     <div className="container body">
       <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} />
+      {/**
+       *Filtre + map du fecth de l'api pour retourner toutes les cartes des personnages
+       */}
       {personnages && (
         <div className="card-group">
           {personnages

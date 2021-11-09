@@ -10,10 +10,7 @@ import Hat from "./Container/Pages/Hat/Hat";
 import Contact from "./Container/Pages/Contact/Contact";
 import "./fonts/Harryp/HARRYP__.ttf";
 import "./fonts/Dumbledor/dum1.ttf";
-import Gryffindor from "./Components/gryffondor/gryffindor";
-import Ravenclaw from "./Components/Ravenclaw/Ravenclaw";
-import Hufflepuff from "./Components/Hufflepuff/Hufflepuff";
-import Slytherin from "./Components/Slytherin/Slytherin";
+import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
 
 function App() {
@@ -27,10 +24,18 @@ function App() {
         <Route exact path="/houses" component={Houses} />
         <Route exact path="/spellpotion" component={SpellPotion} />
         <Route exact path="/hat" component={Hat} />
-        <Route exact path="/hat/Gryffindor" component={Gryffindor} />
-        <Route exact path="/hat/Ravenclaw" component={Ravenclaw} />
-        <Route exact path="/hat/Hufflepuff" component={Hufflepuff} />
-        <Route exact path="/hat/Slytherin" component={Slytherin} />
+        <Route exact path="/hat/Hufflepuff">
+          <House house="hufflepuff" />
+        </Route>
+        <Route exact path="/hat/Gryffindor">
+          <House house="gryffindor" />
+        </Route>
+        <Route exact path="/hat/Ravenclaw">
+          <House house="ravenclaw" />
+        </Route>
+        <Route exact path="/hat/Slytherin">
+          <House house="slytherin" />
+        </Route>
         <Route exact path="/hat/Gryffindor/Marauder" component={Marauder} />
         <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
         <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
@@ -40,7 +45,6 @@ function App() {
       <div>
         <Footer />
       </div>
-
     </>
   );
 }

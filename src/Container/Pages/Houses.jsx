@@ -1,10 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "./Houses.css";
-import Gryffindor from "../../Components/gryffondor/gryffindor";
-import Ravenclaw from "../../Components/Ravenclaw/Ravenclaw";
-import Hufflepuff from "../../Components/Hufflepuff/Hufflepuff";
-import Slytherin from "../../Components/Slytherin/Slytherin";
+import House from "../../Components/House/House";
 
 export default function Houses() {
   return (
@@ -34,16 +31,16 @@ export default function Houses() {
         </section>
         <Switch>
           <Route path="/Houses/Gryffindor">
-            <Gryffindor />
+            <House house="gryffindor" />
           </Route>
           <Route path="/Houses/Hufflepuff">
-            <Hufflepuff />
+            <House house="hufflepuff" />
           </Route>
           <Route path="/Houses/Ravenclaw">
-            <Ravenclaw />
+            <House house="ravenclaw" />
           </Route>
           <Route path="/Houses/Slytherin">
-            <Slytherin />
+            <House house="slytherin" />
           </Route>
         </Switch>
       </div>

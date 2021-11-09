@@ -4,17 +4,19 @@ import "./CardHouse.css";
 import defautAvatar from "./Image/defautAvatar.png";
 
 const CardHouse = ({ pers, id }) => {
+  /**
+   *redirection vers la page du marauder en fonction du choix du chapeau (item)
+   */
   const item = "gryffindor";
   const history = useHistory();
   function handleClick() {
     setTimeout(() => {
-      // history.push(`/hat/ ${item}`);
-      history.push("/hat/gryffindor/Marauder");
+      history.push(`/hat/${item}/Marauder`);
     },);
   }
   return (
     <div className="col-4 px-4">
-      <div id={`harry-${id}`}>
+      <div id={`pers-${id}`}>
         <div className="card  card-stretch text-center mx-auto">
           <img
             src={pers.image || defautAvatar}
