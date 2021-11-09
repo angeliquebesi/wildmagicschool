@@ -1,7 +1,4 @@
-.selectPersonnage{
 
-  background-image: url("../gryffondor/bg-paper.jpg");
-}
 .housechoice {
   width: 850px;
   height: 370px;
@@ -51,6 +48,18 @@
   background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Slytherin.png");
 }
 
+.hero.gryffindor{
+  background-image: url("harry-potter-2240526_1280.jpg");
+  background-size: cover;
+}
+.hero.hufflepuff{
+  background-image: url("wp3546063-hufflepuffs-wallpapers.jpg");
+  background-size: cover;
+}
+.hero.ravenclaw{
+  background-image: url("tumblr_oyra4uUth91wx5fjeo1_1280.jpg");
+  background-size: cover;
+}
 .hero.slytherin{
   background-image: url("wp3897879-slytherin-house-wallpapers.jpg");
   background-size: cover;
@@ -96,7 +105,7 @@ body {
   padding: 0;
   
 }
-.gryffindor {
+.gryffindor{
 
   background: repeating-linear-gradient(
     45deg,
@@ -110,8 +119,7 @@ body {
     #6d0000 30px);
 }
 
-.slytherin {
-
+.slytherin{
   background: repeating-linear-gradient(
     45deg,
     #7a7a7a,
@@ -136,12 +144,11 @@ body {
     #7a7a7a 9px,
     #7a7a7a 10px,
     #191c68 10px,
-    #191c68 30px,
+    #191c68 30px
   );
 }
 
 .hufflepuff {
-
   background: repeating-linear-gradient(
     45deg,
     #161616,
@@ -151,6 +158,11 @@ body {
     #161616 9px,
     #161616 10px,
     #c6a513 10px,
-    #c6a513 30px,
+    #c6a513 30px
   );
+}
+
+.selectPersonnage{
+
+  background-image: url("../House/bg-paper.jpg");
 }
