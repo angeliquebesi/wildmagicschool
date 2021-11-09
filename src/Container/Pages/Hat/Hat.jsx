@@ -18,6 +18,9 @@ export default function Hat() {
     const myHouse = houses[Math.floor(Math.random() * houses.length)];
     setItem(myHouse);
     setVisibility(false);
+    /*
+    *Timeout pour change de page automatiquement après le choix du chapeau
+    */
     setTimeout(() => {
       history.push(`/hat/${myHouse}`);
     }, 1500);

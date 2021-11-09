@@ -1,28 +1,38 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CardDeck from "../CardDeck";
-import "./gryffindor.css";
-import logo from "./Blason_de_Gryffondor.png";
-// import SearchBar from "../../Components/Search";
+import "./House.css";
+import HouseData from "../../DATA/HouseData";
 
-export default function Gryffindor() {
+export default function Gryffindor({ house }) {
   const [personnages, setPersonnages] = useState(null);
-  const [filtervalue, setFiltervalue] = useState("");
+  /*
+  *Fetch de l'api en fonction du choix de la maison
+  */
   useEffect(() => {
     axios
-      .get("http://hp-api.herokuapp.com/api/characters/house/gryffindor")
+      .get(`http://hp-api.herokuapp.com/api/characters/house/${house}`)
       .then((response) => {
         setPersonnages(response.data);
       });
-  }, [filtervalue]);
-
+  }, [house]);
+  /**
+   *filtre du fichier HouseData pour reécupérer les information en fonction de House
+   */
+  const filteredHouse = HouseData.filter((i) => i.name === house);
   return (
     <div>
       <div>
-        <div className="description gryffindor text-center text-light fs-1 fw-bold ">
-          <h1 className="welcomeHouse">WELCOME TO GRYFFINDOR</h1>
+        <div
+          className={`description ${filteredHouse[0].name} text-center text-light fs-1 fw-bold`}
+        >
+          <h1 className="welcomeHouse text-uppercase">
+            {`WELCOME TO  ${filteredHouse[0].name}`}
+          </h1>
         </div>
-        <div className="hero gryffindor">
+        <div
+          className={`hero ${filteredHouse[0].name} text-center text-light fs-1 fw-bold`}
+        >
           <section className="Embleme-president">
             <div className="col-2 ">
               <div id="">
@@ -31,20 +41,20 @@ export default function Gryffindor() {
                 </h2>
                 <div className=" card  text-center mx-auto">
                   <img
-                    src="http://hp-api.herokuapp.com/images/mcgonagall.jpg"
+                    src={filteredHouse[0].directorimg}
                     alt="president"
                     className="card-img-top img-fluid "
                   />
                   <div className="card-body">
                     <div className="card-text ">
-                      <strong>Name: </strong>
-                      Minerva McGonagall
+                      <strong>Name : </strong>
+                      {filteredHouse[0].Directorname}
                       <br />
-                      <strong>Patronus: </strong>
-                      tabby cat
+                      <strong>Patronus : </strong>
+                      {filteredHouse[0].patronus}
                       <br />
-                      <strong>birth: </strong>
-                      04-10-1925
+                      <strong>birth : </strong>
+                      {filteredHouse[0].birth}
                     </div>
                   </div>
                 </div>
@@ -52,12 +62,12 @@ export default function Gryffindor() {
             </div>
             <div className="col-4">
               <div>
-                <img className="embleme" src={logo} alt="logo" />
+                <img className="embleme" src={filteredHouse[0].logo} alt="logo" />
                 <h4 className="PresentationHouse text-uppercase text-center text-light fs-1 fw-bold border border-white  ">
                   Most important traits:
                 </h4>
                 <p className="PresentationHouse text-center text-light fs-1    ">
-                  Bravery, Nerve, Chivalry, Courage and Daring.
+                  {filteredHouse[0].traits}
                 </p>
               </div>
             </div>
@@ -66,8 +76,6 @@ export default function Gryffindor() {
         <div className="selectPersonnage">
           <CardDeck
             personnages={personnages}
-            filtervalue={filtervalue}
-            setFiltervalue={setFiltervalue}
           />
         </div>
       </div>
