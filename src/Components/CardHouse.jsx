@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./CardHouse.css";
 import defautAvatar from "./Image/defautAvatar.png";
+import UserContext from "../Context/UserContext";
 
 const CardHouse = ({ pers, id }) => {
   /**
    *redirection vers la page du marauder en fonction du choix du chapeau (item)
    */
-  const item = "gryffindor";
+  const { item } = useContext(UserContext);
   const history = useHistory();
   function handleClick() {
     setTimeout(() => {
       history.push(`/hat/${item}/Marauder`);
-    },);
+    });
   }
   return (
     <div className="col-4 px-4">

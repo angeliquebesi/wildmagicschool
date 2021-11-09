@@ -12,10 +12,11 @@ import "./fonts/Harryp/HARRYP__.ttf";
 import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
+import { UserContextProvider } from "./Context/UserContext";
 
 function App() {
   return (
-    <>
+    <UserContextProvider>
       <div>
         <NavBar />
       </div>
@@ -45,7 +46,7 @@ function App() {
       <div>
         <Footer />
       </div>
-    </>
+    </UserContextProvider>
   );
 }
 
