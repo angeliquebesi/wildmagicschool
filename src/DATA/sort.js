@@ -2,8 +2,17 @@ const sorts = [
   {
     id: 1,
     name: "Aberto",
-    description: "Probably a shortened version of Portaberto (door open), a more violent form of Unlocking Charm used before Alohomora was invented "
+    description: "Probably a shortened version of Portaberto (door open), a more violent form of Unlocking Charm used before Alohomora was invented ",
+    baguetteWay: {
+      style: "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/accio.svg')",
+      viewBox: "0 0 184 73.89",
+      clip: "clip-accio",
+      d: "M125,89c43.91,0,80.83,27.11,91.58,63.89C210.25,111.13,171.66,79,125,79s-85.25,32.13-91.58,73.89C44.17,116.11,81.09,89,125,89Z",
+      clippath: "url(#clip-accio)",
+      dSecond: "M33,150s20-64,92-64,92,64,92,64",
+      transform: "translate(-33 -79)",
 
+    }
   },
   {
     id: 2,

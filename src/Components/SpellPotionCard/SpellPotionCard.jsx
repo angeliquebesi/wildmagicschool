@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import React from "react";
 import "./SpellPotionCard.css";
+import sort from "../../DATA/sort";
+import SpellPotionImage from "../SpellPotionImage/SpellPotionImage";
 
 export default function SpellPotionCard() {
   return (
@@ -8,11 +10,12 @@ export default function SpellPotionCard() {
       <div className="potionbackground">
         <div className="spell-card">
           <div className="spell-card__inner">
-            <div className="spell-card__shape" />
-            <div className="spell-card__trace" />
-            <div className="spell-card__name">
-              <h5>Ageing Potion</h5>
-              <p>A potion that, depending on the amount taken, ages the drinker to various ages.</p>
+            <div className="spell-card__shape">
+              {sort[0].baguetteWay ? <SpellPotionImage value={sort[0].baguetteWay} /> : <img src="https://i.pinimg.com/564x/ae/75/18/ae7518db580785c328a5332ec585ab37.jpg" alt="default wand" />}
+              <div className="spell-card__name">
+                <h5>{sort[0].name}</h5>
+                <p>{sort[0].description}</p>
+              </div>
             </div>
           </div>
         </div>

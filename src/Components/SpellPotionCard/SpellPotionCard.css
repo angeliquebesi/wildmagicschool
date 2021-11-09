@@ -11,6 +11,27 @@
   justify-content: center;
 }
 
+.trace-motion {
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+	opacity: .8;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+h1 {
+	font: 60px 'Cinzel Decorative';
+	margin: 2em 0 .2em;
+}
+
+h3 {
+	font: 24px 'Cinzel';
+}
+
 .spell-card {
   background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
   flex: 0 0 300px;
@@ -70,6 +91,25 @@
   position: relative;
   margin-top: 20px;
 }
+.spell-card__shape svg {
+  width: 70%;
+  max-width: 250px;
+  filter: drop-shadow(0 0 12px #0ff) drop-shadow(-2px -2px 12px #00bcd4);
+}
+.spell-card__trace {
+  position: absolute;
+  width: 100%;
+  opacity: 0.4;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+}
 .spell-card:hover {
   cursor: pointer;
+}
+.spell-card:hover .trace-motion {
+  animation: draw 0.7s linear forwards;
 }
