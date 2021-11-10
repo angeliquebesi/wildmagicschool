@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import SpellPotionCard from "../../Components/SpellPotionCard/SpellPotionCard";
-// import Potion from "../../Components/Potion/Potion";
 import "./SpellPotion.css";
 
 export default function SpellPotion() {
