@@ -1,0 +1,32 @@
+.card,.card-stretch {
+  background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
+  flex: 0 0 300px;
+  padding: 5px;
+  margin: 3em;
+  border-radius: 20px;
+  box-shadow: 0 0 0 14px #333;
+  text-align: center;
+  position: relative;
+  image-rendering: auto;
+  transition:all 0.3s ease;
+  font-family: "Dum1";
+}
+
+.card-group{
+
+  justify-content: center;
+}
+
+.card.card-stretch:hover
+{
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+
+.card img {
+  max-width: 100%;
+  height: 520px;
+}
+

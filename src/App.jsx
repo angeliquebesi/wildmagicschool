@@ -13,6 +13,7 @@ import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
+import ContainerGame from "./Container/Pages/ContainerGame";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
         <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
         <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
+        <Route exact path="/hat/Marauder/fight" component={ContainerGame} />
         <Route exact path="/contact" component={Contact} />
       </Switch>
       <div>
