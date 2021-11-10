@@ -42,7 +42,7 @@ Awesome feature 3
 
 ## Screenshots
 
-Example screenshot
+<img src="./src/images/screenshot-readme.jpg" alt="home-page"/>
 
 ## Setup
 
