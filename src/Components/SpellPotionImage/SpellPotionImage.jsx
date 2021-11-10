@@ -1,4 +1,5 @@
 import React from "react";
+import "./SpellPotionImage.css";
 
 const SpellPotionImage = ({ ...props }) => {
   const { value } = props;
