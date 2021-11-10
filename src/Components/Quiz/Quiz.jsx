@@ -1,69 +1,116 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Questions from "./Questions";
 
+/**
+ *
+ * SI point = 2 Tu arrete de poser les question
+ *
+ * SI point = 1 mais mauvais choix, reset !
+ *
+ */
+
 export default function Quiz() {
-  const [questions, setQuestions] = React.useState({
+  const [questions, setQuestions] = useState({
     question: "",
     answers: []
   });
-  const [answersClass, setAnswerClass] = React.useState(["", "", "", ""]);
-  const [valid, setValid] = React.useState(false);
-  const [num, setNum] = React.useState(0);
-  const [correctAnswers, setCorrectAnswers] = React.useState(0);
+  const [answersClass, setAnswerClass] = useState(["", "", "", ""]);
+  const [canClickOnButton, setCanClickOnButton] = useState(false);
+  const [num, setNum] = useState(0);
+  const [point, setPoint] = useState(0);
+  const [correct, setCorrect] = useState(false);
 
-  const validQuestion = (reponse) => {
-    console.log(reponse);
-    //setQuestion(questions[1]);
-    setValid(true);
-  };
+  const toggleanswer = (reponses) => reponses.sort(() => Math.random() - 0.5);
 
+  /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
-    const questions = Questions.filter((quest) => quest.type === "sort");
+    const questionsQ = Questions.filter((quest) => quest.type === "sort");
     const myQuestions = {
-      correct: questions[num].correct_answer,
-      question: questions[num].question,
+      correct: questionsQ[num].correct_answer,
+      question: questionsQ[num].question,
       answers: toggleanswer([
-        questions[num].correct_answer,
-        ...questions[num].incorrect_answers
+        questionsQ[num].correct_answer,
+        ...questionsQ[num].incorrect_answers
       ])
     };
-    console.log(myQuestions);
     setQuestions(myQuestions);
   }, [num]);
 
-  const toggleanswer = (reponses) => {
-    //melagnge un tableau
-    return reponses;
-  };
-
+  // const validQuestion = (answer) => {
+  //   console.log(answer);
+  //   // setQuestion(questions[1]);
+  //   setValid(true);
+  // };
+  /**
+   * function pour changer la class du button en fonction de la réponse
+   * @param {récupère la réponse} answer
+   * @param {permet de récupérer l'index de la réponse dans le tableau de choix} index
+   */
   const checkedResponse = (answer, index) => {
-    if (valid === false) {
-      let array = [...answersClass];
+    if (canClickOnButton === false) {
+      const array = [...answersClass];
       if (answer === questions.correct) {
         array[index] = "btn-success";
-        setCorrectAnswers(correctAnswers + 1);
+        setPoint(point + 1);
+        setCorrect(true);
       } else {
         array[index] = "btn-alert";
+        setCorrect(false);
       }
+      setCanClickOnButton(true);
       setAnswerClass(array);
-      setValid(true);
     }
   };
 
+  /**
+   * function for change question
+   */
   const changeQuestions = () => {
-    let index = num + 1;
+    const index = num + 1;
     setNum(index);
-    setValid(false);
+    setCanClickOnButton(false);
     setAnswerClass(["", "", "", ""]);
+  };
+
+  /**
+ * fonction pour modifier les propositions en fonction de la réponse apportée
+ */
+  const solution = () => {
+    if (point === 1 && correct && canClickOnButton) {
+      return (<button type="button" onClick={() => changeQuestions()}>NEXT</button>);
+    } if (point === 1 && !correct && canClickOnButton) {
+      return (
+        <div>
+          <p> Answer is wrong. </p>
+          <button type="button">Back</button>
+        </div>
+      );
+    }
+    if (point === 2) {
+      return (<button type="button">Valider</button>);
+    } if (point === 0 && canClickOnButton && !correct) {
+      return (
+        <div>
+          <p> Answer is wrong. </p>
+          <button type="button">Back</button>
+        </div>
+      );
+    }
+    return (<div />);
   };
 
   return (
     <div>
-      <h1>Question : {questions.question}</h1>
+      <h1>
+        Question :
+        {" "}
+        {questions.question}
+      </h1>
       <ul>
         {questions.answers.map((answer, index) => (
           <li>
             <button
+              type="button"
               className={answersClass[index]}
               onClick={() => checkedResponse(answer, index)}
             >
@@ -72,8 +119,18 @@ export default function Quiz() {
           </li>
         ))}
       </ul>
-      {valid ? <button onClick={() => changeQuestions()}>NEXT</button> : false}
-      {correctAnswers}
+      <div>
+        {solution()}
+      </div>
     </div>
   );
 }
+
+// { canClickOnButton && correct && (
+//   <div>
+//     <button type="button" onClick={() => changeQuestions()}>NEXT</button>
+//     {" "}
+//     <p>{point}</p>
+//   </div>
+// ); }
+// { canClickOnButton && !correct && <p> Answer is wrong. </p>; }

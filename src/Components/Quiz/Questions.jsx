@@ -9,7 +9,7 @@ const Questions = [
   {
     ref: 2,
     type: "sort",
-    name: "Anccio",
+    name: "Accio",
     question: "quel sort permet de faire de la barbapapa?",
     correct_answer: "aucun",
     incorrect_answers: ["non", "oui", "d'accord"]
