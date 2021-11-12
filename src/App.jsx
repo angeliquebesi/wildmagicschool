@@ -13,6 +13,7 @@ import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
+import SpellPotionCard from "./Components/SpellPotionCard/SpellPotionCard";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route exact path="/houses" component={Houses} />
         <Route exact path="/spellpotion" component={SpellPotion} />
         <Route exact path="/hat" component={Hat} />
+
+        {/* Route to go from hat to house */}
         <Route exact path="/hat/Hufflepuff">
           <House house="hufflepuff" />
         </Route>
@@ -37,10 +40,41 @@ function App() {
         <Route exact path="/hat/Slytherin">
           <House house="slytherin" />
         </Route>
+
+        {/* Route to go from house to Marauder */}
         <Route exact path="/hat/Gryffindor/Marauder" component={Marauder} />
         <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
         <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
         <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
+
+        {/* Route to go from marauder to Spell Lesson */}
+        <Route exact path="/hat/Gryffindor/Marauder/Spell">
+          <SpellPotionCard type="spells" />
+        </Route>
+        <Route exact path="/hat/Ravenclaw/Marauder/Spell">
+          <SpellPotionCard type="spells" />
+        </Route>
+        <Route exact path="/hat/Hufflepuff/Marauder/Spell">
+          <SpellPotionCard type="spells" />
+        </Route>
+        <Route exact path="/hat/Slytherin/Marauder/Spell">
+          <SpellPotionCard type="spells" />
+        </Route>
+
+        {/* Route to go from marauder to Potion Lesson */}
+        <Route exact path="/hat/Gryffindor/Marauder/Potion">
+          <SpellPotionCard type="potions" />
+        </Route>
+        <Route exact path="/hat/Ravenclaw/Marauder/Potion">
+          <SpellPotionCard type="potions" />
+        </Route>
+        <Route exact path="/hat/Hufflepuff/Marauder/Potion">
+          <SpellPotionCard type="potions" />
+        </Route>
+        <Route exact path="/hat/Slytherin/Marauder/Potion">
+          <SpellPotionCard type="potions" />
+        </Route>
+
         <Route exact path="/contact" component={Contact} />
       </Switch>
       <div>

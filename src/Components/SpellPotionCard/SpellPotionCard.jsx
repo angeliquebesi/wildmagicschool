@@ -13,7 +13,7 @@ export default function SpellPotionCard({ type }) {
   function handleClick() {}
   // redirection vers quizz de cette carte
   const [filtervalue, setFiltervalue] = useState("");
-  // Fonction pour filtrer les carttes des personnages grace à la search bar
+  // Fonction pour filtrer les cartes des personnages grace à la search bar
   const onChangefilter = (event) => {
     const newvalue = event.target.value;
     setFiltervalue(newvalue);
