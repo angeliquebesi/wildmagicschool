@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Marauder.css";
 
 export default function Marauder() {
@@ -17,17 +18,16 @@ export default function Marauder() {
         </div>
         <div className="MarauderButton ">
           <button type="button" className="buttonspell">
-            {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
             POTION
           </button>
           <button type="button" className="buttonfight">
-            {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
             FIGHT
           </button>
-          <button type="button" className="buttonspell">
-            {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
-            SPELL
-          </button>
+          <Link to="{`/hat/${item}/Marauder/Spell/`}">
+            <button type="button" className="buttonspell">
+              SPELL
+            </button>
+          </Link>
         </div>
       </section>
     </div>

@@ -12,6 +12,7 @@ import "./fonts/Harryp/HARRYP__.ttf";
 import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
+import Spell from "./Components/Spell/Spell";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route exact path="/houses" component={Houses} />
         <Route exact path="/spellpotion" component={SpellPotion} />
         <Route exact path="/hat" component={Hat} />
-        {/* Routes for to go from the hat to the house */}
+        {/* Routes for from the hat to the house */}
         <Route exact path="/hat/Hufflepuff">
           <House house="hufflepuff" />
         </Route>
@@ -44,6 +45,10 @@ function App() {
         <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
 
         {/* Routes for go to Spell Lesson */}
+        <Route exact path="/hat/Gryffindor/Marauder/Spell" component={Spell} />
+        <Route exact path="/hat/Ravenclaw/Marauder/Spell" component={Spell} />
+        <Route exact path="/hat/Hufflepuff/Marauder/Spell" component={Spell} />
+        <Route exact path="/hat/Slytherin/Marauder/Spell" component={Spell} />
 
         <Route exact path="/contact" component={Contact} />
       </Switch>
