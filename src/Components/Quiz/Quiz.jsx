@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Questions from "./Questions";
-
-/**
- *
- * SI point = 2 Tu arrete de poser les question
- *
- * SI point = 1 mais mauvais choix, reset !
- *
- */
+import "./Quizz.css";
 
 export default function Quiz() {
   const [questions, setQuestions] = useState({
@@ -36,11 +29,6 @@ export default function Quiz() {
     setQuestions(myQuestions);
   }, [num]);
 
-  // const validQuestion = (answer) => {
-  //   console.log(answer);
-  //   // setQuestion(questions[1]);
-  //   setValid(true);
-  // };
   /**
    * function pour changer la class du button en fonction de la réponse
    * @param {récupère la réponse} answer
@@ -77,22 +65,22 @@ export default function Quiz() {
  */
   const solution = () => {
     if (point === 1 && correct && canClickOnButton) {
-      return (<button type="button" onClick={() => changeQuestions()}>NEXT</button>);
+      return (<button type="button" className="buttonstart" onClick={() => changeQuestions()}>NEXT</button>);
     } if (point === 1 && !correct && canClickOnButton) {
       return (
         <div>
-          <p> Answer is wrong. </p>
-          <button type="button">Back</button>
+          <p className="quiz-p"> Answer is wrong. </p>
+          <button type="button" className="buttonstart">Back</button>
         </div>
       );
     }
     if (point === 2) {
-      return (<button type="button">Valider</button>);
+      return (<button type="button" className="buttonstart">Get your sort</button>);
     } if (point === 0 && canClickOnButton && !correct) {
       return (
         <div>
-          <p> Answer is wrong. </p>
-          <button type="button">Back</button>
+          <p className="quiz-p"> Answer is wrong. </p>
+          <button type="button" className="buttonstart">Back to choose your lesson</button>
         </div>
       );
     }
@@ -100,37 +88,28 @@ export default function Quiz() {
   };
 
   return (
-    <div>
-      <h1>
-        Question :
-        {" "}
+    <div className="container">
+      <h3 className="quizquestion">
         {questions.question}
-      </h1>
-      <ul>
-        {questions.answers.map((answer, index) => (
-          <li>
-            <button
-              type="button"
-              className={answersClass[index]}
-              onClick={() => checkedResponse(answer, index)}
-            >
-              {answer}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div>
+      </h3>
+      <div className="propositions">
+        <ul>
+          {questions.answers.map((answer, index) => (
+            <li>
+              <button
+                type="button"
+                className={answersClass[index]}
+                onClick={() => checkedResponse(answer, index)}
+              >
+                {answer}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="result">
         {solution()}
       </div>
     </div>
   );
 }
-
-// { canClickOnButton && correct && (
-//   <div>
-//     <button type="button" onClick={() => changeQuestions()}>NEXT</button>
-//     {" "}
-//     <p>{point}</p>
-//   </div>
-// ); }
-// { canClickOnButton && !correct && <p> Answer is wrong. </p>; }
