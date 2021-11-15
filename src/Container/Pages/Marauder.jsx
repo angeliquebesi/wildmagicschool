@@ -1,7 +1,14 @@
 import React from "react";
 import "./Marauder.css";
+import { useHistory } from "react-router-dom";
 
 export default function Marauder() {
+  const history = useHistory();
+  function handleClick() {
+    setTimeout(() => {
+      history.push("/hat/Marauder/fight");
+    });
+  }
   return (
     <div>
       <section className="Maraudercontainer ">
@@ -20,7 +27,7 @@ export default function Marauder() {
             {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
             POTION
           </button>
-          <button type="button" className="buttonfight">
+          <button type="button" className="buttonfight" onClick={handleClick}>
             {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
             FIGHT
           </button>
