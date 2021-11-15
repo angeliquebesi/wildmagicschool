@@ -1,13 +1,17 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import UserContext from "../../Context/UserContext";
 
 export default function ButtonReturnMap() {
-  const history = useHistory();
+  const { item } = useContext(UserContext);
+
   return (
     <div>
-      <button type="button" className="buttonstart" onClick={/* Function to return to the previous page */history.goBack}>
-        Return to map
-      </button>
+      <Link to={`/hat/${item}/Marauder`}>
+        <button type="button" className="buttonstart">
+          Return to map
+        </button>
+      </Link>
     </div>
   );
 }

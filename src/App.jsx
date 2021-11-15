@@ -13,11 +13,8 @@ import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
-<<<<<<< HEAD
 import SpellPotionCard from "./Components/SpellPotionCard/SpellPotionCard";
-=======
 import ContainerGame from "./Container/Pages/ContainerGame";
->>>>>>> dev
 
 function App() {
   return (
@@ -50,40 +47,64 @@ function App() {
         <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
         <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
         <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
-<<<<<<< HEAD
 
         {/* Route to go from marauder to Spell Lesson */}
         <Route exact path="/hat/Gryffindor/Marauder/Spell">
-          <SpellPotionCard type="spells" />
+          <SpellPotionCard type="spells" type2="Spell" />
         </Route>
         <Route exact path="/hat/Ravenclaw/Marauder/Spell">
-          <SpellPotionCard type="spells" />
+          <SpellPotionCard type="spells" type2="Spell" />
         </Route>
         <Route exact path="/hat/Hufflepuff/Marauder/Spell">
-          <SpellPotionCard type="spells" />
+          <SpellPotionCard type="spells" type2="Spell" />
         </Route>
         <Route exact path="/hat/Slytherin/Marauder/Spell">
-          <SpellPotionCard type="spells" />
+          <SpellPotionCard type="spells" type2="Spell" />
         </Route>
 
         {/* Route to go from marauder to Potion Lesson */}
         <Route exact path="/hat/Gryffindor/Marauder/Potion">
-          <SpellPotionCard type="potions" />
+          <SpellPotionCard type="potions" type2="Potion" />
         </Route>
         <Route exact path="/hat/Ravenclaw/Marauder/Potion">
-          <SpellPotionCard type="potions" />
+          <SpellPotionCard type="potions" type2="Potion" />
         </Route>
         <Route exact path="/hat/Hufflepuff/Marauder/Potion">
-          <SpellPotionCard type="potions" />
+          <SpellPotionCard type="potions" type2="Potion" />
         </Route>
         <Route exact path="/hat/Slytherin/Marauder/Potion">
-          <SpellPotionCard type="potions" />
+          <SpellPotionCard type="potions" type2="Potion" />
         </Route>
 
-=======
+        {/* Routes pour aller du choix de la potion au quizz pour l'acquérir */}
+        <Route exact path="/hat/Gryffindor/Marauder/Potion/Quizz">
+          <ContainerGame />
+        </Route>
+        <Route exact path="/hat/Ravenclaw/Marauder/Potion/Quizz">
+          <ContainerGame />
+        </Route>
+        <Route exact path="/hat/Hufflepuff/Marauder/Potion/Quizz">
+          <ContainerGame />
+        </Route>
+        <Route exact path="/hat/Slytherin/Marauder/Potion/Quizz">
+          <ContainerGame />
+        </Route>
+
+        {/* Routes pour aller du choix du sort au quizz pour l'acquérir */}
+        <Route exact path="/hat/Gryffindor/Marauder/Spell/Quizz">
+          <ContainerGame />
+        </Route>
+        <Route exact path="/hat/Ravenclaw/Marauder/Spell/Quizz">
+          <ContainerGame />
+        </Route>
+        <Route exact path="/hat/Hufflepuff/Marauder/Spell/Quizz">
+          <ContainerGame />
+        </Route>
+        <Route exact path="/hat/Slytherin/Marauder/Spell/Quizz">
+          <ContainerGame />
+        </Route>
+
         <Route exact path="/hat/Marauder/fight" component={ContainerGame} />
-        {/* Routes for go to Spell Lesson */}
->>>>>>> dev
         <Route exact path="/contact" component={Contact} />
       </Switch>
       <div>
