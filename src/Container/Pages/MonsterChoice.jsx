@@ -79,7 +79,7 @@ const MonsterChoice = ({ id }) => {
                   }
                   modal
                 >
-                  <span> You need the Spell X and the potion X to fight against the monster x !! </span>
+                  <span> You need the Spell X and the potion X to fight against the monster X !! </span>
                 </Popup>
               </div>
             </div>
