@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Questions from "../../DATA/Questions";
 import "./Quizz.css";
+import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
 
 export default function Quiz() {
   const [questions, setQuestions] = useState({
@@ -70,7 +71,7 @@ export default function Quiz() {
       return (
         <div>
           <p className="quiz-p"> Answer is wrong. </p>
-          <button type="button" className="buttonstart">Back to choose your lesson</button>
+          <ButtonReturnLesson />
         </div>
       );
     }
@@ -80,7 +81,7 @@ export default function Quiz() {
       return (
         <div>
           <p className="quiz-p"> Answer is wrong. </p>
-          <button type="button" className="buttonstart">Back to choose your lesson</button>
+          <ButtonReturnLesson />
         </div>
       );
     }
