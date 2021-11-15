@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
 import "./MonsterChoice.css";
 import UserContext from "../../Context/UserContext";
 import defautAvatar from "../../Components/Image/defautAvatar.png";
@@ -9,12 +8,6 @@ const MonsterChoice = ({ id }) => {
    *redirection vers la page du marauder en fonction du choix du chapeau (item)
    */
   const { item } = useContext(UserContext);
-  const history = useHistory();
-  function handleClick() {
-    setTimeout(() => {
-      history.push(`/hat/${item}/Marauder`);
-    });
-  }
   return (
     <div className="monstercontainer">
       <div className="monster card-group">
@@ -38,12 +31,8 @@ const MonsterChoice = ({ id }) => {
                   <strong>Ancestry: </strong>
                   **************
                 </div>
-
-                <button
-                  className="btn btn-dark mt-1"
-                  type="button"
-                  onClick={handleClick}
-                >
+                {item ? "" : null}
+                <button className="btn btn-dark mt-1" type="button">
                   Fight
                 </button>
               </div>
@@ -70,14 +59,7 @@ const MonsterChoice = ({ id }) => {
                   <strong>Ancestry: </strong>
                   **************
                 </div>
-
-                <button
-                  className="btn btn-dark mt-1"
-                  type="button"
-                  onClick={handleClick}
-                >
-                  Fight
-                </button>
+                <button type="button" className="btn btn-dark mt-1" data-bs-placement="bottom" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Fight</button>
               </div>
             </div>
           </div>
