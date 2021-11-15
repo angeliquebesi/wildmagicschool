@@ -1,0 +1,36 @@
+.container {
+  width : 90%;
+}
+
+.quizquestion {
+  text-align: center;
+  font-size: 42px;
+}
+
+.propositions ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0;
+  width : 80%;
+  margin : 0 auto;
+  gap : 5px;
+}
+
+.propositions li{
+  font-size: 30px;
+  flex: 2 0 40%;
+  width: 100%;
+}
+
+
+.result {
+  text-align: center;
+  margin : 10px auto;
+}
+
+.quiz-p{
+  font-size: 38px;
+  margin : 0;
+  color : red;
+}
