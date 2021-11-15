@@ -7,7 +7,13 @@ export default function Home() {
   return (
     <div className="hometext">
       <div className="hp-hero__img-wrapper">
-        <video id="autovideo" autoPlay loop muted src="https://static.warnerbros.fr/static/version1634738923/frontend/Warner/wizardingworld/fr_FR/images/home/header_background.mp4" />
+        <video
+          id="autovideo"
+          autoPlay
+          loop
+          muted
+          src="https://static.warnerbros.fr/static/version1634738923/frontend/Warner/wizardingworld/fr_FR/images/home/header_background.mp4"
+        />
       </div>
       <div className="texthero">
         <p className="heropresentation text-center">

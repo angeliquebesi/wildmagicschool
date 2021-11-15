@@ -31,8 +31,8 @@ export default function Quiz() {
 
   /**
    * function pour changer la class du button en fonction de la réponse
-   * @param {récupère la réponse} answer
-   * @param {permet de récupérer l'index de la réponse dans le tableau de choix} index
+   * @param {string} answer récupère la réponse
+   * @param {number} index permet de récupérer l'index de la réponse dans le tableau de choix
    */
   const checkedResponse = (answer, index) => {
     if (canClickOnButton === false) {

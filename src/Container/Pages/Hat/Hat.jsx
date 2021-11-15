@@ -1,31 +1,36 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./Hat.css";
 import { useHistory } from "react-router-dom";
+import UserContext from "../../../Context/UserContext";
 
 const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
 export default function Hat() {
   const [visibility, setVisibility] = useState(true);
-  const [item, setItem] = useState("");
+  const { item, setItem } = useContext(UserContext);
   // const [count, setCount] = useState("");
   const history = useHistory();
   /**
    * Recherche alétoire d'une maison
    * SetVisibility (Boolean)
    */
+  useEffect(() => {
+    setItem("");
+  }, []);
+
   function handleClick() {
     const myHouse = houses[Math.floor(Math.random() * houses.length)];
     setItem(myHouse);
     setVisibility(false);
     /*
-    *Timeout pour change de page automatiquement après le choix du chapeau
-    */
+     *Timeout pour change de page automatiquement après le choix du chapeau
+     */
     setTimeout(() => {
       history.push(`/hat/${myHouse}`);
     }, 1500);
   }
-
+  console.log(item);
   return (
     <div className="sortingHat">
       <div className={`hatchoice ${item}`}>
