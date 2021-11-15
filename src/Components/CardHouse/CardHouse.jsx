@@ -6,13 +6,13 @@ import UserContext from "../../Context/UserContext";
 
 const CardHouse = ({ pers, id }) => {
   /**
-   *redirection vers la page du marauder en fonction du choix du chapeau (item)
+   *redirection vers la page du marauder en fonction du choix du chapeau (userHouse)
    */
-  const { item } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
   const history = useHistory();
   function handleClick() {
     setTimeout(() => {
-      history.push(`/hat/${item}/Marauder`);
+      history.push(`/hat/${userHouse}/Marauder`);
     });
   }
   return (
@@ -36,7 +36,7 @@ const CardHouse = ({ pers, id }) => {
               <strong>Ancestry: </strong>
               {pers.ancestry}
             </div>
-            {item !== "" ? (
+            {userHouse !== "" ? (
               <button
                 className="btn btn-dark"
                 type="button"
