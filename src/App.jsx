@@ -3,7 +3,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer/Footer";
-import SpellPotion from "./Container/SpellPotion/SpellPotion";
+import SpellPotion from "./Components/SpellPotion/SpellPotion";
 import Houses from "./Container/Pages/Houses";
 import Home from "./Container/Pages/Home";
 import Hat from "./Container/Pages/Hat/Hat";
