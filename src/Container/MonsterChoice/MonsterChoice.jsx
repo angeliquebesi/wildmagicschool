@@ -3,10 +3,11 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "./MonsterChoice.css";
 // import UserContext from "../../Context/UserContext";
-import Monsters from "../../DATA/Monsters";
+// import Monsters from "../../DATA/Monsters";
 
-const MonsterChoice = () => {
-  console.log();
+const MonsterChoice = ({ Monsters, id }) => {
+  console.log(id);
+
   return (
     <div>
       <div className="textmarauder">
@@ -18,6 +19,7 @@ const MonsterChoice = () => {
         {Monsters && (
         <div className="monster card-group">
           {Monsters
+            .filter((monster) => monster.id === id)
             /* creation des monsters avec le fetch api */
             .map((monster) => (
               <div className="col-5 px-4">
@@ -39,6 +41,7 @@ const MonsterChoice = () => {
                           <button
                             className="button btn btn-dark mt-1"
                             type="button"
+                            onClick=""
                           >
                             {" "}
                             Fight
