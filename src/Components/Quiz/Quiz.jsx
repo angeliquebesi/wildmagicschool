@@ -70,7 +70,7 @@ export default function Quiz() {
       return (
         <div>
           <p className="quiz-p"> Answer is wrong. </p>
-          <button type="button" className="buttonstart">Back</button>
+          <button type="button" className="buttonstart">Back to choose your lesson</button>
         </div>
       );
     }
