@@ -112,11 +112,18 @@ function App() {
         </Route>
 
         {/* Route pour accéder à la zone de combat */}
-        <Route exact path="/hat/Gryffindor/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Ravenclaw/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Hufflepuff/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Slytherin/Marauder/Fight" component={ContainerGame} />
-
+        <Route exact path="/hat/Gryffindor/Marauder/Fight">
+          <ContainerGame type="Fight" />
+        </Route>
+        <Route exact path="/hat/Ravenclaw/Marauder/Fight">
+          <ContainerGame type="Fight" />
+        </Route>
+        <Route exact path="/hat/Hufflepuff/Marauder/Fight">
+          <ContainerGame type="Fight" />
+        </Route>
+        <Route exact path="/hat/Slytherin/Marauder/Fight">
+          <ContainerGame type="Fight" />
+        </Route>
         <Route exact path="/contact" component={Contact} />
       </Switch>
       <div>

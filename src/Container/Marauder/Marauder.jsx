@@ -27,7 +27,9 @@ export default function Marauder() {
           </Link>
 
           <Link to={`/hat/${item}/Marauder/Fight`}>
-            FIGHT
+            <button type="button" className="buttonspell">
+              FIGHT
+            </button>
           </Link>
 
           <Link to={`/hat/${item}/Marauder/Spell`}>

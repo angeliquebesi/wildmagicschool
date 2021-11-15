@@ -8,8 +8,14 @@ import Monsters from "../../DATA/Monsters";
 const MonsterChoice = () => {
   console.log();
   return (
-    <div className="monstercontainer">
-      {Monsters && (
+    <div>
+      <div className="textmarauder">
+        <p className="heropresentation text-center">
+          TEXT POUR LE CHOIX DU COMBAT????
+        </p>
+      </div>
+      <div className="monstercontainer">
+        {Monsters && (
         <div className="monster card-group">
           {Monsters
             /* creation des monsters avec le fetch api */
@@ -54,7 +60,8 @@ const MonsterChoice = () => {
               </div>
             ))}
         </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
