@@ -3,89 +3,58 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "./MonsterChoice.css";
 // import UserContext from "../../Context/UserContext";
-import defautAvatar from "../../images/defautAvatar.png";
+import Monsters from "../../DATA/Monsters";
 
-const MonsterChoice = ({ id }) => {
-  /**
-   *redirection vers la page du marauder en fonction du choix du chapeau (item)
-   */
-  console.log(id);
+const MonsterChoice = () => {
+  console.log();
   return (
     <div className="monstercontainer">
-      <div className="monster card-group">
-        <div className="col-5 px-4">
-          <div id={`pers-${id}`}>
-            <div className="monster card card-stretch text-center mx-auto">
-              <img
-                src={defautAvatar}
-                alt="monster1"
-                className="card-img-top img-fluid "
-              />
-              <div className="card-body">
-                <h2 className="card-title ">Name</h2>
-                <div className="card-text ">
-                  <strong>Patronus: </strong>
-                  **********
-                  <br />
-                  <strong>birth: </strong>
-                  ***********
-                  <br />
-                  <strong>Ancestry: </strong>
-                  **************
+      {Monsters && (
+        <div className="monster card-group">
+          {Monsters
+            /* creation des monsters avec le fetch api */
+            .map((monster) => (
+              <div className="col-5 px-4">
+                <div id={monster.id}>
+                  <div className="monster card card-stretch text-center mx-auto">
+                    <img
+                      src={monster.img}
+                      alt="monster1"
+                      className="card-img-top img-fluid "
+                    />
+                    <div className="card-body">
+                      <h2 className="card-title ">{monster.name}</h2>
+                      <div className="card-text ">
+                        <strong>Description: </strong>
+                        {monster.description}
+                      </div>
+                      <Popup
+                        trigger={
+                          <button
+                            className="button btn btn-dark mt-1"
+                            type="button"
+                          >
+                            {" "}
+                            Fight
+                            {" "}
+                          </button>
+                        }
+                        modal
+                      >
+                        <span>
+                          {" "}
+                          You need the Spell x and the potion X to fight against
+                          the monster X !!
+                          {" "}
+                        </span>
+                      </Popup>
+                    </div>
+                  </div>
                 </div>
-                <Popup
-                  trigger={
-                    <button className="button btn btn-dark mt-1" type="button">
-                      {" "}
-                      Fight
-                      {" "}
-                    </button>
-                  }
-                  modal
-                >
-                  <span> You need the Spell x and the potion X to fight against the monster x !! </span>
-                </Popup>
               </div>
-            </div>
-          </div>
+            ))}
         </div>
-        <div className="col-5 px-4">
-          <div id={`pers-${id}`}>
-            <div className="monster card  card-stretch text-center mx-auto">
-              <img
-                src={defautAvatar}
-                alt="monster1"
-                className="card-img-top img-fluid "
-              />
-              <div className="card-body">
-                <h2 className="card-title ">Name</h2>
-                <div className="card-text ">
-                  <strong>Patronus: </strong>
-                  **********
-                  <br />
-                  <strong>birth: </strong>
-                  ***********
-                  <br />
-                  <strong>Ancestry: </strong>
-                  **************
-                </div>
-                <Popup
-                  trigger={
-                    <button className="button btn btn-dark mt-1" type="button">
-                      {" "}
-                      Fight
-                      {" "}
-                    </button>
-                  }
-                  modal
-                >
-                  <span> You need the Spell X and the potion X to fight against the monster X !! </span>
-                </Popup>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
