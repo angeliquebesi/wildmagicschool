@@ -12,10 +12,11 @@ import "./fonts/Harryp/HARRYP__.ttf";
 import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
+import { UserContextProvider } from "./Context/UserContext";
 
 function App() {
   return (
-    <>
+    <UserContextProvider>
       <div>
         <NavBar />
       </div>
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/houses" component={Houses} />
         <Route exact path="/spellpotion" component={SpellPotion} />
         <Route exact path="/hat" component={Hat} />
+        {/* Routes for to go from the hat to the house */}
         <Route exact path="/hat/Hufflepuff">
           <House house="hufflepuff" />
         </Route>
@@ -36,16 +38,20 @@ function App() {
         <Route exact path="/hat/Slytherin">
           <House house="slytherin" />
         </Route>
+        {/* Routes for go from house to marauder */}
         <Route exact path="/hat/Gryffindor/Marauder" component={Marauder} />
         <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
         <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
         <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
+
+        {/* Routes for go to Spell Lesson */}
+
         <Route exact path="/contact" component={Contact} />
       </Switch>
       <div>
         <Footer />
       </div>
-    </>
+    </UserContextProvider>
   );
 }
 

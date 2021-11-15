@@ -1,0 +1,35 @@
+import React, { createContext, useState } from "react";
+
+const UserContext = createContext();
+
+export const UserContextProvider = ({ children }) => {
+  const [item, setItem] = useState("");
+  const [userPersonnage, setUserPersonnage] = useState("");
+  const [potion1, setpotion1] = useState(false);
+  const [spell1, setspell1] = useState(false);
+  const [Ennemy1, setEnnemy1] = useState(false);
+  const [quizzChoice, setquizzChoice] = useState("");
+
+  return (
+    <UserContext.Provider
+      value={{
+        item,
+        setItem,
+        userPersonnage,
+        setUserPersonnage,
+        potion1,
+        setpotion1,
+        spell1,
+        setspell1,
+        Ennemy1,
+        setEnnemy1,
+        quizzChoice,
+        setquizzChoice
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
+};
+
+export default UserContext;
