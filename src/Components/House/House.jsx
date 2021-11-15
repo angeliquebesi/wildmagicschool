@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CardDeck from "../CardDeck";
+import CardDeck from "../CardDeck/CardDeck";
 import "./House.css";
 import HouseData from "../../DATA/HouseData";
 
