@@ -10,14 +10,15 @@ import SearchBar from "../Search";
 export default function SpellPotionCard({ type }) {
   const [cards, setCards] = useState([]);
   const { item } = useContext(UserContext);
+
   function handleClick() {}
-  // redirection vers quizz de cette carte
   const [filtervalue, setFiltervalue] = useState("");
   // Fonction pour filtrer les carttes des personnages grace à la search bar
   const onChangefilter = (event) => {
     const newvalue = event.target.value;
     setFiltervalue(newvalue);
   };
+  // Fonction pour fetch API
   useEffect(() => {
     axios
       .get(`https://the-harry-potter-database.herokuapp.com/api/1/${type}/all`)
@@ -32,6 +33,7 @@ export default function SpellPotionCard({ type }) {
         <div className="card-group">
           {cards
             .filter((card) => card.name.toLowerCase().includes(filtervalue))
+            /* creation des cards avec le fetch api */
             .map((card) => (
               <div className="col-4 px-4 fs-4">
 
