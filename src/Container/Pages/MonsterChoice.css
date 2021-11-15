@@ -1,5 +1,5 @@
 
-.card,.card-stretch {
+.monster.card,.card-stretch {
   background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
   flex: 0 0 300px;
   padding: 5px;
@@ -17,17 +17,17 @@
 
   justify-content: center;
   margin-top: 1em;
-  margin-left: 14%;
+  margin-left: 14.5%;
   align-items: center;
   width: 70%;
   background-image: url(./../../images/bg-paper.jpg);
 }
 
-.card.card-stretch:hover
+.monster.card.card-stretch:hover
 {
-  -webkit-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  transform: scale(0.9);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
 
 
@@ -36,3 +36,40 @@
   height: 450px;
 }
 
+
+
+
+.popup-content {
+  font-family: "Dum1";
+  font-weight: bold;
+  margin: auto;
+  font-size: 24px;
+  text-align: center;
+  background: #fff;
+  border-radius: 5px;
+  width:60%;
+  padding: 5
+    px;
+  border: 1
+    px
+    solid #d7d7d7;
+    animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+    -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}
