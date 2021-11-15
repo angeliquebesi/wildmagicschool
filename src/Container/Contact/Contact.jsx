@@ -6,10 +6,6 @@ export default function Contact() {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
-    console.log(`
-      Email: ${email}
-      Message: ${message}
-    `);
     event.preventDefault();
   };
 
