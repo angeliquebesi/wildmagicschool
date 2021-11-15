@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Questions from "./Questions";
+import Questions from "../../DATA/Questions";
 import "./Quizz.css";
 
 export default function Quiz() {
