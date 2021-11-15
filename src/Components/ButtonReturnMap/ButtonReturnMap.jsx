@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import UserContext from "../../Context/UserContext";
 
 export default function ButtonReturnMap() {
-  const { item } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
 
   return (
     <div>
-      <Link to={`/hat/${item}/Marauder`}>
+      <Link to={`/hat/${userHouse}/Marauder`}>
         <button type="button" className="buttonstart">
           Return to map
         </button>

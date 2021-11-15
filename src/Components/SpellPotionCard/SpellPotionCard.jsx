@@ -11,7 +11,7 @@ import SpellPotion from "../SpellPotion/SpellPotion";
 
 export default function SpellPotionCard({ type, type2 }) {
   const [cards, setCards] = useState([]);
-  const { item } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
 
   const [filtervalue, setFiltervalue] = useState("");
   // Fonction pour filtrer les cartes des personnages grace à la search bar
@@ -52,8 +52,8 @@ export default function SpellPotionCard({ type, type2 }) {
                         {card.description}
                       </div>
                     </div>
-                    {item !== "" ? (
-                      <Link to={`/hat/${item}/Marauder/${type2}/Quizz`}>
+                    {userHouse !== "" ? (
+                      <Link to={`/hat/${userHouse}/Marauder/${type2}/Quizz`}>
                         <button
                           className="btn btn-dark"
                           type="button"
