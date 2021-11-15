@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./SpellPotionCard.css";
 import Potion from "../../images/Potion.svg";
@@ -7,13 +8,12 @@ import Wand from "../../images/Wand.svg";
 import UserContext from "../../Context/UserContext";
 import SearchBar from "../Search";
 
-export default function SpellPotionCard({ type }) {
+export default function SpellPotionCard({ type, type2 }) {
   const [cards, setCards] = useState([]);
   const { item } = useContext(UserContext);
 
-  function handleClick() {}
   const [filtervalue, setFiltervalue] = useState("");
-  // Fonction pour filtrer les carttes des personnages grace à la search bar
+  // Fonction pour filtrer les cartes des personnages grace à la search bar
   const onChangefilter = (event) => {
     const newvalue = event.target.value;
     setFiltervalue(newvalue);
@@ -49,13 +49,15 @@ export default function SpellPotionCard({ type }) {
                       {card.description}
                     </div>
                     {item !== "" ? (
-                      <button
-                        className="btn btn-dark"
-                        type="button"
-                        onClick={handleClick}
-                      >
-                        Select
-                      </button>
+                      <Link to={`/hat/${item}/Marauder/${type2}/Quizz`}>
+                        <button
+                          className="btn btn-dark"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </Link>
+
                     ) : null}
                   </div>
                 </div>
