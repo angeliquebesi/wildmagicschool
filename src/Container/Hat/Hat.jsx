@@ -2,7 +2,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./Hat.css";
 import { useHistory } from "react-router-dom";
-import UserContext from "../../../Context/UserContext";
+import UserContext from "../../Context/UserContext";
 
 const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
@@ -30,7 +30,6 @@ export default function Hat() {
       history.push(`/hat/${myHouse}`);
     }, 1500);
   }
-  console.log(item);
   return (
     <div className="sortingHat">
       <div className={`hatchoice ${item}`}>

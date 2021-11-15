@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CardHouse from "./CardHouse";
-import SearchBar from "./Search";
+import CardHouse from "../CardHouse/CardHouse";
+import SearchBar from "../SearchBar/Search";
 
 export default function CardDeck({ personnages }) {
   const [filtervalue, setFiltervalue] = useState("");

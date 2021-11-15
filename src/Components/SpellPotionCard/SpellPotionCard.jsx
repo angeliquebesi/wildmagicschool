@@ -6,7 +6,7 @@ import "./SpellPotionCard.css";
 import Potion from "../../images/Potion.svg";
 import Wand from "../../images/Wand.svg";
 import UserContext from "../../Context/UserContext";
-import SearchBar from "../Search";
+import SearchBar from "../SearchBar/Search";
 import SpellPotion from "../SpellPotion/SpellPotion";
 
 export default function SpellPotionCard({ type, type2 }) {
