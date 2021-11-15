@@ -17,7 +17,7 @@ const MonsterChoice = ({ id }) => {
   }
   return (
     <div className="monstercontainer">
-      <div className="card-group">
+      <div className="monster card-group">
         <div className="col-5 px-4">
           <div id={`pers-${id}`}>
             <div className="monster card card-stretch text-center mx-auto">
