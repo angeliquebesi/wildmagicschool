@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./MonsterChoice.css";
 import UserContext from "../../Context/UserContext";
-import defautAvatar from "../../Components/Image/defautAvatar.png";
+import defautAvatar from "../../images/defautAvatar.png";
 
 const MonsterChoice = ({ id }) => {
   /**

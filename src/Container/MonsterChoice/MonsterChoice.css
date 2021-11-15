@@ -20,7 +20,7 @@
   margin-left: 14%;
   align-items: center;
   width: 70%;
-  background-image: url(./../../images/bg-paper.jpg);
+  background-image: url(../../images/bg-paper.jpg);
 }
 
 .card.card-stretch:hover
