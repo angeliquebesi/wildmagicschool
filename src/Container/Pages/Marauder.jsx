@@ -2,9 +2,19 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../Context/UserContext";
 import "./Marauder.css";
+import { useHistory } from "react-router-dom";
 
 export default function Marauder() {
+<<<<<<< HEAD
   const { item } = useContext(UserContext);
+=======
+  const history = useHistory();
+  function handleClick() {
+    setTimeout(() => {
+      history.push("/hat/Marauder/fight");
+    });
+  }
+>>>>>>> dev
   return (
     <div>
       <section className="Maraudercontainer ">
@@ -19,6 +29,7 @@ export default function Marauder() {
           </p>
         </div>
         <div className="MarauderButton ">
+<<<<<<< HEAD
           <Link to={`/hat/${item}/Marauder/Potion`}>
             <button type="button" className="buttonspell">
               POTION
@@ -26,6 +37,14 @@ export default function Marauder() {
           </Link>
           {/* Ajouter le lien vers la page combat */}
           <button type="button" className="buttonfight">
+=======
+          <button type="button" className="buttonspell">
+            {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
+            POTION
+          </button>
+          <button type="button" className="buttonfight" onClick={handleClick}>
+            {/* Ajouter le lien vers la page de choix du chapeau en utilisant href */}
+>>>>>>> dev
             FIGHT
           </button>
 

@@ -13,7 +13,11 @@ import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
+<<<<<<< HEAD
 import SpellPotionCard from "./Components/SpellPotionCard/SpellPotionCard";
+=======
+import ContainerGame from "./Container/Pages/ContainerGame";
+>>>>>>> dev
 
 function App() {
   return (
@@ -46,6 +50,7 @@ function App() {
         <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
         <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
         <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
+<<<<<<< HEAD
 
         {/* Route to go from marauder to Spell Lesson */}
         <Route exact path="/hat/Gryffindor/Marauder/Spell">
@@ -75,6 +80,10 @@ function App() {
           <SpellPotionCard type="potions" />
         </Route>
 
+=======
+        <Route exact path="/hat/Marauder/fight" component={ContainerGame} />
+        {/* Routes for go to Spell Lesson */}
+>>>>>>> dev
         <Route exact path="/contact" component={Contact} />
       </Switch>
       <div>
