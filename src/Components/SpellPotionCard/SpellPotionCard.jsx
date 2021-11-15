@@ -4,7 +4,7 @@ import axios from "axios";
 import "./SpellPotionCard.css";
 import Potion from "../../images/Potion.svg";
 import Wand from "../../images/Wand.svg";
-import UserContext from "../../Context/UserContext";
+//  import UserContext from "../../";
 import SearchBar from "../Search";
 
 export default function SpellPotionCard({ type }) {
