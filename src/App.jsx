@@ -14,6 +14,7 @@ import House from "./Components/House/House";
 import Marauder from "./Container/Pages/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
 import ContainerGame from "./Container/Pages/ContainerGame";
+import SpellPotionCard from "./Components/SpellPotionCard/SpellPotionCard";
 
 function App() {
   return (
@@ -25,6 +26,13 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/houses" component={Houses} />
         <Route exact path="/spellpotion" component={SpellPotion} />
+        {/* Routes for spell and potion */}
+        <Route path="/SpellPotion/potions">
+          <SpellPotionCard type="potions" />
+        </Route>
+        <Route path="/SpellPotion/spells">
+          <SpellPotionCard type="spells" />
+        </Route>
         <Route exact path="/hat" component={Hat} />
         {/* Routes for to go from the hat to the house */}
         <Route exact path="/hat/Hufflepuff">
