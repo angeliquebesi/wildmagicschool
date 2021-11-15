@@ -8,7 +8,7 @@ const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
 export default function Hat() {
   const [visibility, setVisibility] = useState(true);
-  const { item, setItem } = useContext(UserContext);
+  const { userHouse, setUserHouse } = useContext(UserContext);
   // const [count, setCount] = useState("");
   const history = useHistory();
   /**
@@ -16,12 +16,12 @@ export default function Hat() {
    * SetVisibility (Boolean)
    */
   useEffect(() => {
-    setItem("");
+    setUserHouse("");
   }, []);
 
   function handleClick() {
     const myHouse = houses[Math.floor(Math.random() * houses.length)];
-    setItem(myHouse);
+    setUserHouse(myHouse);
     setVisibility(false);
     /*
      *Timeout pour change de page automatiquement après le choix du chapeau
@@ -32,7 +32,7 @@ export default function Hat() {
   }
   return (
     <div className="sortingHat">
-      <div className={`hatchoice ${item}`}>
+      <div className={`hatchoice ${userHouse}`}>
         <div>
           {visibility ? (
             <div>

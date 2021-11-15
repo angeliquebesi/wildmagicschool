@@ -5,9 +5,9 @@ import defautAvatar from "../../images/defautAvatar.png";
 
 const MonsterChoice = ({ id }) => {
   /**
-   *redirection vers la page du marauder en fonction du choix du chapeau (item)
+   *redirection vers la page du marauder en fonction du choix du chapeau (userHouse)
    */
-  const { item } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
   return (
     <div className="monstercontainer">
       <div className="monster card-group">
@@ -31,7 +31,7 @@ const MonsterChoice = ({ id }) => {
                   <strong>Ancestry: </strong>
                   **************
                 </div>
-                {item ? "" : null}
+                {userHouse ? "" : null}
                 <button className="btn btn-dark mt-1" type="button">
                   Fight
                 </button>

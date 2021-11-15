@@ -4,7 +4,7 @@ import UserContext from "../../Context/UserContext";
 import "./Marauder.css";
 
 export default function Marauder() {
-  const { item } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
 
   return (
     <div>
@@ -20,17 +20,17 @@ export default function Marauder() {
           </p>
         </div>
         <div className="MarauderButton ">
-          <Link to={`/hat/${item}/Marauder/Potion`}>
+          <Link to={`/hat/${userHouse}/Marauder/Potion`}>
             <button type="button" className="buttonspell">
               POTION
             </button>
           </Link>
 
-          <Link to={`/hat/${item}/Marauder/Fight`}>
+          <Link to={`/hat/${userHouse}/Marauder/Fight`}>
             FIGHT
           </Link>
 
-          <Link to={`/hat/${item}/Marauder/Spell`}>
+          <Link to={`/hat/${userHouse}/Marauder/Spell`}>
             <button type="button" className="buttonspell">
               SPELL
             </button>
