@@ -51,7 +51,7 @@
 }
 
 .Gryffindor {
-  background-image: url("../../../images/wallpaperhouse/gryffindor-banner.jpg");
+  background-image: url("../../images/wallpaperhouse/gryffindor-banner.jpg");
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -67,7 +67,7 @@ transform: scale(3.5);
 
 
 .Hufflepuff {
-  background-image: url("../../../images/wallpaperhouse/hufflepuff-banner.jpg");
+  background-image: url("../../images/wallpaperhouse/hufflepuff-banner.jpg");
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -82,7 +82,7 @@ transform: scale(3.5);
 
 
 .Ravenclaw {
-  background-image: url("../../../images/wallpaperhouse/ravenclaw-banner.jpg");
+  background-image: url("../../images/wallpaperhouse/ravenclaw-banner.jpg");
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -97,7 +97,7 @@ transform: scale(3.5);
 
 
 .Slytherin {
-  background-image: url("../../../images/wallpaperhouse/slytherin-banner.jpg");
+  background-image: url("../../images/wallpaperhouse/slytherin-banner.jpg");
   background-size: cover;
   background-position: center;
   height: 400px;

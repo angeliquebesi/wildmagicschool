@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./CardHouse.css";
-import defautAvatar from "../Image/defautAvatar.png";
+import defautAvatar from "../../images/defautAvatar.png";
 import UserContext from "../../Context/UserContext";
 
 const CardHouse = ({ pers, id }) => {
