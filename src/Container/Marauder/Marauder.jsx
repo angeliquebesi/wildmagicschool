@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../../Context/UserContext";
 import "./Marauder.css";
+import UserContext from "../../Context/UserContext";
 
 export default function Marauder() {
   const { userHouse } = useContext(UserContext);
@@ -20,7 +20,7 @@ export default function Marauder() {
           </p>
         </div>
         <div className="MarauderButton ">
-          <Link to={`/hat/${userHouse}/Marauder/Potion`}>
+          <Link to={`/hat/${userHouse}/Marauder/potions`}>
             <button type="button" className="buttonspell">
               POTION
             </button>
@@ -30,7 +30,7 @@ export default function Marauder() {
             FIGHT
           </Link>
 
-          <Link to={`/hat/${userHouse}/Marauder/Spell`}>
+          <Link to={`/hat/${userHouse}/Marauder/spells`}>
             <button type="button" className="buttonspell">
               SPELL
             </button>

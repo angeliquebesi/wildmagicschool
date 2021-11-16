@@ -1,7 +1,7 @@
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 const HouseData = [
   {
-    name: "gryffindor",
+    name: "Gryffindor",
     Directorname: "Minerva McGonagall",
     directorimg: "http://hp-api.herokuapp.com/images/mcgonagall.jpg",
     logo: `${serverUrl}/images/Blason_de_Gryffondor.png`,
@@ -10,7 +10,7 @@ const HouseData = [
     traits: "Bravery, Nerve, Chivalry, Courage and Daring.",
   },
   {
-    name: "hufflepuff",
+    name: "Hufflepuff",
     Directorname: "Pomona Sprout",
     directorimg: `${serverUrl}/images/imagePomona.jpeg`,
     logo: `${serverUrl}/images/logoHUPPLEPUF.png`,
@@ -19,7 +19,7 @@ const HouseData = [
     traits: "Loyalty, Kindness, Honesty  and Friendship.",
   },
   {
-    name: "ravenclaw",
+    name: "Ravenclaw",
     Directorname: "Filius Flitwick",
     directorimg: `${serverUrl}/images/imageFilius.jpeg`,
     logo: `${serverUrl}/images/ravenclow.png`,
@@ -28,7 +28,7 @@ const HouseData = [
     traits: "Intelligence, Wisdom, Creativity and Originality.",
   },
   {
-    name: "slytherin",
+    name: "Slytherin",
     Directorname: "Horace Slughorn",
     directorimg: "http://hp-api.herokuapp.com/images/slughorn.JPG",
     logo: `${serverUrl}/images/logo_Slytherin.png`,

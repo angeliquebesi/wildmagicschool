@@ -30,17 +30,8 @@ export default function Houses() {
           </Link>
         </section>
         <Switch>
-          <Route path="/Houses/Gryffindor">
-            <House house="gryffindor" />
-          </Route>
-          <Route path="/Houses/Hufflepuff">
-            <House house="hufflepuff" />
-          </Route>
-          <Route path="/Houses/Ravenclaw">
-            <House house="ravenclaw" />
-          </Route>
-          <Route path="/Houses/Slytherin">
-            <House house="slytherin" />
+          <Route path="/Houses/:house">
+            <House />
           </Route>
         </Switch>
       </div>
