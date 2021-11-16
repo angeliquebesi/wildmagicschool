@@ -1,53 +1,4 @@
 
-.housechoice {
-  width: 850px;
-  height: 370px;
-  margin: 1em auto;
-  display: flex;
-}
-
-.house {
-  height: 300px;
-  flex-grow: 1;
-  font-family: Harry Potter, Arial;
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  padding-top: 15px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 110px 150px;
-  border-bottom: 30px solid transparent;
-  border-image: url(https://raw.githubusercontent.com/NestorPlasencia/img/master/border-triangle.png) 0% 0% 100% 0% stretch;
-  transition:  0.75s;
-}
-
-.house:hover {
-  height: 370px;
-  font-size: 30px;
-}
-
-#Gryffindor {
-  
-  background-color: #A80102;
-  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Gryffindor.png");
-}
-
-#Hufflepuff {
-  background-color: #786254;
-  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Hufflepuff.png");
-}
-
-#Ravenclaw {
-  background-color: #31446F;
-  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Ravenclaw.png");
-}
-
-#Slytherin {
-  background-color: #097146;
-  background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Slytherin.png");
-}
-
 .hero.Gryffindor{
   background-image: url("../../images/harry-potter-2240526_1280.jpg");
   background-size: cover;
@@ -72,10 +23,7 @@
   font-family: "Dum1";
 }
 
-.card img {
-  max-width: 100%;
-  height: 450px;
-}
+
 
 .welcomeHouse{
   margin: 0;
@@ -165,4 +113,34 @@ body {
 .selectPersonnage{
 
   background-image: url("../../images/bg-paper.jpg");
+  background-attachment: fixed;
 }
+
+@media (max-width: 576px) { 
+  .embleme {
+    margin: 0;
+    width: 75%;
+    height: 250px;
+    
+  }
+  
+
+  
+  .Embleme-president{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Dum1";
+  }
+
+  .col-2 {
+    width: 70%;
+    margin: auto;
+  }
+
+  .col-4{
+    width: 70%;
+    margin: auto;
+  }
+ }
