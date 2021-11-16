@@ -4,8 +4,7 @@ const Monsters = [
     id: 1,
     name: "Aragog",
     img: `${serverUrl}/images/Aragog.jpeg`,
-    description: "",
-    potion: "Ageing Potion",
+    potion: "Ageing ",
     spell: "Aberto",
 
   },
@@ -13,7 +12,6 @@ const Monsters = [
     id: 2,
     name: "Détraqeurs",
     img: `${serverUrl}/images/Detraqueur.jpeg`,
-    description: "",
     potion: "Alihotsy Draught",
     spell: "Accio"
   },
@@ -21,7 +19,6 @@ const Monsters = [
     id: 3,
     name: "Lord Voldemort",
     img: "http://hp-api.herokuapp.com/images/voldemort.jpg",
-    description: "",
     potion: "Amortentia",
     spell: "Age Line"
   },

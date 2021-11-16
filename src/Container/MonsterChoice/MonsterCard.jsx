@@ -13,10 +13,6 @@ export default function MonsterCard({ monster, handleid }) {
           />
           <div className="card-body">
             <h2 className="card-title ">{monster.name}</h2>
-            <div className="card-text ">
-              <strong>Description: </strong>
-              {monster.description}
-            </div>
             <Popup
               trigger={
                 <button className="button btn btn-dark mx-2" type="button">
@@ -29,8 +25,19 @@ export default function MonsterCard({ monster, handleid }) {
             >
               <span>
                 {" "}
-                You need the {monster.potion} and the {monster.spell} to fight against the
-                monster X !!
+                You need the
+                {" "}
+                {monster.potion}
+                {" "}
+                potion and the
+                {" "}
+                {monster.spell}
+                {" "}
+                spell to fight against the
+                {" "}
+                {monster.name}
+                {" "}
+                !!
                 {" "}
                 <button
                   className="button btn btn-dark mx-2"

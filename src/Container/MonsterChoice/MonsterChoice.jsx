@@ -6,8 +6,8 @@ import MonsterCard from "./MonsterCard";
 
 const MonsterChoice = ({ Monsters }) => {
   const { setIdMonster, potions, spells } = useContext(UserContext);
-  
-  
+  console.log(spells);
+  console.log(potions);
   const handleid = (e) => {
     // if (potions.contains(monster.potion) && spells.contains(monster.spell))
     setIdMonster(e.target.value);
