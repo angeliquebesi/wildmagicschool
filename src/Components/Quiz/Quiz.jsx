@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Questions from "../../DATA/Questions";
 import "./Quizz.css";
 import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
 
 export default function Quiz() {
+  const { type } = useParams();
   const [questions, setQuestions] = useState({
     question: "",
     answers: []
@@ -18,7 +20,7 @@ export default function Quiz() {
 
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
-    const questionsQ = Questions.filter((quest) => quest.type === "sort");
+    const questionsQ = Questions.filter((quest) => quest.type === type);
     const myQuestions = {
       correct: questionsQ[num].correct_answer,
       question: questionsQ[num].question,

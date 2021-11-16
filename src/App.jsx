@@ -15,6 +15,7 @@ import Marauder from "./Container/Marauder/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
 import SpellPotionCard from "./Components/SpellPotionCard/SpellPotionCard";
 import ContainerGame from "./Container/ContainerGame/ContainerGame";
+import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
 
         {/* Routes pour aller du choix de la potion au quizz pour l'acquérir */}
         <Route exact path="/hat/:house/Marauder/:type/Quizz">
-          <ContainerGame />
+          <SpellPotionGame />
         </Route>
 
         <Route exact path="/contact" component={Contact} />
