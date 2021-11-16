@@ -201,7 +201,7 @@ const Questions = [
     ]
   },
   {
-    ref: 25,
+    ref: 1,
     type: "Fight",
     question: "What are the three Unforgivable Curses?",
     correct_answer: "Avada Kedavra, Crucio and Imperio",
@@ -212,7 +212,7 @@ const Questions = [
     ]
   },
   {
-    ref: 26,
+    ref: 1,
     type: "Fight",
     question: "What dragon had Harry Potter during the Triwizard Tournament?",
     correct_answer: "Hungarian Horntail",
@@ -223,8 +223,8 @@ const Questions = [
     ]
   },
   {
-    ref: 27,
-    type: "monstre",
+    ref: 2,
+    type: "Fight",
     question: "What kind of creature is Norbert, Hagrid's (hidden) pet?",
     correct_answer: "Dragon",
     incorrect_answers: [
@@ -234,8 +234,8 @@ const Questions = [
     ]
   },
   {
-    ref: 28,
-    type: "monstre",
+    ref: 2,
+    type: "Fight",
     question: "A hippogriff is part horse and part what other animal?",
     correct_answer: "Eagle",
     incorrect_answers: [
@@ -245,7 +245,7 @@ const Questions = [
     ]
   },
   {
-    ref: 29,
+    ref: 3,
     type: "Fight",
     question: "Who was Tom Marvolo Riddle?",
     correct_answer: "Voldemort",
@@ -256,7 +256,7 @@ const Questions = [
     ]
   },
   {
-    ref: 30,
+    ref: 3,
     type: "Fight",
     question: "Who killed Albus Dumbledore?",
     correct_answer: "Serverus Snape",
