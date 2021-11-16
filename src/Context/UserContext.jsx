@@ -9,6 +9,7 @@ export const UserContextProvider = ({ children }) => {
   const [spell1, setspell1] = useState(false);
   const [Ennemy1, setEnnemy1] = useState(false);
   const [quizzChoice, setquizzChoice] = useState("");
+  const [idMonster, setIdMonster] = useState("");
 
   return (
     <UserContext.Provider
@@ -24,7 +25,9 @@ export const UserContextProvider = ({ children }) => {
         Ennemy1,
         setEnnemy1,
         quizzChoice,
-        setquizzChoice
+        setquizzChoice,
+        idMonster,
+        setIdMonster
       }}
     >
       {children}

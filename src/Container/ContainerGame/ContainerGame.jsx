@@ -1,23 +1,37 @@
-import React from "react";
-// import CardDeck from "../../Components/CardDeck";
+import React, { useContext } from "react";
+import UserContext from "../../Context/UserContext";
 import MonsterChoice from "../MonsterChoice/MonsterChoice";
 import ButtonReturnMap from "../../Components/ButtonReturnMap/ButtonReturnMap";
 import Quiz from "../../Components/Quiz/Quiz";
 import Monsters from "../../DATA/Monsters";
 
 export default function ContainerGame({ type }) {
-  const combat1 = true;
-  console.log(type);
+  const { idMonster } = useContext(UserContext);
+  // const [filteredMonster, setFilteredMonster] = useState("");
+
+  console.log(idMonster);
+
+  // useEffect(() => {
+  // setFilteredMonster(Monsters.filter((monster) => monster.id === idMonster));
+  // }, [idMonster]);
+  // console.log(filteredMonster);
+
+  const monster = Monsters.filter((item) => item.id === parseInt(idMonster, 36));
+  console.log(Monsters);
   return (
     <div>
-      <Quiz />
-      {type === "Fight" && combat1 === null ? <MonsterChoice Monsters={Monsters} /> : null}
-      {type === "Fight" && combat1 === true ? (
-        <div>
-          <MonsterChoice Monsters={Monsters} id={1} />
-          <Quiz />
-        </div>
-      ) : null}
+      {type === "Fight" && (
+        <>
+          {/* <Monster monster={monster} */}
+          {idMonster === "" && <MonsterChoice Monsters={Monsters} />}
+          {idMonster !== "" && (
+            <div>
+              <MonsterChoice Monsters={monster} />
+              <Quiz />
+            </div>
+          )}
+        </>
+      )}
       <ButtonReturnMap />
     </div>
   );

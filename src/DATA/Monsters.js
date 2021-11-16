@@ -5,6 +5,8 @@ const Monsters = [
     name: "Aragog",
     img: `${serverUrl}/images/Aragog.jpeg`,
     description: "",
+    potion: "",
+    spell: "",
 
   },
   {
@@ -12,12 +14,16 @@ const Monsters = [
     name: "Détraqeurs",
     img: `${serverUrl}/images/Detraqueur.jpeg`,
     description: "",
+    potion: "",
+    spell: ""
   },
   {
     id: 3,
     name: "Lord Voldemort",
     img: "http://hp-api.herokuapp.com/images/voldemort.jpg",
     description: "",
+    potion: "",
+    spell: ""
   },
 
 ];
