@@ -5,8 +5,9 @@ import UserContext from "../../Context/UserContext";
 import MonsterCard from "./MonsterCard";
 
 const MonsterChoice = ({ Monsters }) => {
-  const { setIdMonster } = useContext(UserContext);
-  // const { setIdMonster, potions, spells } = useContext(UserContext);
+  const { setIdMonster, potions, spells } = useContext(UserContext);
+  
+  
   const handleid = (e) => {
     // if (potions.contains(monster.potion) && spells.contains(monster.spell))
     setIdMonster(e.target.value);

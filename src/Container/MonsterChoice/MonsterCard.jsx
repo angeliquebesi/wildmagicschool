@@ -29,7 +29,7 @@ export default function MonsterCard({ monster, handleid }) {
             >
               <span>
                 {" "}
-                You need the Spell x and the potion X to fight against the
+                You need the {monster.potion} and the {monster.spell} to fight against the
                 monster X !!
                 {" "}
                 <button
