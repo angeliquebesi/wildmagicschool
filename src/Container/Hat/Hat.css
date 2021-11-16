@@ -50,7 +50,7 @@
   background: #ffffff;
 }
 
-.Gryffindor {
+.sortingHat .Gryffindor {
   background-image: url("../../images/wallpaperhouse/gryffindor-banner.jpg");
   background-size: cover;
   background-position: center;
@@ -58,15 +58,15 @@
   border-radius: 10px;
   transition: transform 2s;
 }
-.Gryffindor  {
--ms-transform: scale(3.5); /* IE 9 */
--webkit-transform: scale(3.5); /* Safari 3-8 */
+.sortingHat .Gryffindor  {
+-ms-transform: scale(3.5);
+-webkit-transform: scale(3.5); 
 transform: scale(3.5);
 }
 
 
 
-.Hufflepuff {
+.sortingHat .Hufflepuff {
   background-image: url("../../images/wallpaperhouse/hufflepuff-banner.jpg");
   background-size: cover;
   background-position: center;
@@ -74,14 +74,14 @@ transform: scale(3.5);
   border-radius: 10px;
   transition: transform 2s;
 }
-.Hufflepuff  {
--ms-transform: scale(3.5); /* IE 9 */
--webkit-transform: scale(3.5); /* Safari 3-8 */
+.sortingHat .Hufflepuff  {
+-ms-transform: scale(3.5); 
+-webkit-transform: scale(3.5); 
 transform: scale(3.5);
 }
 
 
-.Ravenclaw {
+.sortingHat .Ravenclaw {
   background-image: url("../../images/wallpaperhouse/ravenclaw-banner.jpg");
   background-size: cover;
   background-position: center;
@@ -89,14 +89,14 @@ transform: scale(3.5);
   border-radius: 10px;
   transition: transform 2s;
 }
-.Ravenclaw {
--ms-transform: scale(3.5); /* IE 9 */
--webkit-transform: scale(3.5); /* Safari 3-8 */
+.sortingHat .Ravenclaw {
+-ms-transform: scale(3.5); 
+-webkit-transform: scale(3.5); 
 transform: scale(3.5);
 }
 
 
-.Slytherin {
+.sortingHat .Slytherin {
   background-image: url("../../images/wallpaperhouse/slytherin-banner.jpg");
   background-size: cover;
   background-position: center;
@@ -105,9 +105,9 @@ transform: scale(3.5);
   padding : auto 10px;
   transition: transform 2s;
 }
-.Slytherin {
--ms-transform: scale(3.5); /* IE 9 */
--webkit-transform: scale(3.5); /* Safari 3-8 */
+.sortingHat .Slytherin {
+-ms-transform: scale(3.5); 
+-webkit-transform: scale(3.5); 
 transform: scale(3.5);
 }
 
