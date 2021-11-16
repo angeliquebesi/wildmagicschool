@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
-  const [item, setItem] = useState("");
+  const [userHouse, setUserHouse] = useState("");
   const [userPersonnage, setUserPersonnage] = useState("");
   const [potion1, setpotion1] = useState(false);
   const [spell1, setspell1] = useState(false);
@@ -14,8 +14,8 @@ export const UserContextProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        item,
-        setItem,
+        userHouse,
+        setUserHouse,
         userPersonnage,
         setUserPersonnage,
         potion1,

@@ -1,17 +1,17 @@
 
-.hero.gryffindor{
+.hero.Gryffindor{
   background-image: url("../../images/harry-potter-2240526_1280.jpg");
   background-size: cover;
 }
-.hero.hufflepuff{
+.hero.Hufflepuff{
   background-image: url("../../images/wp3546063-hufflepuffs-wallpapers.jpg");
   background-size: cover;
 }
-.hero.ravenclaw{
+.hero.Ravenclaw{
   background-image: url("../../images/tumblr_oyra4uUth91wx5fjeo1_1280.jpg");
   background-size: cover;
 }
-.hero.slytherin{
+.hero.Slytherin{
   background-image: url("../../images/wp3897879-slytherin-house-wallpapers.jpg");
   background-size: cover;
 }
@@ -53,7 +53,7 @@ body {
   padding: 0;
   
 }
-.gryffindor{
+.Gryffindor{
 
   background: repeating-linear-gradient(
     45deg,
@@ -67,7 +67,7 @@ body {
     #6d0000 30px);
 }
 
-.slytherin{
+.Slytherin{
   background: repeating-linear-gradient(
     45deg,
     #7a7a7a,
@@ -81,7 +81,7 @@ body {
   );
 }
 
-.ravenclaw {
+.Ravenclaw {
 
   background: repeating-linear-gradient(
     45deg,
@@ -96,7 +96,7 @@ body {
   );
 }
 
-.hufflepuff {
+.Hufflepuff {
   background: repeating-linear-gradient(
     45deg,
     #161616,

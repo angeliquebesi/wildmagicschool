@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../../Context/UserContext";
 import "./Marauder.css";
+import UserContext from "../../Context/UserContext";
 
 export default function Marauder() {
-  const { item } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
 
   return (
     <div>
@@ -20,19 +20,17 @@ export default function Marauder() {
           </p>
         </div>
         <div className="MarauderButton ">
-          <Link to={`/hat/${item}/Marauder/Potion`}>
+          <Link to={`/hat/${userHouse}/Marauder/potions`}>
             <button type="button" className="buttonspell">
               POTION
             </button>
           </Link>
 
-          <Link to={`/hat/${item}/Marauder/Fight`}>
-            <button type="button" className="buttonspell">
-              FIGHT
-            </button>
+          <Link to={`/hat/${userHouse}/Marauder/Fight`}>
+            FIGHT
           </Link>
 
-          <Link to={`/hat/${item}/Marauder/Spell`}>
+          <Link to={`/hat/${userHouse}/Marauder/spells`}>
             <button type="button" className="buttonspell">
               SPELL
             </button>

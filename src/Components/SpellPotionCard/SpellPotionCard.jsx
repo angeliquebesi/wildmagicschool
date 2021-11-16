@@ -1,17 +1,19 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "./SpellPotionCard.css";
 import Potion from "../../images/Potion.svg";
 import Wand from "../../images/Wand.svg";
 import UserContext from "../../Context/UserContext";
 import SearchBar from "../SearchBar/Search";
-import SpellPotion from "../SpellPotion/SpellPotion";
+import ButtonReturnMap from "../ButtonReturnMap/ButtonReturnMap";
 
-export default function SpellPotionCard({ type, type2 }) {
+export default function SpellPotionCard() {
+  const { type } = useParams();
+  const { house } = useParams();
   const [cards, setCards] = useState([]);
-  const { item } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
 
   const [filtervalue, setFiltervalue] = useState("");
   // Fonction pour filtrer les cartes des personnages grace à la search bar
@@ -19,17 +21,24 @@ export default function SpellPotionCard({ type, type2 }) {
     const newvalue = event.target.value;
     setFiltervalue(newvalue);
   };
+  // Fonction de filtre pour les 6 premieres card
+  const onSetCard = (data) => {
+    if (userHouse === "") {
+      setCards(data);
+    } else {
+      setCards(data.slice(0, 6));
+    }
+  };
   // Fonction pour fetch API
   useEffect(() => {
     axios
       .get(`https://the-harry-potter-database.herokuapp.com/api/1/${type}/all`)
       .then((response) => {
-        setCards(response.data);
+        onSetCard(response.data);
       });
   }, [type]);
   return (
     <div>
-      <SpellPotion />
       <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} />
       <div className="potionbackground">
         {cards && (
@@ -52,8 +61,8 @@ export default function SpellPotionCard({ type, type2 }) {
                         {card.description}
                       </div>
                     </div>
-                    {item !== "" ? (
-                      <Link to={`/hat/${item}/Marauder/${type2}/Quizz`}>
+                    {userHouse !== "" ? (
+                      <Link to={`/hat/${house}/Marauder/${type}/Quizz`}>
                         <button
                           className="btn btn-dark"
                           type="button"
@@ -70,6 +79,7 @@ export default function SpellPotionCard({ type, type2 }) {
           </div>
         )}
       </div>
+      {userHouse !== "" ? <ButtonReturnMap /> : ""}
     </div>
   );
 }
