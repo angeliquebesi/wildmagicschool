@@ -7,22 +7,15 @@ import Monsters from "../../DATA/Monsters";
 
 export default function ContainerGame({ type }) {
   const { idMonster } = useContext(UserContext);
-  // const [filteredMonster, setFilteredMonster] = useState("");
-
-  console.log(idMonster);
-
-  // useEffect(() => {
-  // setFilteredMonster(Monsters.filter((monster) => monster.id === idMonster));
-  // }, [idMonster]);
-  // console.log(filteredMonster);
-
+  /**
+   * Fitre des monstres avec l'Id du monstre selectionné
+   */
   const monster = Monsters.filter((item) => item.id === parseInt(idMonster, 36));
-  console.log(Monsters);
   return (
     <div>
       {type === "Fight" && (
         <>
-          {/* <Monster monster={monster} */}
+          {/* Affichage du Quiz si Monstre selectionné */}
           {idMonster === "" && <MonsterChoice Monsters={Monsters} />}
           {idMonster !== "" && (
             <div>

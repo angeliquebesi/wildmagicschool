@@ -3,7 +3,6 @@ import "reactjs-popup/dist/index.css";
 import "./MonsterChoice.css";
 import UserContext from "../../Context/UserContext";
 import MonsterCard from "./MonsterCard";
-// import Monsters from "../../DATA/Monsters";
 
 const MonsterChoice = ({ Monsters }) => {
   const { setIdMonster } = useContext(UserContext);
@@ -28,7 +27,6 @@ const MonsterChoice = ({ Monsters }) => {
           {Monsters
             /* creation des monsters avec le fetch api */
             .map((monster) => (
-              // TODO transform to component
               <MonsterCard monster={monster} handleid={handleid} />
             ))}
         </div>
