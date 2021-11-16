@@ -29,6 +29,12 @@ export default function SpellPotionCard() {
       setCards(data.slice(0, 6));
     }
   };
+  // const pour récupérer l'id de la carte
+  const { setIdLesson } = useContext(UserContext);
+  const handleidLesson = (e) => {
+    setIdLesson(e.target.value);
+  };
+
   // Fonction pour fetch API
   useEffect(() => {
     axios
@@ -66,6 +72,8 @@ export default function SpellPotionCard() {
                         <button
                           className="btn btn-dark"
                           type="button"
+                          value={card.id}
+                          onClick={handleidLesson}
                         >
                           Select
                         </button>

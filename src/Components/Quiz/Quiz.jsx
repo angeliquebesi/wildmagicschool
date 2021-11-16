@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import Questions from "../../DATA/Questions";
 import "./Quizz.css";
 import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
+import UserContext from "../../Context/UserContext";
 
 export default function Quiz() {
   const { type } = useParams();
+  const { idLesson, setSpells, spells, setPotions, potions } = useContext(UserContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: []
@@ -18,9 +20,20 @@ export default function Quiz() {
 
   const toggleanswer = (reponses) => reponses.sort(() => Math.random() - 0.5);
 
+  /** Fonction pour récupérer l'id de la lesson gagnée et le pousser dans le tableau correspondant */
+  const addLesson = () => {
+    const newspells = [];
+    newspells.push(idLesson);
+    setSpells(newspells);
+    console.log(newspells);
+    console.log(spells);
+    console.log(setSpells);
+  };
+  console.log(potions, setPotions);
+
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
-    const questionsQ = Questions.filter((quest) => quest.type === type);
+    const questionsQ = Questions.filter((quest) => quest.ref === parseInt(idLesson, 32) && (quest.type === type));
     const myQuestions = {
       correct: questionsQ[num].correct_answer,
       question: questionsQ[num].question,
@@ -78,7 +91,7 @@ export default function Quiz() {
       );
     }
     if (point === 2) {
-      return (<button type="button" className="buttonstart">Get your sort</button>);
+      return (<button type="button" className="buttonstart" onClick={addLesson}>Get your sort</button>);
     } if (point === 0 && canClickOnButton && !correct) {
       return (
         <div>
