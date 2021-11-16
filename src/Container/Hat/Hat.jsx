@@ -12,7 +12,7 @@ export default function Hat() {
   // const [count, setCount] = useState("");
   const history = useHistory();
   /**
-   * Recherche alétoire d'une maison
+   * Recherche alétoire d'une house
    * SetVisibility (Boolean)
    */
   useEffect(() => {

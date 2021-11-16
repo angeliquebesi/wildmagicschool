@@ -26,13 +26,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/houses" component={Houses} />
         <Route exact path="/spellpotion" component={SpellPotion} />
-        {/* Routes for spell and potion */}
-        <Route path="/SpellPotion/potions">
-          <SpellPotionCard type="potions" />
-        </Route>
-        <Route path="/SpellPotion/spells">
-          <SpellPotionCard type="spells" />
-        </Route>
+
         <Route exact path="/hat" component={Hat} />
 
         {/* Route to go from hat to house */}
@@ -41,72 +35,23 @@ function App() {
         </Route>
 
         {/* Route to go from house to Marauder */}
-        <Route exact path="/hat/Gryffindor/Marauder" component={Marauder} />
-        <Route exact path="/hat/Ravenclaw/Marauder" component={Marauder} />
-        <Route exact path="/hat/Hufflepuff/Marauder" component={Marauder} />
-        <Route exact path="/hat/Slytherin/Marauder" component={Marauder} />
-
-        {/* Route to go from marauder to Spell Lesson */}
-        <Route exact path="/hat/Gryffindor/Marauder/Spell">
-          <SpellPotionCard type="spells" type2="Spell" />
-        </Route>
-        <Route exact path="/hat/Ravenclaw/Marauder/Spell">
-          <SpellPotionCard type="spells" type2="Spell" />
-        </Route>
-        <Route exact path="/hat/Hufflepuff/Marauder/Spell">
-          <SpellPotionCard type="spells" type2="Spell" />
-        </Route>
-        <Route exact path="/hat/Slytherin/Marauder/Spell">
-          <SpellPotionCard type="spells" type2="Spell" />
+        <Route exact path="/hat/:house/Marauder">
+          <Marauder />
         </Route>
 
-        {/* Route to go from marauder to Potion Lesson */}
-        <Route exact path="/hat/Gryffindor/Marauder/Potion">
-          <SpellPotionCard type="potions" type2="Potion" />
+        <Route exact path="/hat/:house/Marauder/Fight">
+          <ContainerGame />
         </Route>
-        <Route exact path="/hat/Ravenclaw/Marauder/Potion">
-          <SpellPotionCard type="potions" type2="Potion" />
-        </Route>
-        <Route exact path="/hat/Hufflepuff/Marauder/Potion">
-          <SpellPotionCard type="potions" type2="Potion" />
-        </Route>
-        <Route exact path="/hat/Slytherin/Marauder/Potion">
-          <SpellPotionCard type="potions" type2="Potion" />
+
+        {/* Route to go from marauder to Spell & Potions */}
+        <Route exact path="/hat/:house/Marauder/:type">
+          <SpellPotionCard />
         </Route>
 
         {/* Routes pour aller du choix de la potion au quizz pour l'acquérir */}
-        <Route exact path="/hat/Gryffindor/Marauder/Potion/Quizz">
+        <Route exact path="/hat/:house/Marauder/:type/Quizz">
           <ContainerGame />
         </Route>
-        <Route exact path="/hat/Ravenclaw/Marauder/Potion/Quizz">
-          <ContainerGame />
-        </Route>
-        <Route exact path="/hat/Hufflepuff/Marauder/Potion/Quizz">
-          <ContainerGame />
-        </Route>
-        <Route exact path="/hat/Slytherin/Marauder/Potion/Quizz">
-          <ContainerGame />
-        </Route>
-
-        {/* Routes pour aller du choix du sort au quizz pour l'acquérir */}
-        <Route exact path="/hat/Gryffindor/Marauder/Spell/Quizz">
-          <ContainerGame />
-        </Route>
-        <Route exact path="/hat/Ravenclaw/Marauder/Spell/Quizz">
-          <ContainerGame />
-        </Route>
-        <Route exact path="/hat/Hufflepuff/Marauder/Spell/Quizz">
-          <ContainerGame />
-        </Route>
-        <Route exact path="/hat/Slytherin/Marauder/Spell/Quizz">
-          <ContainerGame />
-        </Route>
-
-        {/* Route pour accéder à la zone de combat */}
-        <Route exact path="/hat/Gryffindor/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Ravenclaw/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Hufflepuff/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Slytherin/Marauder/Fight" component={ContainerGame} />
 
         <Route exact path="/contact" component={Contact} />
       </Switch>

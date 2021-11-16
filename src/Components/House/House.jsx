@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import CardDeck from "../CardDeck/CardDeck";
 import "./House.css";
 import HouseData from "../../DATA/HouseData";
 
-export default function Gryffindor({ house }) {
+export default function Gryffindor() {
   const [personnages, setPersonnages] = useState(null);
+  const { house } = useParams();
   /*
-  *Fetch de l'api en fonction du choix de la maison
+  *Fetch de l'api en fonction du choix de lahouse
   */
   useEffect(() => {
     axios
@@ -17,7 +19,7 @@ export default function Gryffindor({ house }) {
       });
   }, [house]);
   /**
-   *filtre du fichier HouseData pour reécupérer les information en fonction de House
+   *filtre du fichierhouseData pour reécupérer les information en fonction dehouse
    */
   const filteredHouse = HouseData.filter((i) => i.name === house);
   return (
