@@ -1,7 +1,7 @@
 import React, { } from "react";
 import Popup from "reactjs-popup";
 
-export default function MonsterCard({ monster, handleid }) {
+export default function MonsterCard({ monster, onStartFight, canFight }) {
   return (
     <div className="col-5 px-4">
       <div id={monster.id}>
@@ -39,16 +39,17 @@ export default function MonsterCard({ monster, handleid }) {
                 {" "}
                 !!
                 {" "}
-                <button
+                {canFight
+                && <button
                   className="button btn btn-dark mx-2"
                   type="button"
                   value={monster.id}
-                  onClick={handleid}
+                  onClick={onStartFight}
                 >
                   {"  "}
                   Fight
                   {" "}
-                </button>
+                </button>}
               </span>
             </Popup>
           </div>

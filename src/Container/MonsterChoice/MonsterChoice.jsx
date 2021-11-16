@@ -9,11 +9,11 @@ const MonsterChoice = ({ Monsters }) => {
   console.log(spells);
   console.log(potions);
   console.log(idMonster);
-  const handleid = (e) => {
-    // if (potions.includes(idMonster) && spells.includes(idMonster)) {
-    setIdMonster(e.target.value);
+  const handleMonster = (monster) => {
+    if (potions.includes(monster.id) && spells.includes(monster.id)) setIdMonster(monster.id);
     // afficher c'est mort
   };
+
   return (
     <div>
       <div className="textmarauder">
@@ -23,13 +23,19 @@ const MonsterChoice = ({ Monsters }) => {
       </div>
       <div className="monstercontainer">
         {Monsters && (
-        <div className="monster card-group">
-          {Monsters
-            /* creation des monsters avec le fetch api */
-            .map((monster) => (
-              <MonsterCard monster={monster} handleid={handleid} />
-            ))}
-        </div>
+          <div className="monster card-group">
+            {Monsters
+              /* creation des monsters avec le fetch api */
+              .map((monster) => (
+                <MonsterCard
+                  monster={monster}
+                  canFight={
+                    potions.includes(monster.id) && spells.includes(monster.id)
+                  }
+                  onStartFight={() => handleMonster(monster)}
+                />
+              ))}
+          </div>
         )}
       </div>
     </div>
