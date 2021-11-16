@@ -8,22 +8,22 @@ export default function Houses() {
     <Router>
       <div>
         <section className="housechoice">
-          <Link to="/Houses/Gryffindor" className="linkStyle  link-light  ">
+          <Link to="/Houses/Gryffindor" className="linkStyle house link-light  ">
             <div className="house" id="Gryffindor">
               Gryffindor
             </div>
           </Link>
-          <Link to="/Houses/Hufflepuff" className="linkStyle link-light">
+          <Link to="/Houses/Hufflepuff" className="linkStyle house link-light">
             <div className="house" id="Hufflepuff">
               Hufflepuff
             </div>
           </Link>
-          <Link to="/Houses/Ravenclaw" className="linkStyle link-light">
+          <Link to="/Houses/Ravenclaw" className="linkStyle house link-light">
             <div className="house" id="Ravenclaw">
               Ravenclaw
             </div>
           </Link>
-          <Link to="/Houses/Slytherin" className="linkStyle link-light">
+          <Link to="/Houses/Slytherin" className="linkStyle house link-light">
             <div className="house" id="Slytherin">
               Slytherin
             </div>
