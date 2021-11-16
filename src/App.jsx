@@ -35,9 +35,15 @@ function App() {
         </Route>
 
         {/* Route to go from house to Marauder */}
-        <Route exact path="/hat/:house/Marauder" component={Marauder} />
+        <Route exact path="/hat/:house/Marauder">
+          <Marauder />
+        </Route>
 
-        {/* Route to go from marauder to Spell Lesson */}
+        <Route exact path="/hat/:house/Marauder/Fight">
+          <ContainerGame />
+        </Route>
+
+        {/* Route to go from marauder to Spell & Potions */}
         <Route exact path="/hat/:house/Marauder/:type">
           <SpellPotionCard />
         </Route>
@@ -46,12 +52,6 @@ function App() {
         <Route exact path="/hat/:house/Marauder/:type/Quizz">
           <ContainerGame />
         </Route>
-
-        {/* Route pour accéder à la zone de combat */}
-        <Route exact path="/hat/Gryffindor/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Ravenclaw/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Hufflepuff/Marauder/Fight" component={ContainerGame} />
-        <Route exact path="/hat/Slytherin/Marauder/Fight" component={ContainerGame} />
 
         <Route exact path="/contact" component={Contact} />
       </Switch>

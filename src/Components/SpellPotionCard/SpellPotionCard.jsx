@@ -7,6 +7,7 @@ import Potion from "../../images/Potion.svg";
 import Wand from "../../images/Wand.svg";
 import UserContext from "../../Context/UserContext";
 import SearchBar from "../SearchBar/Search";
+import ButtonReturnMap from "../ButtonReturnMap/ButtonReturnMap";
 
 export default function SpellPotionCard() {
   const { type } = useParams();
@@ -78,6 +79,7 @@ export default function SpellPotionCard() {
           </div>
         )}
       </div>
+      {userHouse !== "" ? <ButtonReturnMap /> : ""}
     </div>
   );
 }
