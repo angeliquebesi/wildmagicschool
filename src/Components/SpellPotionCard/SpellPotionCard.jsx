@@ -6,6 +6,11 @@ import Wand from "../../images/Wand.svg";
 
 function SpellPotionCard({ type, card, house }) {
   const { userHouse } = useContext(UserContext);
+  // const pour récupérer l'id de la carte
+  const { setIdLesson } = useContext(UserContext);
+  const handleidLesson = (e) => {
+    setIdLesson(e.target.value);
+  };
 
   return (
 
@@ -28,6 +33,8 @@ function SpellPotionCard({ type, card, house }) {
             <button
               className="btn btn-dark"
               type="button"
+              value={card.id}
+              onClick={handleidLesson}
             >
               Select
             </button>
