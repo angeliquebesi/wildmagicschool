@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "./SpellPotion.css";
-import SpellPotionCard from "../SpellPotionCard/SpellPotionCard";
+import SpellPotionDeck from "../SpellPotionDeck/SpellPotionDeck";
 
 export default function SpellPotion() {
   return (
@@ -20,7 +20,7 @@ export default function SpellPotion() {
         </div>
         <Switch>
           <Route path="/SpellPotion/:type">
-            <SpellPotionCard />
+            <SpellPotionDeck />
           </Route>
 
         </Switch>

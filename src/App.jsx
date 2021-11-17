@@ -13,7 +13,7 @@ import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Marauder/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
-import SpellPotionCard from "./Components/SpellPotionCard/SpellPotionCard";
+import SpellPotionDeck from "./Components/SpellPotionDeck/SpellPotionDeck";
 import ContainerGame from "./Container/ContainerGame/ContainerGame";
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
 
         {/* Route to go from marauder to Spell & Potions */}
         <Route exact path="/hat/:house/Marauder/:type">
-          <SpellPotionCard />
+          <SpellPotionDeck />
         </Route>
 
         {/* Routes pour aller du choix de la potion au quizz pour l'acquérir */}
