@@ -17,7 +17,7 @@
 
   justify-content: center;
   margin-top: 1em;
-  margin-left: 14.5%;
+  margin-left: 15%;
   align-items: center;
   width: 70%;
   background-image: url(../../images/bg-paper.jpg);
@@ -35,7 +35,7 @@
 
 .monster img {
   max-width: 100%;
-  height: 450px;
+  height: 350px;
   image-rendering: auto;
 }
 
