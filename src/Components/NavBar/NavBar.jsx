@@ -6,7 +6,7 @@ import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <header>
+    <div className="navbar">
       <img src={Logo} alt="logo" className="logo" />
       <ul className="list">
         <li>
@@ -22,6 +22,6 @@ export default function NavBar() {
           <Link to="/hat" className="NavLink">Start the Game</Link>
         </li>
       </ul>
-    </header>
+    </div>
   );
 }

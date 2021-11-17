@@ -15,6 +15,7 @@ import Marauder from "./Container/Marauder/Marauder";
 import { UserContextProvider } from "./Context/UserContext";
 import SpellPotionDeck from "./Components/SpellPotionDeck/SpellPotionDeck";
 import ContainerGame from "./Container/ContainerGame/ContainerGame";
+import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
 
         {/* Route to go from hat to house */}
         <Route exact path="/hat/:house">
-          <House />
+          <House house="Gryffindor" />
         </Route>
 
         {/* Route to go from house to Marauder */}
@@ -50,7 +51,7 @@ function App() {
 
         {/* Routes pour aller du choix de la potion au quizz pour l'acquérir */}
         <Route exact path="/hat/:house/Marauder/:type/Quizz">
-          <ContainerGame />
+          <SpellPotionGame />
         </Route>
 
         <Route exact path="/contact" component={Contact} />

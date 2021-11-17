@@ -21,7 +21,7 @@
   position: absolute;
     top: 30%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-40%);
 }
 
 .texthero {
@@ -65,4 +65,18 @@
 
 .link-light:hover{
   color : black;
+}
+
+@media (max-width: 540px) {
+  .hp-hero__img-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width : 1066px) {
+  .texthero{
+    margin : auto auto 10% auto;
+    width: auto;
+  }
+  
 }
