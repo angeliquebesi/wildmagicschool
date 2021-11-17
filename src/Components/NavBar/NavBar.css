@@ -2,7 +2,7 @@
   width: 100px;
 }
 
-ul{
+.list {
   align-items: flex-end;
   list-style-type: none;
   display: flex;
@@ -12,17 +12,18 @@ ul{
   margin: 0;
 }
 
-header{
+.navbar {
   padding-top: 50px;
   display: flex;
   justify-content: center;
   font-family: 'Harry P';
   font-size: 32px;
+  text-align: center;
+  flex-flow: nowrap;
 }
 
 body{
   background-image: url(../../images/background.png);
-  
   background-size: 100%;
 }
 

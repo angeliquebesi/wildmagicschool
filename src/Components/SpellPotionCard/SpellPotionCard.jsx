@@ -31,8 +31,8 @@ function SpellPotionCard({ type, card, house, quizz = false }) {
         </div>
         {/**
         * double condition :
-         - cas 1 : pas de bouton pour les sélectionner => accueil du jeu (pas de userhouse) pour connaitre les sorts & lors du quiz (chemin avec quizz)
-         - cas 2 : présence du bouton =>  dans le jeu on veut pouvoir sélectionner la card pour le quizz
+         *- cas 1 : pas de bouton pour les sélectionner => accueil du jeu (pas de userhouse) pour connaitre les sorts & lors du quiz (chemin avec quizz)
+         *- cas 2 : présence du bouton =>  dans le jeu on veut pouvoir sélectionner la card pour le quizz
         */}
         {userHouse !== "" && quizz !== true ? (
           <Link to={`/hat/${house}/Marauder/${type}/Quizz`}>
