@@ -31,7 +31,6 @@ export default function MonsterCard({ monster, onStartFight, canFight }) {
                   <button
                     className="button btn btn-dark p-2 mx-2"
                     type="button"
-                    value={monster.id}
                     onClick={onStartFight}
                   >
                     Fight
