@@ -1,9 +1,9 @@
-import React, { } from "react";
+import React from "react";
 import Popup from "reactjs-popup";
 
 export default function MonsterCard({ monster, onStartFight, canFight }) {
   return (
-    <div className="col-5 px-4">
+    <div className="col-5 px-3">
       <div id={monster.id}>
         <div className="monster card card-stretch text-center mx-auto">
           <img
@@ -16,41 +16,28 @@ export default function MonsterCard({ monster, onStartFight, canFight }) {
             <Popup
               trigger={
                 <button className="button btn btn-dark mx-2" type="button">
-                  {" "}
                   Show information
-                  {" "}
                 </button>
               }
               modal
             >
-              <span>
-                {" "}
-                You need the
-                {" "}
-                {monster.potion}
-                {" "}
-                potion and the
-                {" "}
-                {monster.spell}
-                {" "}
-                spell to fight against the
-                {" "}
-                {monster.name}
-                {" "}
-                !!
-                {" "}
-                {canFight
-                && <button
-                  className="button btn btn-dark mx-2"
-                  type="button"
-                  value={monster.id}
-                  onClick={onStartFight}
-                >
-                  {"  "}
-                  Fight
-                  {" "}
-                </button>}
-              </span>
+              {!canFight && (
+              <span className="fs-4">
+                {`You need the ${monster.potion} potion and the ${monster.spell} spell to fight against the ${monster.name} !!`}
+              </span>)}
+              {canFight && (
+                <span className="fs-4">
+                  {`Well done John, you can try to beat the ${monster.name} now , let's go  !!  `}
+                  <button
+                    className="button btn btn-dark p-2 mx-2"
+                    type="button"
+                    value={monster.id}
+                    onClick={onStartFight}
+                  >
+                    Fight
+                  </button>
+                </span>
+              )}
             </Popup>
           </div>
         </div>

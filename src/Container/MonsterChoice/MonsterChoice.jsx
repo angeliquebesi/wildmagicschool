@@ -5,10 +5,7 @@ import UserContext from "../../Context/UserContext";
 import MonsterCard from "./MonsterCard";
 
 const MonsterChoice = ({ Monsters }) => {
-  const { idMonster, setIdMonster, potions, spells } = useContext(UserContext);
-  console.log(spells);
-  console.log(potions);
-  console.log(idMonster);
+  const { setIdMonster, potions, spells } = useContext(UserContext);
   const handleMonster = (monster) => {
     if (potions.includes(monster.id) && spells.includes(monster.id)) setIdMonster(monster.id);
     // afficher c'est mort
@@ -16,7 +13,7 @@ const MonsterChoice = ({ Monsters }) => {
 
   return (
     <div>
-      <div className="textmarauder">
+      <div className="textmarauder ">
         <p className="heropresentation text-center">
           TEXT POUR LE CHOIX DU COMBAT????
         </p>
