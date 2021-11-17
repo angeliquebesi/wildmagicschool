@@ -32,7 +32,6 @@ export default function Quiz() {
       history.push(`/hat/${userHouse}/Marauder`);
     }, 500);
   };
-
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));

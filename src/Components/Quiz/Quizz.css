@@ -15,12 +15,14 @@
   width : 80%;
   margin : 0 auto;
   gap : 5px;
+  list-style:  none;
 }
 
 .propositions li{
   font-size: 30px;
   flex: 2 0 40%;
   width: 100%;
+  list-style:  none;
 }
 
 

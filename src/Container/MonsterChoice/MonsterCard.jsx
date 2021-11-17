@@ -2,7 +2,6 @@ import React from "react";
 import Popup from "reactjs-popup";
 
 export default function MonsterCard({ monster, onStartFight, canFight }) {
-  console.log(monster.id);
   return (
     <div className="col-5 px-3">
       <div id={monster.id}>
