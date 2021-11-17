@@ -7,7 +7,7 @@ import UserContext from "../../Context/UserContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idLesson, setSpells, spells, setPotions, potions } = useContext(UserContext);
+  const { idLesson, idMonster, setSpells, spells, setPotions, potions } = useContext(UserContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: []
@@ -33,13 +33,22 @@ export default function Quiz() {
 
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
-    const questionsQ = Questions.filter((quest) => quest.ref === parseInt(idLesson, 32) && (quest.type === type));
+    const questionsQ = () => {
+      if (type === "potions" || "spells") {
+        return Questions.filter((quest) => quest.type === type && (quest.id === parseInt(idLesson, 32)));
+      }
+      return Questions.filter((quest) => quest.id === parseInt(idMonster, 32));
+    };
+    console.log(questionsQ());
+    console.log(idMonster);
+
+    // const questionsQ = Questions.filter((quest) => quest.type === type && (quest.id === parseInt(idLesson, 32)));
     const myQuestions = {
-      correct: questionsQ[num].correct_answer,
-      question: questionsQ[num].question,
+      correct: questionsQ()[num].correct_answer,
+      question: questionsQ()[num].question,
       answers: toggleanswer([
-        questionsQ[num].correct_answer,
-        ...questionsQ[num].incorrect_answers
+        questionsQ()[num].correct_answer,
+        ...questionsQ()[num].incorrect_answers
       ])
     };
     setQuestions(myQuestions);
