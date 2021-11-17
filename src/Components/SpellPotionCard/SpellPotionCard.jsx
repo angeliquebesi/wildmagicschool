@@ -1,17 +1,19 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../Context/UserContext";
+import GameContext from "../../Context/GameContext";
 import Potion from "../../images/Potion.svg";
 import Wand from "../../images/Wand.svg";
 
-function SpellPotionCard({ type, card, house }) {
+function SpellPotionCard({ type, card, house, quizz = false }) {
   const { userHouse } = useContext(UserContext);
-  // const pour récupérer l'id de la carte
-  const { setIdLesson } = useContext(UserContext);
-  const handleidLesson = (e) => {
-    setIdLesson(e.target.value);
-  };
 
+  // const pour récupérer l'id de la carte
+  const { setLesson } = useContext(GameContext);
+
+  const handleCard = (myCard) => {
+    setLesson(myCard);
+  };
   return (
 
     <div className="col-4 px-4 fs-4">
@@ -27,13 +29,17 @@ function SpellPotionCard({ type, card, house }) {
             {card.description}
           </div>
         </div>
-        {userHouse !== "" ? (
+        {/**
+        * double condition :
+         - cas 1 : pas de bouton pour les sélectionner => accueil du jeu (pas de userhouse) pour connaitre les sorts & lors du quiz (chemin avec quizz)
+         - cas 2 : présence du bouton =>  dans le jeu on veut pouvoir sélectionner la card pour le quizz
+        */}
+        {userHouse !== "" && quizz !== true ? (
           <Link to={`/hat/${house}/Marauder/${type}/Quizz`}>
             <button
               className="btn btn-dark"
               type="button"
-              value={card.id}
-              onClick={handleidLesson}
+              onClick={() => handleCard(card)}
             >
               Select
             </button>
