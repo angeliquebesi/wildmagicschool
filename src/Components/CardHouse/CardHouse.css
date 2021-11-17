@@ -8,7 +8,7 @@
   text-align: center;
   position: relative;
   image-rendering: auto;
-  transition:all 0.2s ease;
+  transition:all 0.6s ease;
   font-family: "Dum1";
 }
 
@@ -16,9 +16,9 @@
 
 .card.card-stretch:hover
 {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
+  -webkit-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 

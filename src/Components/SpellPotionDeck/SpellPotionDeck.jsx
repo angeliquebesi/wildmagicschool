@@ -11,7 +11,7 @@ import SpellPotionCard from "../SpellPotionCard/SpellPotionCard";
 export default function SpellPotionDeck() {
   const { type } = useParams();
   const [cards, setCards] = useState([]);
-  const { userHouse } = useContext(UserContext);
+  const { userHouse, potions } = useContext(UserContext);
   const { house } = useParams();
 
   const [filtervalue, setFiltervalue] = useState("");
@@ -46,7 +46,7 @@ export default function SpellPotionDeck() {
               .filter((card) => card.name.toLowerCase().includes(filtervalue))
             /* creation des cards avec le fetch api */
               .map((card) => (
-                <SpellPotionCard card={card} type={type} house={house} />
+                <SpellPotionCard card={card} type={type} house={house} earnedPotion={potions.includes(card.id)} />
               ))}
           </div>
         )}
