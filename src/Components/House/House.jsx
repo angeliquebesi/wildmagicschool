@@ -13,7 +13,7 @@ export default function Gryffindor() {
   */
   useEffect(() => {
     axios
-      .get(`http://hp-api.herokuapp.com/api/characters/house/${house}`)
+      .get(`https://hp-api.herokuapp.com/api/characters/house/${house}`)
       .then((response) => {
         setPersonnages(response.data);
       });
