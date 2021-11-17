@@ -23,8 +23,7 @@ export default function Quiz() {
   const toggleanswer = (reponses) => reponses.sort(() => Math.random() - 0.5);
   const history = useHistory();
   /** Fonction pour récupérer l'id de la lesson gagnée et le pousser dans le tableau correspondant */
-  let getSort = false;
-  // TODO faire fct if pour séparer les spell et potion
+
   const addLesson = () => {
     if (type === "spells") {
       setSpells(spells.concat([lesson.id]));
@@ -34,8 +33,6 @@ export default function Quiz() {
     }, 500);
   };
 
-  console.log(spells);
-  console.log(potions);
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
@@ -105,11 +102,13 @@ export default function Quiz() {
       );
     }
     if (point === 2) {
-      getSort = true;
       return (
-        <button type="button" className="buttonstart px-2" onClick={addLesson}>
-          OK
-        </button>
+        <div>
+          <div className="text-center fs-3 ">{`Well done you've earned the ${lesson.name} `}</div>
+          <button type="button" className="buttonstart px-2" onClick={addLesson}>
+            OK
+          </button>
+        </div>
       );
     }
     if (point === 0 && canClickOnButton && !correct) {
@@ -122,7 +121,6 @@ export default function Quiz() {
     }
     return <div />;
   };
-  console.log(getSort);
   return (
     <div className="container">
       <h3 className="quizquestion">{questions.question}</h3>
@@ -142,7 +140,6 @@ export default function Quiz() {
         </ul>
       </div>
       <div className="result">{solution()}</div>
-      {getSort && <div className="text-center fs-3 ">{`Well done you've earned the ${lesson.id} ${type} `}</div>}
     </div>
   );
 }
