@@ -10,7 +10,7 @@ export default function Quiz() {
   const { idLesson, idMonster, setSpells, spells, setPotions, potions } = useContext(UserContext);
   const [questions, setQuestions] = useState({
     question: "",
-    answers: []
+    answers: [],
   });
   const [answersClass, setAnswerClass] = useState(["", "", "", ""]);
   const [canClickOnButton, setCanClickOnButton] = useState(false);
@@ -21,35 +21,29 @@ export default function Quiz() {
   const toggleanswer = (reponses) => reponses.sort(() => Math.random() - 0.5);
 
   /** Fonction pour récupérer l'id de la lesson gagnée et le pousser dans le tableau correspondant */
-  const addLesson = () => {
-    const newspells = [];
-    newspells.push(idLesson);
-    setSpells(newspells);
-    console.log(newspells);
-    console.log(spells);
-    console.log(setSpells);
-  };
-  console.log(potions, setPotions);
 
+  // TODO faire fct if pour séparer les spell et potion
+  const addLesson = () => {
+    setSpells(spells.concat([idLesson]));
+    setPotions(potions.concat([idLesson]));
+  };
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
-    const questionsQ = () => {
-      if (type === "potions" || "spells") {
-        return Questions.filter((quest) => quest.type === type && (quest.id === parseInt(idLesson, 32)));
-      }
-      return Questions.filter((quest) => quest.id === parseInt(idMonster, 32));
-    };
-    console.log(questionsQ());
-    console.log(idMonster);
+    // const questionsQ = () => {
+    // if (type === "potions" || "spells") {
+    // r eturn Questions.filter((quest) => quest.type === type && (quest.id === parseInt(idLesson, 32)));
+    // }
+    // return Questions.filter((quest) => quest.id === parseInt(monster.id, 32));
+    // };
+    const questionsQ = (type !== "potions" && "spells" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(idLesson, 32)));
 
-    // const questionsQ = Questions.filter((quest) => quest.type === type && (quest.id === parseInt(idLesson, 32)));
     const myQuestions = {
-      correct: questionsQ()[num].correct_answer,
-      question: questionsQ()[num].question,
+      correct: questionsQ[num].correct_answer,
+      question: questionsQ[num].question,
       answers: toggleanswer([
-        questionsQ()[num].correct_answer,
-        ...questionsQ()[num].incorrect_answers
-      ])
+        questionsQ[num].correct_answer,
+        ...questionsQ[num].incorrect_answers,
+      ]),
     };
     setQuestions(myQuestions);
   }, [num]);
@@ -86,12 +80,21 @@ export default function Quiz() {
   };
 
   /**
- * fonction pour modifier les propositions en fonction de la réponse apportée
- */
+   * fonction pour modifier les propositions en fonction de la réponse apportée
+   */
   const solution = () => {
     if (point === 1 && correct && canClickOnButton) {
-      return (<button type="button" className="buttonstart" onClick={() => changeQuestions()}>NEXT</button>);
-    } if (point === 1 && !correct && canClickOnButton) {
+      return (
+        <button
+          type="button"
+          className="buttonstart"
+          onClick={() => changeQuestions()}
+        >
+          NEXT
+        </button>
+      );
+    }
+    if (point === 1 && !correct && canClickOnButton) {
       return (
         <div>
           <p className="quiz-p"> Answer is wrong. </p>
@@ -100,8 +103,13 @@ export default function Quiz() {
       );
     }
     if (point === 2) {
-      return (<button type="button" className="buttonstart" onClick={addLesson}>Get your sort</button>);
-    } if (point === 0 && canClickOnButton && !correct) {
+      return (
+        <button type="button" className="buttonstart" onClick={addLesson}>
+          Get your sort
+        </button>
+      );
+    }
+    if (point === 0 && canClickOnButton && !correct) {
       return (
         <div>
           <p className="quiz-p"> Answer is wrong. </p>
@@ -109,14 +117,12 @@ export default function Quiz() {
         </div>
       );
     }
-    return (<div />);
+    return <div />;
   };
 
   return (
     <div className="container">
-      <h3 className="quizquestion">
-        {questions.question}
-      </h3>
+      <h3 className="quizquestion">{questions.question}</h3>
       <div className="propositions">
         <ul>
           {questions.answers.map((answer, index) => (
@@ -132,9 +138,7 @@ export default function Quiz() {
           ))}
         </ul>
       </div>
-      <div className="result">
-        {solution()}
-      </div>
+      <div className="result">{solution()}</div>
     </div>
   );
 }

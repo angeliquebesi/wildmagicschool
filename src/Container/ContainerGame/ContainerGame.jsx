@@ -21,7 +21,7 @@ export default function ContainerGame() {
         {idMonster !== "" && (
           <div>
             <MonsterChoice Monsters={monster} />
-            <Quiz />
+            <Quiz Monsters={monster} />
           </div>
         )}
       </>
