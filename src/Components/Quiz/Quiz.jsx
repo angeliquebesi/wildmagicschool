@@ -37,12 +37,10 @@ export default function Quiz() {
       if (type === "potions" || "spells") {
         return Questions.filter((quest) => quest.type === type && (quest.id === parseInt(idLesson, 32)));
       }
-      return Questions.filter((quest) => quest.id === parseInt(idMonster, 32));
+      return Questions.filter((quest) => quest.type === "Fight" && (quest.id === parseInt(idMonster, 32)));
     };
     console.log(questionsQ());
-    console.log(idMonster);
 
-    // const questionsQ = Questions.filter((quest) => quest.type === type && (quest.id === parseInt(idLesson, 32)));
     const myQuestions = {
       correct: questionsQ()[num].correct_answer,
       question: questionsQ()[num].question,
