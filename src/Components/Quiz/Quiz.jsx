@@ -4,10 +4,12 @@ import Questions from "../../DATA/Questions";
 import "./Quizz.css";
 import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
 import UserContext from "../../Context/UserContext";
+import GameContext from "../../Context/GameContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idLesson, idMonster, setSpells, spells, setPotions, potions, userHouse } = useContext(UserContext);
+  const { idMonster, setSpells, spells, setPotions, potions, userHouse } = useContext(UserContext);
+  const { lesson } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: [],
@@ -24,15 +26,19 @@ export default function Quiz() {
   let getSort = false;
   // TODO faire fct if pour séparer les spell et potion
   const addLesson = () => {
-    setSpells(spells.concat([idLesson]));
-    setPotions(potions.concat([idLesson]));
+    if (type === "spells") {
+      setSpells(spells.concat([lesson.id]));
+    } else { setPotions(potions.concat([lesson.id])); }
     setTimeout(() => {
       history.push(`/hat/${userHouse}/Marauder`);
     }, 500);
   };
+
+  console.log(spells);
+  console.log(potions);
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
-    const questionsQ = (type !== "potions" && "spells" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(idLesson, 32)));
+    const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
     const myQuestions = {
       correct: questionsQ[num].correct_answer,
       question: questionsQ[num].question,
@@ -136,7 +142,7 @@ export default function Quiz() {
         </ul>
       </div>
       <div className="result">{solution()}</div>
-      {getSort && <div className="text-center fs-3 ">{`Well done you've earned the ${idLesson} ${type} `}</div>}
+      {getSort && <div className="text-center fs-3 ">{`Well done you've earned the ${lesson.id} ${type} `}</div>}
     </div>
   );
 }
