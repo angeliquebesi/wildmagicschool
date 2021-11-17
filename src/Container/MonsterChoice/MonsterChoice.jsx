@@ -5,12 +5,10 @@ import UserContext from "../../Context/UserContext";
 import MonsterCard from "./MonsterCard";
 
 const MonsterChoice = ({ Monsters }) => {
-  const { setIdMonster, potions, spells } = useContext(UserContext);
+  const { setIdMonster, potions, spells, defeatedMonster } = useContext(UserContext);
   const handleMonster = (monster) => {
     if (potions.includes(monster.id) && spells.includes(monster.id)) setIdMonster(monster.id);
-    // afficher c'est mort
   };
-
   return (
     <div>
       <div className="textmarauder ">
@@ -30,6 +28,9 @@ const MonsterChoice = ({ Monsters }) => {
                     potions.includes(monster.id) && spells.includes(monster.id)
                   }
                   onStartFight={() => handleMonster(monster)}
+                  availableMonster={
+                    defeatedMonster.includes(monster.id)
+                  }
                 />
               ))}
           </div>
