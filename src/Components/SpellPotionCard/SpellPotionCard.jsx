@@ -15,7 +15,6 @@ function SpellPotionCard({ type, card, house }) {
   return (
 
     <div className="col-4 px-4 fs-4">
-
       <div className="card  card-stretch text-center mx-auto spell">
         <img
           src={type === "potions" ? Potion : Wand}
