@@ -11,7 +11,7 @@ export default function ContainerGame() {
    * Fitre des monstres avec l'Id du monstre selectionné
    */
   const monster = Monsters.filter(
-    (item) => item.id === parseInt(idMonster, 36)
+    (item) => item.id === idMonster
   );
   return (
     <div>
@@ -21,7 +21,7 @@ export default function ContainerGame() {
         {idMonster !== "" && (
           <div>
             <MonsterChoice Monsters={monster} />
-            <Quiz />
+            <Quiz Monsters={monster} />
           </div>
         )}
       </>

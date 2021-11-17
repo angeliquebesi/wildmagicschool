@@ -8,6 +8,7 @@ const MonsterChoice = ({ Monsters }) => {
   const { setIdMonster, potions, spells } = useContext(UserContext);
   const handleMonster = (monster) => {
     if (potions.includes(monster.id) && spells.includes(monster.id)) setIdMonster(monster.id);
+    console.log(monster.id);
     // afficher c'est mort
   };
 
