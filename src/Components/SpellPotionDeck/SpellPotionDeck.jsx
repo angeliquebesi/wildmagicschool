@@ -38,7 +38,7 @@ export default function SpellPotionDeck() {
   }, [type]);
   return (
     <div>
-      <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} />
+      {userHouse === "" ? <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} /> : ""}
       <div className="potionbackground">
         {cards && (
           <div className="card-group">
