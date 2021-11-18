@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import GameContext from "../../Context/GameContext";
-import "./LessonCard.css";
 
 export default function LessonCard() {
   const { spells, potions } = useContext(GameContext);
   return (
-    <div className="LessonCardstyle">
+    <div>
       <h4> Spells obtained </h4>
       <p>
         {spells.map((spell) => spell.name)}

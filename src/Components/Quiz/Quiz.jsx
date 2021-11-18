@@ -22,7 +22,7 @@ export default function Quiz() {
 
   const toggleanswer = (reponses) => reponses.sort(() => Math.random() - 0.5);
   const history = useHistory();
-  /** Fonction pour récupérer la lesson gagnée et le pousser dans le tableau correspondant */
+  /** Fonction pour récupérer l'id de la lesson gagnée et le pousser dans le tableau correspondant */
   const addLesson = () => {
     if (type === "spells") {
       const newGain = [...spells, lesson];
