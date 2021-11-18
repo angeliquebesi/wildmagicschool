@@ -6,11 +6,12 @@ export default function LessonCard() {
   const { spells, potions } = useContext(GameContext);
   return (
     <div className="LessonCardstyle">
-      <h4> Spells obtained </h4>
+      <h3> Inventory </h3>
+      <h4> Spells </h4>
       <p>
         {spells.map((spell) => spell.name).join(", ")}
       </p>
-      <h4> Potions obtained </h4>
+      <h4> Potions </h4>
       <p>
         {potions.map((potion) => potion.name).join(", ")}
       </p>
