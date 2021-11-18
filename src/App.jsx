@@ -17,6 +17,7 @@ import { GameContextProvider } from "./Context/GameContext";
 import SpellPotionDeck from "./Components/SpellPotionDeck/SpellPotionDeck";
 import ContainerGame from "./Container/ContainerGame/ContainerGame";
 import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
+import Teams from "./Container/Team/Teams";
 import VictoryPage from "./Components/VictoryPage/VictoryPage";
 
 function App() {
@@ -68,6 +69,8 @@ function App() {
                 <SpellPotionGame />
               </Route>
 
+              <Route exact path="/about-us" component={Teams} />
+              
               <Route exact path="/hat/:house/Marauder/Fight/Victory">
                 <VictoryPage />
               </Route>

@@ -1,0 +1,55 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.person-item:nth-child(1) {
+  color: white;
+}
+
+.person-item:nth-child(1) h3 {
+  padding-left: 100px;
+}
+
+.person-item:nth-child(1) h4 {
+  padding-left: 100px;
+}
+
+.person-item:nth-child(2) {
+  color: white;
+}
+
+.person-item:nth-child(3) {
+  color: white;
+}
+
+.person-item:nth-child(4) {
+  color: white;
+}
+
+div .img-homme:hover {
+  content: url(../../images/after-homme.png);
+}
+
+div .img-femme:hover {
+  content: url(../../images/after-femme.png);
+}
+
+.alias{
+  opacity: 0;
+}
+
+.name{
+  opacity: 0;
+}
+
+.person-item:hover h3{
+  opacity: 100;
+}
+
+.person-item:hover h4{
+  opacity: 100;
+}
