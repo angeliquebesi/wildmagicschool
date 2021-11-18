@@ -1,23 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./VictoryPage.css";
 
-function VictoryPage() {
+export default function VictoryPage() {
   return (
     <div>
-      <div>
-        <p>Victory !</p>
-        <p>You defeated Voldemort !</p>
+      <div className="VictoryP">
+        <p>
+          Victory !
+          <br />
+          You defeated Voldemort !
+        </p>
       </div>
-      <div>
+      <div className="VictoryGif">
         <img src="https://c.tenor.com/qNu2IB0eDUEAAAAd/voldemort-death.gif" alt="gif of lord voldermort's death" />
       </div>
-      <div>
-        <button type="button" className="buttonstart">
-          Go back Home
-        </button>
+      <div className="VictoryButton">
+        <Link to="/home">
+          <button type="button" className="buttonstart">
+            Go back Home
+          </button>
+        </Link>
       </div>
     </div>
 
   );
 }
-
-export default VictoryPage;

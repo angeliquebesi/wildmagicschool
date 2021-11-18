@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from "react";
 import { Link } from "react-router-dom";
+import VictoryPage from "../VictoryPage/VictoryPage";
 import "./Home.css";
 
 export default function Home() {
@@ -17,16 +18,21 @@ export default function Home() {
       </div>
       <div className="texthero">
         <p className="heropresentation text-center">
-          Welcome on the website of The Wild Magic School, we propose you an
-          epic aventure which you will not regret ! Just press the start button
-          and the hat will chose your house. When your house is finally chosen,
-          you will have to make multiple choices to stay in the aventure.
+          Welcome to the Wild Magic School !
+          <br />
+          Be ready to live an epic aventure inside the wonderful world of Harry Potter.
+          Press the START GAME button and let the Sorting Hat choose your house.
+          <br />
+          You now have to choose your character and begin your journey...
         </p>
         <Link to="/hat">
           <button type="button" className="buttonstart">
             Start game
           </button>
         </Link>
+      </div>
+      <div>
+        <VictoryPage />
       </div>
     </div>
   );

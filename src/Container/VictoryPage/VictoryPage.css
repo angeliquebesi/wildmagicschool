@@ -1,0 +1,19 @@
+.VictoryP{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 100px;
+}
+
+.VictoryGif{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.VictoryButton{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
