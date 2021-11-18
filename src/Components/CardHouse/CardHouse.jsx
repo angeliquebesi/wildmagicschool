@@ -3,21 +3,27 @@ import { useHistory } from "react-router-dom";
 import "./CardHouse.css";
 import defautAvatar from "../../images/defautAvatar.png";
 import UserContext from "../../Context/UserContext";
+import GameContext from "../../Context/GameContext";
 
-const CardHouse = ({ pers, id }) => {
+const CardHouse = ({ pers, marauder = false }) => {
+  const { userHouse } = useContext(UserContext);
+
+  // const pour récupérer la carte personnage
+  const { setUserPersonnage } = useContext(GameContext);
   /**
    *redirection vers la page du marauder en fonction du choix du chapeau (userHouse)
+   * récupérer le personange
    */
-  const { userHouse } = useContext(UserContext);
   const history = useHistory();
-  function handleClick() {
+  const handleClick = (myPers) => {
     setTimeout(() => {
       history.push(`/hat/${userHouse}/Marauder`);
     });
-  }
+    setUserPersonnage(myPers);
+  };
   return (
     <div className="col-4 px-4">
-      <div id={`pers-${id}`}>
+      <div>
         <div className="card rounded-2 card-stretch text-center mx-auto">
           <img
             src={pers.image || defautAvatar}
@@ -36,11 +42,11 @@ const CardHouse = ({ pers, id }) => {
               <strong>Ancestry: </strong>
               {pers.ancestry}
             </div>
-            {userHouse !== "" ? (
+            {userHouse !== "" && marauder !== true ? (
               <button
                 className="btn btn-dark"
                 type="button"
-                onClick={handleClick}
+                onClick={() => handleClick(pers)}
               >
                 Select
               </button>
