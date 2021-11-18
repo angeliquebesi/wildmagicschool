@@ -11,8 +11,6 @@ const MonsterChoice = ({ Monsters }) => {
   const handleMonster = (monster) => {
     if (potions.some((potion) => potion.id === monster.id)
     && spells.some((spell) => spell.id === monster.id)) { setIdMonster(monster.id); }
-    // afficher c'est mort
-    console.log(potions, spells, monster.id);
   };
 
   return (
