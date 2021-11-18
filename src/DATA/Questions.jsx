@@ -103,7 +103,7 @@ const Questions = [
     incorrect_answers: [
       "Weedosoros",
       "Polyjuice Potion",
-      "Gregory's Unctuous Unction"
+      "Gregory's Unctuous"
     ]
   },
   {
@@ -250,7 +250,7 @@ const Questions = [
     question: "Who was Tom Marvolo Riddle?",
     correct_answer: "Voldemort",
     incorrect_answers: [
-      "The best friend of Albus Dumbledore",
+      "Albus Dumbledore",
       "The ghost of Sirius Black",
       "Harry's father"
     ]
