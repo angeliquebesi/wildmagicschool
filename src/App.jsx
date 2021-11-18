@@ -18,6 +18,7 @@ import SpellPotionDeck from "./Components/SpellPotionDeck/SpellPotionDeck";
 import ContainerGame from "./Container/ContainerGame/ContainerGame";
 import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
 import Teams from "./Container/Team/Teams";
+import VictoryPage from "./Components/VictoryPage/VictoryPage";
 
 function App() {
   const { pathname } = useLocation();
@@ -40,7 +41,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/houses" component={Houses} />
-              <Route exact path="/spellpotion" component={SpellPotion} />
+              <Route exact path="/SpellPotion/:type" component={SpellPotion} />
 
               <Route exact path="/hat" component={Hat} />
 
@@ -69,6 +70,10 @@ function App() {
               </Route>
 
               <Route exact path="/about-us" component={Teams} />
+              
+              <Route exact path="/hat/:house/Marauder/Fight/Victory">
+                <VictoryPage />
+              </Route>
 
               <Route exact path="/contact" component={Contact} />
             </Switch>
