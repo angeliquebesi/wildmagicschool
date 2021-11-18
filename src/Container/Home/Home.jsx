@@ -20,8 +20,10 @@ export default function Home() {
         <p className="heropresentation text-center">
           Welcome to the Wild Magic School !
           <br />
-          Be ready to live an epic aventure inside the wonderful world of Harry Potter.
-          Press the START GAME button and let the Sorting Hat choose your house.
+          Be ready to live an epic aventure inside the wonderful Harry Potter s world.
+          Press the START GAME button
+          <br />
+          The Sorting Hat choose your house.
           <br />
           You now have to choose your character and begin your journey...
         </p>
