@@ -4,13 +4,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./SpellPotionDeck.css";
 import UserContext from "../../Context/UserContext";
+import GameContext from "../../Context/GameContext";
 import SearchBar from "../SearchBar/Search";
 import ButtonReturnMap from "../ButtonReturnMap/ButtonReturnMap";
 import SpellPotionCard from "../SpellPotionCard/SpellPotionCard";
 
 export default function SpellPotionDeck() {
   const { type } = useParams();
-  const { userHouse, potions, spells } = useContext(UserContext);
+  const { userHouse } = useContext(UserContext);
+  const { potions, spells } = useContext(GameContext);
   const { house } = useParams();
   const [cards, setCards] = useState([]);
 
@@ -47,7 +49,7 @@ export default function SpellPotionDeck() {
               .filter((card) => card.name.toLowerCase().includes(filtervalue))
             /* creation des cards avec le fetch api */
               .map((card) => (
-                <SpellPotionCard card={card} type={type} house={house} earnedPotion={type === "potions" ? potions.includes(card.id) : spells.includes(card.id)} />
+                <SpellPotionCard card={card} type={type} house={house} earnedPotion={type === "potions" ? potions.some((potion) => potion.id === card.id) : spells.some((spell) => spell.id === card.id)} />
               ))}
           </div>
         )}

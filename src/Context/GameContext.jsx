@@ -7,7 +7,6 @@ export const GameContextProvider = ({ children }) => {
   const [userPersonnage, setUserPersonnage] = useState({});
   const [potions, setPotions] = useState([]);
   const [spells, setSpells] = useState([]);
-  const [idMonster, setIdMonster] = useState("");
   const [defeatedMonster, setDefeatedMonster] = useState([1]);
 
   return (
@@ -21,8 +20,6 @@ export const GameContextProvider = ({ children }) => {
         setPotions,
         spells,
         setSpells,
-        idMonster,
-        setIdMonster,
         defeatedMonster,
         setDefeatedMonster
       }}
