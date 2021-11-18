@@ -13,7 +13,7 @@ export default function MonsterCard({ monster, onStartFight, canFight, available
           />
           {!availableMonster && (
             <div className="card-img-overlay bg-black bg-opacity-75 text-white rounded-2">
-              <div className="card-text fs-2 text-center m-5  ">
+              <div className="card-text fs-4 text-center m-5  ">
                 You need to defeat the previous monster to unlock this one!!
               </div>
             </div>

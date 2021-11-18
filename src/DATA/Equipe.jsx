@@ -1,31 +1,35 @@
 const Equipe = [
   {
-    name: "Angélique",
-    alias: "Serpentard",
+    name: "Angélique Bésineaud",
+    alias: "Dev - Scrum Master",
     linkedin: "",
     github: "https://github.com/angeliquebesi",
-    nickname: "angeliquebesi"
+    nickname: "angeliquebesi",
+    type: "femme"
   },
   {
-    name: "Yohan",
-    alias: "Le bricoleur",
+    name: "Yohan Gerbaud",
+    alias: "Dev - Leaddev",
     linkedin: "",
     github: "https://github.com/Ygerbaud",
-    nickname: "Ygerbaud"
+    nickname: "Ygerbaud",
+    type: "homme"
   },
   {
-    name: "Mathieu",
-    alias: "Beer man",
+    name: "Mathieu Nanaki",
+    alias: "Dev - Product owner",
     linkedin: "",
     github: "https://github.com/NanakiMathieu",
-    nickname: "NanakiMathieu"
+    nickname: "NanakiMathieu",
+    type: "homme"
   },
   {
-    name: "Victor",
-    alias: "Retardataire",
+    name: "Victor Pagnier",
+    alias: "Dev - UI",
     linkedin: "",
     github: "https://github.com/VictorPagnier",
-    nickname: "VictorPagnier"
+    nickname: "VictorPagnier",
+    type: "homme"
   }
 ];
 
