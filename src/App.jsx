@@ -39,7 +39,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/houses" component={Houses} />
-              <Route exact path="/spellpotion" component={SpellPotion} />
+              <Route exact path="/SpellPotion/:type" component={SpellPotion} />
 
               <Route exact path="/hat" component={Hat} />
 
