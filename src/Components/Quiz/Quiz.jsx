@@ -8,8 +8,8 @@ import GameContext from "../../Context/GameContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idMonster, userHouse, setIdMonster, setDefeatedMonster, defeatedMonster } = useContext(UserContext);
-  const { setSpells, spells, setPotions, potions, lesson } = useContext(GameContext);
+  const { userHouse, idMonster, setIdMonster } = useContext(UserContext);
+  const { setSpells, spells, setPotions, potions, lesson, setDefeatedMonster, defeatedMonster } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: [],
@@ -38,9 +38,12 @@ export default function Quiz() {
   };
 
   const addDefeatedMonster = () => {
-    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster])); }
+    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster + 1])); }
+    setTimeout(() => {
+      setIdMonster("");
+      history.push(`/hat/${userHouse}/Marauder`);
+    }, 500);
   };
-
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
@@ -68,7 +71,7 @@ export default function Quiz() {
         setPoint(point + 1);
         setCorrect(true);
       } else {
-        array[index] = "btn-alert";
+        array[index] = "btn-danger";
         setCorrect(false);
       }
       setCanClickOnButton(true);

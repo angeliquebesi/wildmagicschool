@@ -6,22 +6,15 @@ import MonsterCard from "./MonsterCard";
 import GameContext from "../../Context/GameContext";
 
 const MonsterChoice = ({ Monsters }) => {
+  const { potions, spells, defeatedMonster } = useContext(GameContext);
   const { setIdMonster } = useContext(UserContext);
-  const { potions, spells } = useContext(GameContext);
   const handleMonster = (monster) => {
     if (potions.some((potion) => potion.id === monster.id)
     && spells.some((spell) => spell.id === monster.id)) { setIdMonster(monster.id); }
-    // afficher c'est mort
-    console.log(potions, spells, monster.id);
   };
 
   return (
     <div>
-      <div className="textmarauder ">
-        <p className="heropresentation text-center">
-          TEXT POUR LE CHOIX DU COMBAT????
-        </p>
-      </div>
       <div className="monstercontainer">
         {Monsters && (
           <div className="monster card-group">
@@ -35,6 +28,7 @@ const MonsterChoice = ({ Monsters }) => {
                     && spells.some((spell) => spell.id === monster.id)
                   }
                   onStartFight={() => handleMonster(monster)}
+                  availableMonster={defeatedMonster.includes(monster.id)}
                 />
               ))}
           </div>
