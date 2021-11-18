@@ -1,0 +1,62 @@
+.Maraudercontainer {
+  background-image: url("../../images/carte.jpg");
+  background-size: cover;
+  width: 70%;
+  height: 125vh;
+  margin-left: 15%;
+  justify-content: center;
+
+}
+
+.RecapCard{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 40px;
+}
+
+.MarauderButton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index : 2;
+}
+
+.buttonspell {
+  align-self: flex-end;
+  color: #f7f7f7 !important;
+  font-size: 32px;
+  text-shadow: 0px 0px 0px #000000;
+  box-shadow: 0px 0px 0px #ffffff;
+  background: #a85;
+  padding: 5px 10px;
+  margin: 0 1em;
+  font-family: 'Harry P';
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  width: 5em;
+  border-color: #a85;
+  
+}
+
+.buttonspell:hover ,.buttonfight:hover {
+  color: #000000 !important;
+  border: 1px solid #a85;
+  background: #ffffff;
+}
+
+.buttonfight {
+  align-self: flex-end;
+  color: #fcf5e7 !important;
+  font-size: 32px;
+  text-shadow: 0px 0px 0px #a85;
+  box-shadow: 0px 0px 0px #ffffff;
+  background: #a85;
+  padding: 5px 10px;
+  font-family: 'Harry P';
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  width: 5em;
+  border-color: #a85;
+  
+}
+
+

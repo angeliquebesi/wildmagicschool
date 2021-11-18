@@ -1,0 +1,42 @@
+.spellpotionbutton {
+  padding: 10px 40px;
+  float: left;
+  border-radius: 10px;
+  font-family: "Dum1";
+  font-size: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #333333;
+  border-bottom: 5px solid black;
+  text-shadow: 0px -2px black;
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+.spellpotionbutton:active {
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+
+.linkStyle{
+  text-decoration: none;
+  color: white;
+}
+
+.linkStyle:hover{
+  text-decoration: none;
+  color: rgb(212, 158, 41);
+}
+.buttonDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+}
+
+
+
