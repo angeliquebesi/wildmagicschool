@@ -26,8 +26,8 @@ export default function Quiz() {
 
   const addLesson = () => {
     if (type === "spells") {
-      setSpells(spells.concat([lesson.id]));
-    } else { setPotions(potions.concat([lesson.id])); }
+      setSpells(spells.concat([lesson]));
+    } else { setPotions(potions.concat([lesson])); }
     setTimeout(() => {
       setIdMonster("");
       history.push(`/hat/${userHouse}/Marauder`);
@@ -146,7 +146,6 @@ export default function Quiz() {
     }
     return <div />;
   };
-  console.log(defeatedMonster);
   return (
     <div className="container">
       <h3 className="quizquestion">{questions.question}</h3>
