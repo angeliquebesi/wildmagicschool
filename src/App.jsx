@@ -17,6 +17,7 @@ import { GameContextProvider } from "./Context/GameContext";
 import SpellPotionDeck from "./Components/SpellPotionDeck/SpellPotionDeck";
 import ContainerGame from "./Container/ContainerGame/ContainerGame";
 import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
+import Teams from "./Container/Team/Teams";
 
 function App() {
   const { pathname } = useLocation();
@@ -66,6 +67,8 @@ function App() {
               <Route exact path="/hat/:house/Marauder/:type/Quizz">
                 <SpellPotionGame />
               </Route>
+
+              <Route exact path="/about-us" component={Teams} />
 
               <Route exact path="/contact" component={Contact} />
             </Switch>
