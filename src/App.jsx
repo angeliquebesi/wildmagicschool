@@ -70,7 +70,7 @@ function App() {
               </Route>
 
               <Route exact path="/about-us" component={Teams} />
-              
+
               <Route exact path="/hat/:house/Marauder/Fight/Victory">
                 <VictoryPage />
               </Route>
