@@ -41,6 +41,7 @@
 .FormBody label {
   color: #444;
   font-weight: lighter;
+  font-size: 24px;
 }
 
 .FormBody input, textarea{

@@ -11,7 +11,7 @@ export default function Contact() {
 
   return (
     <div className="FormBody">
-      <form onSubmit={handleSubmit} className="Form">
+      <form className="Form">
         <h1>Contact Us</h1>
 
         <label htmlFor="email">
@@ -36,7 +36,7 @@ export default function Contact() {
           />
         </label>
 
-        <button type="button">Submit</button>
+        <button type="button" onClick={handleSubmit}>Submit</button>
       </form>
     </div>
   );
