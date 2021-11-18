@@ -3,12 +3,16 @@ import "reactjs-popup/dist/index.css";
 import "./MonsterChoice.css";
 import UserContext from "../../Context/UserContext";
 import MonsterCard from "./MonsterCard";
+import GameContext from "../../Context/GameContext";
 
 const MonsterChoice = ({ Monsters }) => {
-  const { setIdMonster, potions, spells } = useContext(UserContext);
+  const { setIdMonster } = useContext(UserContext);
+  const { potions, spells } = useContext(GameContext);
   const handleMonster = (monster) => {
-    if (potions.includes(monster.id) && spells.includes(monster.id)) setIdMonster(monster.id);
+    if (potions.some((potion) => potion.id === monster.id)
+    && spells.some((spell) => spell.id === monster.id)) { setIdMonster(monster.id); }
     // afficher c'est mort
+    console.log(potions, spells, monster.id);
   };
 
   return (
@@ -27,7 +31,8 @@ const MonsterChoice = ({ Monsters }) => {
                 <MonsterCard
                   monster={monster}
                   canFight={
-                    potions.includes(monster.id) && spells.includes(monster.id)
+                    potions.some((potion) => potion.id === monster.id)
+                    && spells.some((spell) => spell.id === monster.id)
                   }
                   onStartFight={() => handleMonster(monster)}
                 />

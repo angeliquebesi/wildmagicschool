@@ -9,8 +9,8 @@ export default function Gryffindor() {
   const [personnages, setPersonnages] = useState([]);
   const { house } = useParams();
   /*
-  *Fetch de l'api en fonction du choix de lahouse
-  */
+   *Fetch de l'api en fonction du choix de lahouse
+   */
   useEffect(() => {
     axios
       .get(`https://hp-api.herokuapp.com/api/characters/house/${house}`)
@@ -26,7 +26,7 @@ export default function Gryffindor() {
     <div>
       <div>
         <div
-          className={`description ${filteredHouse[0].name} text-center text-light fs-1 fw-bold`}
+          className={`description ${filteredHouse[0].name} text-center text-light fs-3 fw-bold`}
         >
           <h1 className="welcomeHouse text-uppercase">
             {`WELCOME TO  ${filteredHouse[0].name}`}
@@ -48,15 +48,13 @@ export default function Gryffindor() {
                     className="card-img-top img-fluid "
                   />
                   <div className="card-body">
-                    <div className="card-text ">
-                      <strong>Name : </strong>
+                    <div className="card-title ">
                       {filteredHouse[0].Directorname}
-                      <br />
-                      <strong>Patronus : </strong>
-                      {filteredHouse[0].patronus}
-                      <br />
-                      <strong>birth : </strong>
+                    </div>
+                    <div className="card-text ">
+                      <strong>Birth: </strong>
                       {filteredHouse[0].birth}
+                      <br />
                     </div>
                   </div>
                 </div>
@@ -76,9 +74,7 @@ export default function Gryffindor() {
           </section>
         </div>
         <div className="selectPersonnage">
-          <CardDeck
-            personnages={personnages}
-          />
+          <CardDeck personnages={personnages} />
         </div>
       </div>
     </div>
