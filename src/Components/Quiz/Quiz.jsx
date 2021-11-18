@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import Questions from "../../DATA/Questions";
 import "./Quizz.css";
 import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
@@ -8,8 +8,8 @@ import GameContext from "../../Context/GameContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idMonster, userHouse, setIdMonster, setDefeatedMonster, defeatedMonster } = useContext(UserContext);
-  const { setSpells, spells, setPotions, potions, lesson } = useContext(GameContext);
+  const { userHouse, idMonster, setIdMonster } = useContext(UserContext);
+  const { setSpells, spells, setPotions, potions, lesson, setDefeatedMonster, defeatedMonster } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: [],
@@ -38,9 +38,12 @@ export default function Quiz() {
   };
 
   const addDefeatedMonster = () => {
-    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster])); }
+    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster + 1])); }
+    setTimeout(() => {
+      setIdMonster("");
+      history.push(`/hat/${userHouse}/Marauder`);
+    }, 500);
   };
-
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
@@ -133,9 +136,11 @@ export default function Quiz() {
       return (
         <div>
           <div className="text-center fs-3 ">`Well done, you&apos;ve kill Lord Voldemort `</div>
-          <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
-            OK
-          </button>
+          <Link to={`/hat/${userHouse}/Marauder/Fight/Victory`}>
+            <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
+              OK
+            </button>
+          </Link>
         </div>
       );
     }
