@@ -9,8 +9,8 @@ export default function Gryffindor() {
   const [personnages, setPersonnages] = useState([]);
   const { house } = useParams();
   /*
-  *Fetch de l'api en fonction du choix de lahouse
-  */
+   *Fetch de l'api en fonction du choix de lahouse
+   */
   useEffect(() => {
     axios
       .get(`https://hp-api.herokuapp.com/api/characters/house/${house}`)
@@ -48,15 +48,13 @@ export default function Gryffindor() {
                     className="card-img-top img-fluid "
                   />
                   <div className="card-body">
-                    <div className="card-text ">
-                      <strong>Name : </strong>
+                    <div className="card-title ">
                       {filteredHouse[0].Directorname}
-                      <br />
-                      <strong>Patronus : </strong>
-                      {filteredHouse[0].patronus}
-                      <br />
-                      <strong>birth : </strong>
+                    </div>
+                    <div className="card-text ">
+                      <strong>Birth: </strong>
                       {filteredHouse[0].birth}
+                      <br />
                     </div>
                   </div>
                 </div>
@@ -64,7 +62,11 @@ export default function Gryffindor() {
             </div>
             <div className="col-4">
               <div>
-                <img className="embleme" src={filteredHouse[0].logo} alt="logo" />
+                <img
+                  className="embleme"
+                  src={filteredHouse[0].logo}
+                  alt="logo"
+                />
                 <h4 className="PresentationHouse text-uppercase text-center text-light fs-4 fw-bold border border-white  ">
                   Most important traits:
                 </h4>
@@ -76,9 +78,7 @@ export default function Gryffindor() {
           </section>
         </div>
         <div className="selectPersonnage">
-          <CardDeck
-            personnages={personnages}
-          />
+          <CardDeck personnages={personnages} />
         </div>
       </div>
     </div>

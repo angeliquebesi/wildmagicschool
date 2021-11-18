@@ -8,7 +8,7 @@ import GameContext from "../../Context/GameContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idMonster, setSpells, spells, setPotions, potions, userHouse, setIdMonster } = useContext(UserContext);
+  const { idMonster, setSpells, spells, setPotions, potions, userHouse, setIdMonster, setDefeatedMonster, defeatedMonster } = useContext(UserContext);
   const { lesson } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
@@ -33,6 +33,11 @@ export default function Quiz() {
       history.push(`/hat/${userHouse}/Marauder`);
     }, 500);
   };
+
+  const addDefeatedMonster = () => {
+    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster])); }
+  };
+
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
@@ -115,7 +120,7 @@ export default function Quiz() {
       return (
         <div>
           <div className="text-center fs-3 ">`Well done, you&apos;ve kill the monster `</div>
-          <button type="button" className="buttonstart px-2" onClick={addLesson}>
+          <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
             OK
           </button>
         </div>
@@ -125,7 +130,7 @@ export default function Quiz() {
       return (
         <div>
           <div className="text-center fs-3 ">`Well done, you&apos;ve kill Lord Voldemort `</div>
-          <button type="button" className="buttonstart px-2" onClick={addLesson}>
+          <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
             OK
           </button>
         </div>
@@ -141,7 +146,7 @@ export default function Quiz() {
     }
     return <div />;
   };
-  console.log(idMonster);
+  console.log(defeatedMonster);
   return (
     <div className="container">
       <h3 className="quizquestion">{questions.question}</h3>
