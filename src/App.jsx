@@ -69,7 +69,7 @@ function App() {
 
               <Route exact path="/contact" component={Contact} />
             </Switch>
-            <div>
+            <div className="FooterStyle">
               <Footer />
             </div>
           </GameContextProvider>

@@ -22,11 +22,11 @@ export default function Hat() {
   function handleClick() {
     const myHouse = houses[Math.floor(Math.random() * houses.length)];
     setUserHouse(myHouse);
-    history.push(`/hat/${myHouse}`);
-    setVisibility(false);
     /*
      *Timeout pour change de page automatiquement après le choix du chapeau
      */
+    history.push(`/hat/${myHouse}`);
+    setVisibility(false);
   }
   return (
     <div className="sortingHat">

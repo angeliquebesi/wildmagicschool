@@ -8,8 +8,8 @@ import GameContext from "../../Context/GameContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idMonster, setSpells, spells, setPotions, potions, userHouse, setIdMonster, setDefeatedMonster, defeatedMonster } = useContext(UserContext);
-  const { lesson } = useContext(GameContext);
+  const { idMonster, userHouse, setIdMonster, setDefeatedMonster, defeatedMonster } = useContext(UserContext);
+  const { setSpells, spells, setPotions, potions, lesson } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: [],
@@ -22,12 +22,15 @@ export default function Quiz() {
 
   const toggleanswer = (reponses) => reponses.sort(() => Math.random() - 0.5);
   const history = useHistory();
-  /** Fonction pour récupérer l'id de la lesson gagnée et le pousser dans le tableau correspondant */
-
+  /** Fonction pour récupérer la lesson gagnée et le pousser dans le tableau correspondant */
   const addLesson = () => {
     if (type === "spells") {
-      setSpells(spells.concat([lesson]));
-    } else { setPotions(potions.concat([lesson])); }
+      const newGain = [...spells, lesson];
+      setSpells(newGain);
+    } else {
+      const newGain = [...potions, lesson];
+      setPotions(newGain);
+    }
     setTimeout(() => {
       setIdMonster("");
       history.push(`/hat/${userHouse}/Marauder`);
