@@ -5,7 +5,7 @@ const UserContext = createContext();
 export const UserContextProvider = ({ children }) => {
   const [userHouse, setUserHouse] = useState("");
   const [quizzChoice, setquizzChoice] = useState("");
-
+  const [idLesson, setIdLesson] = useState("");
   return (
     <UserContext.Provider
       value={{
@@ -13,6 +13,8 @@ export const UserContextProvider = ({ children }) => {
         setUserHouse,
         quizzChoice,
         setquizzChoice,
+        idLesson,
+        setIdLesson,
       }}
     >
       {children}
