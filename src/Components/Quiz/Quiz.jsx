@@ -8,7 +8,7 @@ import GameContext from "../../Context/GameContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idMonster, userHouse } = useContext(UserContext);
+  const { idMonster, userHouse, setIdMonster, setDefeatedMonster, defeatedMonster } = useContext(UserContext);
   const { setSpells, spells, setPotions, potions, lesson } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
@@ -32,9 +32,15 @@ export default function Quiz() {
       setPotions(newGain);
     }
     setTimeout(() => {
+      setIdMonster("");
       history.push(`/hat/${userHouse}/Marauder`);
     }, 500);
   };
+
+  const addDefeatedMonster = () => {
+    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster])); }
+  };
+
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
@@ -103,11 +109,31 @@ export default function Quiz() {
         </div>
       );
     }
-    if (point === 2) {
+    if (point === 2 && (type === "spells" || type === "potions")) {
       return (
         <div>
           <div className="text-center fs-3 ">{`Well done you've earned the ${lesson.name} `}</div>
           <button type="button" className="buttonstart px-2" onClick={addLesson}>
+            OK
+          </button>
+        </div>
+      );
+    }
+    if (point === 2 && type !== "spells" && type !== "potions" && idMonster !== 3) {
+      return (
+        <div>
+          <div className="text-center fs-3 ">`Well done, you&apos;ve kill the monster `</div>
+          <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
+            OK
+          </button>
+        </div>
+      );
+    }
+    if (point === 2 && idMonster === 3) {
+      return (
+        <div>
+          <div className="text-center fs-3 ">`Well done, you&apos;ve kill Lord Voldemort `</div>
+          <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
             OK
           </button>
         </div>

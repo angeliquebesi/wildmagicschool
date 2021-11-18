@@ -33,14 +33,9 @@ const CardHouse = ({ pers, marauder = false }) => {
           <div className="card-body">
             <h2 className="card-title ">{pers.name}</h2>
             <div className="card-text ">
-              <strong>Patronus: </strong>
-              {pers.patronus}
-              <br />
-              <strong>birth: </strong>
+              <strong>Birth: </strong>
               {pers.dateOfBirth}
               <br />
-              <strong>Ancestry: </strong>
-              {pers.ancestry}
             </div>
             {userHouse !== "" && marauder !== true ? (
               <button
