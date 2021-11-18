@@ -10,9 +10,9 @@ import SpellPotionCard from "../SpellPotionCard/SpellPotionCard";
 
 export default function SpellPotionDeck() {
   const { type } = useParams();
-  const [cards, setCards] = useState([]);
   const { userHouse } = useContext(UserContext);
   const { house } = useParams();
+  const [cards, setCards] = useState([]);
 
   const [filtervalue, setFiltervalue] = useState("");
   // Fonction pour filtrer les cartes des personnages grace à la search bar
