@@ -1,9 +1,21 @@
 .LessonCardstyle {
     background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
-    padding: 5px;
+    padding: 15px;
     margin: auto;
     border-radius: 20px;
     box-shadow: 0 0 0 14px #333;
     text-align: center;
     font-family: "Dum1";
+    max-width : 350px;
 }
+.LessonCardstyle h3 {
+    font-size: 50px;
+}
+.LessonCardstyle h4 {
+    font-size: 36px;
+}
+
+.LessonCardstyle p {
+    font-size: 26px;
+}
+
