@@ -4,6 +4,7 @@ import "./Marauder.css";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
 import CardHouse from "../../Components/CardHouse/CardHouse";
+import LessonCard from "../../Components/LessonCard/LessonCard";
 
 export default function Marauder() {
   const { userHouse } = useContext(UserContext);
@@ -13,7 +14,10 @@ export default function Marauder() {
   return (
     <div>
       <section className="Maraudercontainer ">
-        <CardHouse pers={userPersonnage} marauder={marauder} />
+        <div className="RecapCard">
+          <CardHouse pers={userPersonnage} marauder={marauder} />
+          <LessonCard />
+        </div>
         <div className="MarauderButton ">
           <Link to={`/hat/${userHouse}/Marauder/potions`}>
             <button type="button" className="buttonspell">

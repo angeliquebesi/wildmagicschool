@@ -4,8 +4,6 @@ const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
   const [userHouse, setUserHouse] = useState("");
-  const [potions, setPotions] = useState([]);
-  const [spells, setSpells] = useState([]);
   const [Ennemys, setEnnemys] = useState([]);
   const [quizzChoice, setquizzChoice] = useState("");
   const [idMonster, setIdMonster] = useState("");
@@ -16,10 +14,6 @@ export const UserContextProvider = ({ children }) => {
       value={{
         userHouse,
         setUserHouse,
-        potions,
-        setPotions,
-        spells,
-        setSpells,
         Ennemys,
         setEnnemys,
         quizzChoice,
