@@ -36,3 +36,8 @@
   margin : 0;
   color : red;
 }
+
+.propositions button{
+  width: 300px;
+  border-radius: 10px;
+}
