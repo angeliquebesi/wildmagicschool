@@ -1,5 +1,6 @@
 import React from "react";
 import Popup from "reactjs-popup";
+import ButtonReturnMap from "../../Components/ButtonReturnMap/ButtonReturnMap";
 import padlock from "../../images/padlock.png";
 
 export default function MonsterCard({
@@ -44,7 +45,7 @@ export default function MonsterCard({
           )}
           <div className="card-body">
             <h2 className="card-title ">{monster.name}</h2>
-            {!quizz && (
+            {quizz !== true && (
               <Popup
                 trigger={
                   <button className="button btn btn-dark mx-2" type="button">
@@ -56,6 +57,7 @@ export default function MonsterCard({
                 {!canFight && (
                   <span className="fs-4">
                     {`You need the ${monster.potion} potion and the ${monster.spell} spell to fight against the ${monster.name} !!`}
+                    <ButtonReturnMap />
                   </span>
                 )}
                 {canFight && (
