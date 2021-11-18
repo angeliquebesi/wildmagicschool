@@ -24,7 +24,7 @@ export default function CardDeck({ personnages }) {
           {personnages
             .filter((pers) => pers.name.toLowerCase().includes(filtervalue))
             .map((pers) => (
-              <CardHouse pers={pers} />
+              <CardHouse pers={pers} key={pers.id} />
             ))}
         </div>
       )}

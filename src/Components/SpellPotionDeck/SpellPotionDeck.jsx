@@ -49,7 +49,7 @@ export default function SpellPotionDeck() {
               .filter((card) => card.name.toLowerCase().includes(filtervalue))
             /* creation des cards avec le fetch api */
               .map((card) => (
-                <SpellPotionCard card={card} type={type} house={house} earnedPotion={type === "potions" ? potions.some((potion) => potion.id === card.id) : spells.some((spell) => spell.id === card.id)} />
+                <SpellPotionCard key={card.id} card={card} type={type} house={house} earnedPotion={type === "potions" ? potions.some((potion) => potion.id === card.id) : spells.some((spell) => spell.id === card.id)} />
               ))}
           </div>
         )}
