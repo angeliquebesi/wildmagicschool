@@ -4,7 +4,6 @@ const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
   const [userHouse, setUserHouse] = useState("");
-  const [userPersonnage, setUserPersonnage] = useState("");
   const [potions, setPotions] = useState([]);
   const [spells, setSpells] = useState([]);
   const [Ennemys, setEnnemys] = useState([]);
@@ -17,8 +16,6 @@ export const UserContextProvider = ({ children }) => {
       value={{
         userHouse,
         setUserHouse,
-        userPersonnage,
-        setUserPersonnage,
         potions,
         setPotions,
         spells,
