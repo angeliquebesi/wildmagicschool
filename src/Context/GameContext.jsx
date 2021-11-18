@@ -7,6 +7,8 @@ export const GameContextProvider = ({ children }) => {
   const [userPersonnage, setUserPersonnage] = useState({});
   const [potions, setPotions] = useState([]);
   const [spells, setSpells] = useState([]);
+  const [idMonster, setIdMonster] = useState("");
+  const [defeatedMonster, setDefeatedMonster] = useState([1]);
 
   return (
     <GameContext.Provider
@@ -18,7 +20,11 @@ export const GameContextProvider = ({ children }) => {
         potions,
         setPotions,
         spells,
-        setSpells
+        setSpells,
+        idMonster,
+        setIdMonster,
+        defeatedMonster,
+        setDefeatedMonster
       }}
     >
       {children}
