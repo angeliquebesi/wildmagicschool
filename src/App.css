@@ -12,3 +12,8 @@ a:hover{
   text-decoration: none;
   color: rgb(212, 158, 41);
 }
+
+.FooterStyle{
+  position: relative;
+  min-height: 40vh;
+}
