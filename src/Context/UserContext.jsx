@@ -8,6 +8,7 @@ export const UserContextProvider = ({ children }) => {
   const [quizzChoice, setquizzChoice] = useState("");
   const [idMonster, setIdMonster] = useState("");
   const [idLesson, setIdLesson] = useState("");
+  const [defeatedMonster, setDefeatedMonster] = useState([]);
 
   return (
     <UserContext.Provider
@@ -21,7 +22,9 @@ export const UserContextProvider = ({ children }) => {
         idMonster,
         setIdMonster,
         idLesson,
-        setIdLesson
+        setIdLesson,
+        defeatedMonster,
+        setDefeatedMonster
       }}
     >
       {children}
