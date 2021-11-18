@@ -1,8 +1,14 @@
+.VictoryPage{
+margin-top: 40px;
+}
+
 .VictoryP{
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 100px;
+  color: white;
+  font-size: 40px;
+  font-family: "Dum1";
 }
 
 .VictoryGif{

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import Questions from "../../DATA/Questions";
 import "./Quizz.css";
 import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
@@ -133,9 +133,11 @@ export default function Quiz() {
       return (
         <div>
           <div className="text-center fs-3 ">`Well done, you&apos;ve kill Lord Voldemort `</div>
-          <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
-            OK
-          </button>
+          <Link to={`/hat/${userHouse}/Marauder/Fight/Victory`}>
+            <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
+              OK
+            </button>
+          </Link>
         </div>
       );
     }

@@ -4,7 +4,7 @@ import "./VictoryPage.css";
 
 export default function VictoryPage() {
   return (
-    <div>
+    <div className="VictoryPage">
       <div className="VictoryP">
         <p>
           Victory !
@@ -16,7 +16,7 @@ export default function VictoryPage() {
         <img src="https://c.tenor.com/qNu2IB0eDUEAAAAd/voldemort-death.gif" alt="gif of lord voldermort's death" />
       </div>
       <div className="VictoryButton">
-        <Link to="/home">
+        <Link to="/">
           <button type="button" className="buttonstart">
             Go back Home
           </button>
