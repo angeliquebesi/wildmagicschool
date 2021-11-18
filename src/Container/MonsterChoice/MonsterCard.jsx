@@ -1,5 +1,6 @@
 import React from "react";
 import Popup from "reactjs-popup";
+import padlock from "../../images/padlock.png";
 
 export default function MonsterCard({ monster, onStartFight, canFight, availableMonster }) {
   return (
@@ -13,12 +14,16 @@ export default function MonsterCard({ monster, onStartFight, canFight, available
           />
           {!availableMonster && (
             <div className="card-img-overlay bg-black bg-opacity-75 text-white rounded-2">
-              <div className="card-text fs-4 text-center m-5  ">
+              <img
+                className="card-img w-50 h-50 mt-4 opacity-75 "
+                src={padlock}
+                alt="monster1"
+              />
+              <div className="card-text fs-5 text-center m-3  ">
                 You need to defeat the previous monster to unlock this one!!
               </div>
             </div>
           )}
-
           <div className="card-body">
             <h2 className="card-title ">{monster.name}</h2>
             <Popup
