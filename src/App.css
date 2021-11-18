@@ -4,6 +4,7 @@
   font-family: 'dum1';
   src: local('dum1'), url('./fonts/Dumbledor/dum1.ttf') format("truetype");
 }
+
 .linkStyle:hover{
   text-decoration: none;
   color: rgb(212, 158, 41);
@@ -15,5 +16,5 @@ a:hover{
 
 .FooterStyle{
   position: relative;
-  min-height: 348px;
+  min-height: 150px;
 }

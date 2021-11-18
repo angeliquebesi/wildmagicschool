@@ -16,8 +16,8 @@ export default function SpellPotion() {
           <Link to="/SpellPotion/potions" className="linkStyle">
             <button type="button" className="spellpotionbutton" label="bouton potion">POTION</button>
           </Link>
-
         </div>
+
         <Switch>
           <Route path="/SpellPotion/:type">
             <SpellPotionDeck />
