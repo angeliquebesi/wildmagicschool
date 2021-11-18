@@ -21,6 +21,7 @@ const MonsterChoice = ({ Monsters }) => {
           <div className="monster card-group">
             {Monsters
               /* creation des monsters avec le fetch api */
+              // TODO mettre l id du monstre battu dans defeatedMonster
               .map((monster) => (
                 <MonsterCard
                   monster={monster}

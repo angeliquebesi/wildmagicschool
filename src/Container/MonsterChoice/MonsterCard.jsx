@@ -24,7 +24,7 @@ export default function MonsterCard({ monster, onStartFight, canFight, available
             <Popup
               trigger={
                 <button className="button btn btn-dark mx-2" type="button">
-                  Show information
+                  Fight
                 </button>
               }
               modal
