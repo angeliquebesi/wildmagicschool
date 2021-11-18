@@ -8,8 +8,8 @@ import GameContext from "../../Context/GameContext";
 
 export default function Quiz() {
   const { type } = useParams();
-  const { idMonster, userHouse } = useContext(UserContext);
-  const { setSpells, spells, setPotions, potions, lesson } = useContext(GameContext);
+  const { userHouse } = useContext(UserContext);
+  const { setSpells, spells, setPotions, potions, lesson, idMonster } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: [],

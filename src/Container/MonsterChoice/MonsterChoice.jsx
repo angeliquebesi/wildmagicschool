@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "reactjs-popup/dist/index.css";
 import "./MonsterChoice.css";
+
 import MonsterCard from "./MonsterCard";
 import GameContext from "../../Context/GameContext";
 
@@ -13,6 +14,8 @@ const MonsterChoice = ({ Monsters }) => {
       }
     }
   };
+
+  console.log(handleMonster());
   return (
     <div>
       <div className="monstercontainer">
