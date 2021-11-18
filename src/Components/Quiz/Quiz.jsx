@@ -71,7 +71,7 @@ export default function Quiz() {
         setPoint(point + 1);
         setCorrect(true);
       } else {
-        array[index] = "btn-alert";
+        array[index] = "btn-danger";
         setCorrect(false);
       }
       setCanClickOnButton(true);
