@@ -9,7 +9,7 @@ import GameContext from "../../Context/GameContext";
 export default function Quiz() {
   const { type } = useParams();
   const { userHouse, idMonster, setIdMonster } = useContext(UserContext);
-  const { setSpells, spells, setPotions, potions, lesson, setDefeatedMonster, defeatedMonster } = useContext(GameContext);
+  const { setSpells, spells, setPotions, potions, lesson, setDefeatedMonster, defeatedMonster, availableMonster, setAvailableMonster } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: [],
@@ -38,12 +38,12 @@ export default function Quiz() {
   };
 
   const addDefeatedMonster = () => {
-    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster + 1])); }
-    setTimeout(() => {
-      setIdMonster("");
-      history.push(`/hat/${userHouse}/Marauder`);
-    }, 500);
+    history.push(`/hat/${userHouse}/Marauder`);
+    setAvailableMonster(availableMonster.concat([idMonster + 1]));
+    setDefeatedMonster(defeatedMonster.concat([idMonster]));
+    setIdMonster("");
   };
+  console.log(defeatedMonster);
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
@@ -125,7 +125,7 @@ export default function Quiz() {
     if (point === 2 && type !== "spells" && type !== "potions" && idMonster !== 3) {
       return (
         <div>
-          <div className="text-center fs-3 ">`Well done, you&apos;ve kill the monster `</div>
+          <div className="text-center fs-3 ">`Well done, you&apos;ve killed the monster `</div>
           <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
             OK
           </button>
@@ -135,9 +135,9 @@ export default function Quiz() {
     if (point === 2 && idMonster === 3) {
       return (
         <div>
-          <div className="text-center fs-3 ">`Well done, you&apos;ve kill Lord Voldemort `</div>
+          <div className="text-center fs-3 ">`Well done, you&apos;ve killed Lord Voldemort `</div>
           <Link to={`/hat/${userHouse}/Marauder/Fight/Victory`}>
-            <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
+            <button type="button" className="buttonstart px-2">
               OK
             </button>
           </Link>
