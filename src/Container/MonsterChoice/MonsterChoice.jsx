@@ -12,7 +12,6 @@ const MonsterChoice = ({ Monsters }) => {
     if (potions.some((potion) => potion.id === monster.id)
     && spells.some((spell) => spell.id === monster.id)) { setIdMonster(monster.id); }
   };
-  console.log(availableMonster);
   return (
     <div>
       <div className="monstercontainer">

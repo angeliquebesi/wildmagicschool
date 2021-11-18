@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { motion } from "framer-motion";
 import { useParams, useHistory, Link } from "react-router-dom";
 import Questions from "../../DATA/Questions";
 import "./Quizz.css";
@@ -155,24 +156,26 @@ export default function Quiz() {
     return <div />;
   };
   return (
-    <div className="container">
-      <h3 className="quizquestion">{questions.question}</h3>
-      <div className="propositions">
-        <ul>
-          {questions.answers.map((answer, index) => (
-            <li>
-              <button
-                type="button"
-                className={answersClass[index]}
-                onClick={() => checkedResponse(answer, index)}
-              >
-                {answer}
-              </button>
-            </li>
-          ))}
-        </ul>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
+      <div className="container">
+        <h3 className="quizquestion">{questions.question}</h3>
+        <div className="propositions">
+          <ul>
+            {questions.answers.map((answer, index) => (
+              <li>
+                <button
+                  type="button"
+                  className={answersClass[index]}
+                  onClick={() => checkedResponse(answer, index)}
+                >
+                  {answer}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="result">{solution()}</div>
       </div>
-      <div className="result">{solution()}</div>
-    </div>
+    </motion.div>
   );
 }

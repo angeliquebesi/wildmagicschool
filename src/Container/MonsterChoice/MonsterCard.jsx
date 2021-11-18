@@ -11,7 +11,7 @@ export default function MonsterCard({
   defeatedMonster,
   quizz = false,
 }) {
-  // TODO  enlever button sur carte quand on est dans le quizz+ photo fillius+transition entre page
+  // TODO  enlever button sur carte quand on est dans le quizz+ transition entre page
   return (
     <div className="col-5 px-3">
       <div id={monster.id}>
