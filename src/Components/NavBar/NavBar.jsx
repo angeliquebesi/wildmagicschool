@@ -16,7 +16,7 @@ export default function NavBar() {
           <Link to="/houses" className="NavLink">Houses</Link>
         </li>
         <li>
-          <Link to="/spellpotion" className="NavLink">Spell and Potion</Link>
+          <Link to="/SpellPotion/potions" className="NavLink">Spell and Potion</Link>
         </li>
         <li>
           <Link to="/hat" className="NavLink">Start the Game</Link>
