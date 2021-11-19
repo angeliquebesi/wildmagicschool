@@ -113,7 +113,7 @@ export default function Quiz() {
         </div>
       );
     }
-    if (point === 1 && type !== "spells" && type !== "potions" && !correct && canClickOnButton) {
+    if (point <= 1 && type !== "spells" && type !== "potions" && !correct && canClickOnButton) {
       return (
         <div>
           <p className="quiz-p"> Answer is wrong. </p>
