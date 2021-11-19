@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import "./Houses.css";
 import House from "../../Components/House/House";
+import "./Houses.css";
 
 export default function Houses() {
   return (

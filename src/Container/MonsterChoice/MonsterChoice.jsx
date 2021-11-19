@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "reactjs-popup/dist/index.css";
-import "./MonsterChoice.css";
 import UserContext from "../../Context/UserContext";
 import MonsterCard from "./MonsterCard";
 import GameContext from "../../Context/GameContext";
+import "./MonsterChoice.css";
 
 const MonsterChoice = ({ Monsters }) => {
   const { potions, spells, defeatedMonster, availableMonster } = useContext(GameContext);

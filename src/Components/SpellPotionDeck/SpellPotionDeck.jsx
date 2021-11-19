@@ -3,12 +3,12 @@ import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./SpellPotionDeck.css";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
 import SearchBar from "../SearchBar/Search";
 import ButtonReturnMap from "../ButtonReturnMap/ButtonReturnMap";
 import SpellPotionCard from "../SpellPotionCard/SpellPotionCard";
+import "./SpellPotionDeck.css";
 
 export default function SpellPotionDeck() {
   const { type } = useParams();

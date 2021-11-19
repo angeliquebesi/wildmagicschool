@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
+import UserContext from "../../Context/UserContext";
 import CardHouse from "../CardHouse/CardHouse";
 import SearchBar from "../SearchBar/Search";
-import UserContext from "../../Context/UserContext";
 
 export default function CardDeck({ personnages }) {
   const { userHouse } = useContext(UserContext);
