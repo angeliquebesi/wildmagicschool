@@ -43,7 +43,7 @@ function SpellPotionCard({ type, card, house, quizz = false, earnedPotion }) {
         {userHouse !== "" && quizz !== true ? (
           <Link to={`/hat/${house}/Marauder/${type}/Quizz`}>
             <button
-              className="btn btn-dark"
+              className="btn btn-dark buttonspellcard"
               type="button"
               onClick={() => handleCard(card)}
             >

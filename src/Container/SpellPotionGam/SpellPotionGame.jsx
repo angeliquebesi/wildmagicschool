@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import "./SpellPotionGame.css";
 import GameContext from "../../Context/GameContext";
@@ -11,12 +12,12 @@ export default function SpellPotionGame() {
   const { type } = useParams();
   const quizz = true;
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
       <div className="quizcard">
         <SpellPotionCard type={type} card={lesson} quizz={quizz} />
       </div>
       <Quiz />
       <ButtonReturnMap />
-    </div>
+    </motion.div>
   );
 }

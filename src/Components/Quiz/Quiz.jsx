@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
+import { motion } from "framer-motion";
 import { useParams, useHistory, Link } from "react-router-dom";
 import Questions from "../../DATA/Questions";
 import "./Quizz.css";
 import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
+import ButtonReturnMap from "../ButtonReturnMap/ButtonReturnMap";
 
 export default function Quiz() {
   const { type } = useParams();
   const { userHouse, idMonster, setIdMonster } = useContext(UserContext);
-  const { setSpells, spells, setPotions, potions, lesson, setDefeatedMonster, defeatedMonster } = useContext(GameContext);
+  const { setSpells, spells, setPotions, potions, lesson, setDefeatedMonster, defeatedMonster, availableMonster, setAvailableMonster } = useContext(GameContext);
   const [questions, setQuestions] = useState({
     question: "",
     answers: [],
@@ -38,11 +40,10 @@ export default function Quiz() {
   };
 
   const addDefeatedMonster = () => {
-    if (type !== "spells" && type !== "potions") { setDefeatedMonster(defeatedMonster.concat([idMonster + 1])); }
-    setTimeout(() => {
-      setIdMonster("");
-      history.push(`/hat/${userHouse}/Marauder`);
-    }, 500);
+    history.push(`/hat/${userHouse}/Marauder`);
+    setAvailableMonster(availableMonster.concat([idMonster + 1]));
+    setDefeatedMonster(defeatedMonster.concat([idMonster]));
+    setIdMonster("");
   };
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
@@ -112,6 +113,14 @@ export default function Quiz() {
         </div>
       );
     }
+    if (point === 1 && type !== "spells" && type !== "potions" && !correct && canClickOnButton) {
+      return (
+        <div>
+          <p className="quiz-p"> Answer is wrong. </p>
+          <ButtonReturnMap />
+        </div>
+      );
+    }
     if (point === 2 && (type === "spells" || type === "potions")) {
       return (
         <div>
@@ -125,7 +134,7 @@ export default function Quiz() {
     if (point === 2 && type !== "spells" && type !== "potions" && idMonster !== 3) {
       return (
         <div>
-          <div className="text-center fs-3 ">`Well done, you&apos;ve kill the monster `</div>
+          <div className="text-center fs-3 ">`Well done, you&apos;ve killed the monster `</div>
           <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
             OK
           </button>
@@ -135,9 +144,9 @@ export default function Quiz() {
     if (point === 2 && idMonster === 3) {
       return (
         <div>
-          <div className="text-center fs-3 ">`Well done, you&apos;ve kill Lord Voldemort `</div>
+          <div className="text-center fs-3 ">`Well done, you&apos;ve killed Lord Voldemort `</div>
           <Link to={`/hat/${userHouse}/Marauder/Fight/Victory`}>
-            <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
+            <button type="button" className="buttonstart px-2">
               OK
             </button>
           </Link>
@@ -155,24 +164,26 @@ export default function Quiz() {
     return <div />;
   };
   return (
-    <div className="container">
-      <h3 className="quizquestion">{questions.question}</h3>
-      <div className="propositions">
-        <ul>
-          {questions.answers.map((answer, index) => (
-            <li>
-              <button
-                type="button"
-                className={answersClass[index]}
-                onClick={() => checkedResponse(answer, index)}
-              >
-                {answer}
-              </button>
-            </li>
-          ))}
-        </ul>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
+      <div className="container">
+        <h3 className="quizquestion">{questions.question}</h3>
+        <div className="propositions">
+          <ul>
+            {questions.answers.map((answer, index) => (
+              <li>
+                <button
+                  type="button"
+                  className={answersClass[index]}
+                  onClick={() => checkedResponse(answer, index)}
+                >
+                  {answer}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="result">{solution()}</div>
       </div>
-      <div className="result">{solution()}</div>
-    </div>
+    </motion.div>
   );
 }

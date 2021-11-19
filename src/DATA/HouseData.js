@@ -21,7 +21,7 @@ const HouseData = [
   {
     name: "Ravenclaw",
     Directorname: "Filius Flitwick",
-    directorimg: `${serverUrl}/images/imageFilius.jpeg`,
+    directorimg: `${serverUrl}/images/imageFilius.jpg`,
     logo: `${serverUrl}/images/ravenclow.png`,
     patronus: "",
     birth: "17-10-1958",
