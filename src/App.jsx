@@ -20,7 +20,7 @@ import ContainerGame from "./Container/ContainerGame/ContainerGame";
 import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
 import Teams from "./Container/Team/Teams";
 import VictoryPage from "./Components/VictoryPage/VictoryPage";
-
+// TODO faire fichier index pour l'import des composant
 function App() {
   const { pathname } = useLocation();
   // const { location } = useLocation();

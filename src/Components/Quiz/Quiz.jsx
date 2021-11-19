@@ -6,6 +6,7 @@ import "./Quizz.css";
 import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
+import ButtonReturnMap from "../ButtonReturnMap/ButtonReturnMap";
 
 export default function Quiz() {
   const { type } = useParams();
@@ -44,7 +45,6 @@ export default function Quiz() {
     setDefeatedMonster(defeatedMonster.concat([idMonster]));
     setIdMonster("");
   };
-  console.log(defeatedMonster);
   /** Fonction permettant d'afficher le quiz en s'appuyant sur le dossier data Questions et en filtrant sur les sorts  */
   useEffect(() => {
     const questionsQ = (type !== "spells" && type !== "potions" ? Questions.filter((quest) => quest.type === "Fight" && quest.id === parseInt(idMonster, 32)) : Questions.filter((quest) => quest.type === type && quest.id === parseInt(lesson.id, 32)));
@@ -110,6 +110,14 @@ export default function Quiz() {
         <div>
           <p className="quiz-p"> Answer is wrong. </p>
           <ButtonReturnLesson />
+        </div>
+      );
+    }
+    if (point === 1 && type !== "spells" && type !== "potions" && !correct && canClickOnButton) {
+      return (
+        <div>
+          <p className="quiz-p"> Answer is wrong. </p>
+          <ButtonReturnMap />
         </div>
       );
     }
