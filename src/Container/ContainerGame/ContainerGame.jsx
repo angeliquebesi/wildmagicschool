@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
+import Monsters from "../../DATA/Monsters";
 import UserContext from "../../Context/UserContext";
 import MonsterChoice from "../MonsterChoice/MonsterChoice";
 import ButtonReturnMap from "../../Components/ButtonReturnMap/ButtonReturnMap";
 import Quiz from "../../Components/Quiz/Quiz";
-import Monsters from "../../DATA/Monsters";
 
 export default function ContainerGame() {
   const { idMonster } = useContext(UserContext);
@@ -14,7 +15,7 @@ export default function ContainerGame() {
     (item) => item.id === idMonster
   );
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
       <>
         {/* Affichage du Quiz si Monstre selectionné */}
         {idMonster === "" && <MonsterChoice Monsters={Monsters} />}
@@ -26,6 +27,6 @@ export default function ContainerGame() {
         )}
       </>
       <ButtonReturnMap />
-    </div>
+    </motion.div>
   );
 }

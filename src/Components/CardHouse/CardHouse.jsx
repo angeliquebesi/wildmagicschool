@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import "./CardHouse.css";
-import defautAvatar from "../../images/defautAvatar.png";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
+import defautAvatar from "../../images/defautAvatar.png";
+import "./CardHouse.css";
 
 const CardHouse = ({ pers, marauder = false }) => {
   const { userHouse } = useContext(UserContext);
@@ -23,7 +23,7 @@ const CardHouse = ({ pers, marauder = false }) => {
   };
   return (
     <div className="col-4 px-4">
-      <div className="perso">
+      <div className="character">
         <div className="card rounded-2 card-stretch text-center mx-auto">
           <img
             src={pers.image || defautAvatar}

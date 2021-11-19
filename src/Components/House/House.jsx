@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import HouseData from "../../DATA/HouseData";
 import CardDeck from "../CardDeck/CardDeck";
 import "./House.css";
-import HouseData from "../../DATA/HouseData";
 
 export default function Gryffindor() {
   const [personnages, setPersonnages] = useState([]);
@@ -23,7 +24,7 @@ export default function Gryffindor() {
    */
   const filteredHouse = HouseData.filter((i) => i.name === house);
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
       <div>
         <div
           className={`description ${filteredHouse[0].name} text-center text-light fs-3 fw-bold`}
@@ -62,7 +63,11 @@ export default function Gryffindor() {
             </div>
             <div className="col-4">
               <div>
-                <img className="embleme" src={filteredHouse[0].logo} alt="logo" />
+                <img
+                  className="embleme"
+                  src={filteredHouse[0].logo}
+                  alt="logo"
+                />
                 <h4 className="PresentationHouse text-uppercase text-center text-light fs-2 fw-bold border border-white  ">
                   Most important traits:
                 </h4>
@@ -77,6 +82,6 @@ export default function Gryffindor() {
           <CardDeck personnages={personnages} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
