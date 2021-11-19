@@ -63,6 +63,9 @@ h2{
   overflow: hidden;
   background: #333;
 }
+.card-body{
+  color :  #FFFFFF;
+}
 .spell-card h5 {
   font-family: "Cinzel Decorative", "Bahianita";
   font-weight: 700;
@@ -92,4 +95,8 @@ h2{
 }
 .spell-card:hover {
   cursor: pointer;
+}
+
+.buttonspellcard{
+  font-size: 24px;
 }
