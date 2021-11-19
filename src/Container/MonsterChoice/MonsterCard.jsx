@@ -55,16 +55,16 @@ export default function MonsterCard({
                 modal
               >
                 {!canFight && (
-                  <span className="fs-4">
+                  <span className="fs-2">
                     {`You need the ${monster.potion} potion and the ${monster.spell} spell to fight against the ${monster.name} !!`}
                     <ButtonReturnMap />
                   </span>
                 )}
                 {canFight && (
-                  <span className="fs-4">
+                  <span className="fs-2">
                     {`Well done, you can try to beat the ${monster.name} now , let's go !!  `}
                     <button
-                      className="button btn btn-dark p-2 mx-2"
+                      className="button btn btn-dark p-2 mx-2 fs-2"
                       type="button"
                       onClick={onStartFight}
                     >
