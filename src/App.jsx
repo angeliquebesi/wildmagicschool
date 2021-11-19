@@ -2,6 +2,8 @@ import "./App.css";
 import React from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { UserContextProvider } from "./Context/UserContext";
+import { GameContextProvider } from "./Context/GameContext";
 import NavBar from "./Components/NavBar/NavBar";
 import Footer from "./Components/Footer/Footer";
 import SpellPotion from "./Components/SpellPotion/SpellPotion";
@@ -9,18 +11,17 @@ import Houses from "./Container/Houses/Houses";
 import Home from "./Container/Home/Home";
 import Hat from "./Container/Hat/Hat";
 import Contact from "./Container/Contact/Contact";
-import "./fonts/Harryp/HARRYP__.ttf";
-import "./fonts/Dumbledor/dum1.ttf";
 import House from "./Components/House/House";
 import Marauder from "./Container/Marauder/Marauder";
-import { UserContextProvider } from "./Context/UserContext";
-import { GameContextProvider } from "./Context/GameContext";
 import SpellPotionDeck from "./Components/SpellPotionDeck/SpellPotionDeck";
 import ContainerGame from "./Container/ContainerGame/ContainerGame";
 import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
 import Teams from "./Container/Team/Teams";
 import VictoryPage from "./Components/VictoryPage/VictoryPage";
-// TODO faire fichier index pour l'import des composant
+import Bonus from "./Components/Bonus/Bonus";
+import "./fonts/Harryp/HARRYP__.ttf";
+import "./fonts/Dumbledor/dum1.ttf";
+
 function App() {
   const { pathname } = useLocation();
   // const { location } = useLocation();
@@ -80,6 +81,10 @@ function App() {
 
                 <Route exact path="/hat/:house/Marauder/Fight/Victory">
                   <VictoryPage />
+                </Route>
+
+                <Route exact path="/hat/:house/Marauder/Fight/Victory/Bonus">
+                  <Bonus />
                 </Route>
 
                 <Route exact path="/contact" component={Contact} />
