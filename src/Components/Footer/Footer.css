@@ -1,6 +1,5 @@
 *{
-  font-family: 'dum1';
-  font-size: 24px;
+  font-family: "Dum1";
 }
 
 .footer-distributed {
@@ -10,6 +9,8 @@
   width: 100%;
   text-align: left;
   padding: 20px 50px;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer-distributed .footer-left p {
@@ -19,7 +20,7 @@
 }
 
 .footer-distributed p.footer-links {
-  font-size: 36px;
+  font-size: 24px;
   color: #ffffff;
   padding: 0;
   transition: ease .25s;

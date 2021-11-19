@@ -1,0 +1,111 @@
+
+.monster.card,.card-stretch {
+  background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
+  flex: 0 0 300px;
+  padding: 5px;
+  margin: 2em;
+  border-radius: 20px;
+  box-shadow: 0 0 0 14px #333;
+  text-align: center;
+  position: relative;
+  image-rendering: auto;
+  transition:all 0.3s ease;
+  font-family: "Dum1";
+}
+
+.monster.card-group{
+
+  justify-content: center;
+  margin-top: 1em;
+  margin-left: 15%;
+  align-items: center;
+  width: 70%;
+  background-image: url(../../images/bg-paper.jpg);
+  background-attachment: fixed;
+}
+
+
+.monster.card.card-stretch:hover
+{
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+
+.monster img {
+  max-width: 100%;
+  height: 350px;
+  image-rendering: auto;
+}
+#overlay {
+  position: fixed;
+  display: block;
+  width: 20%;
+  height: 20%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+@media (max-width: 576px) { 
+  .monster img {
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .col-5.px-4{
+width: 100%;
+    
+  }
+  
+  }
+
+.popup-content {
+  font-family: "Dum1";
+  font-weight: bold;
+  margin: auto;
+  font-size: 24px;
+  text-align: center;
+  background: #fff;
+  border-radius: 5px;
+  width:60%;
+  padding: 5
+    px;
+  border: 1
+    px
+    solid #d7d7d7;
+    animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+    -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}
