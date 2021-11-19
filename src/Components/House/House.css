@@ -54,6 +54,21 @@ body {
   
 }
 
+
+.Slytherin{
+
+  background: repeating-linear-gradient(
+    45deg,
+    #7a7a7a,
+    #7a7a7a 3px,
+    #0b3a07 3px,
+    #0b3a07 9px,
+    #7a7a7a 9px,
+    #7a7a7a 10px,
+    #0b3a07 10px,
+    #0b3a07 30px
+  );
+}
 .Gryffindor{
 
   background: repeating-linear-gradient(
