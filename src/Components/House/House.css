@@ -53,20 +53,6 @@ body {
   padding: 0;
   
 }
-.Gryffindor{
-
-  background: repeating-linear-gradient(
-    45deg,
-    #c6a513,
-    #c6a513 3px,
-    #6d0000 3px,
-    #6d0000 9px,
-    #c6a513 9px,
-    #c6a513 10px,
-    #6d0000 10px,
-    #6d0000 30px
-    );
-}
 
 .Slytherin{
 
@@ -110,6 +96,21 @@ body {
     #c6a513 10px,
     #c6a513 30px
   );
+}
+
+.Gryffindor{
+
+  background: repeating-linear-gradient(
+    45deg,
+    #c6a513,
+    #c6a513 3px,
+    #6d0000 3px,
+    #6d0000 9px,
+    #c6a513 9px,
+    #c6a513 10px,
+    #6d0000 10px,
+    #6d0000 30px
+    );
 }
 
 .selectPersonnage{
