@@ -1,7 +1,7 @@
 import React from "react";
-import "../../Components/Team/Team.css";
-import Team from "../../Components/Team/Team";
 import Equipe from "../../DATA/Equipe";
+import Team from "../../Components/Team/Team";
+import "../../Components/Team/Team.css";
 
 export default function Teams() {
   return (

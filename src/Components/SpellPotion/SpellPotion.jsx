@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import "./SpellPotion.css";
 import SpellPotionDeck from "../SpellPotionDeck/SpellPotionDeck";
+import "./SpellPotion.css";
 
 export default function SpellPotion() {
   return (

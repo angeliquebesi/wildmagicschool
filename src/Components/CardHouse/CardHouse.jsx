@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import "./CardHouse.css";
-import defautAvatar from "../../images/defautAvatar.png";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
+import defautAvatar from "../../images/defautAvatar.png";
+import "./CardHouse.css";
 
 const CardHouse = ({ pers, marauder = false }) => {
   const { userHouse } = useContext(UserContext);

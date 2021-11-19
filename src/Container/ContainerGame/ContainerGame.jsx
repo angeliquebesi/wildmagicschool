@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
+import Monsters from "../../DATA/Monsters";
 import UserContext from "../../Context/UserContext";
 import MonsterChoice from "../MonsterChoice/MonsterChoice";
 import ButtonReturnMap from "../../Components/ButtonReturnMap/ButtonReturnMap";
 import Quiz from "../../Components/Quiz/Quiz";
-import Monsters from "../../DATA/Monsters";
 
 export default function ContainerGame() {
   const { idMonster } = useContext(UserContext);
