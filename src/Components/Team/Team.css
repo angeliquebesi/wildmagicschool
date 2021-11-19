@@ -6,16 +6,16 @@
   align-items: flex-end;
 }
 
-.person-item:nth-child(1) {
-  color: white;
-}
-
 .person-item:nth-child(1) h3 {
   padding-left: 100px;
 }
 
 .person-item:nth-child(1) h4 {
   padding-left: 100px;
+}
+
+.person-item:nth-child(1) {
+  color: white;
 }
 
 .person-item:nth-child(2) {
@@ -28,14 +28,6 @@
 
 .person-item:nth-child(4) {
   color: white;
-}
-
-div .img-homme:hover {
-  content: url(../../images/after-homme.png);
-}
-
-div .img-femme:hover {
-  content: url(../../images/after-femme.png);
 }
 
 .alias{
