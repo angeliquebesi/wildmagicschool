@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useParams } from "react-router-dom";
 import "./SpellPotionGame.css";
 import GameContext from "../../Context/GameContext";
 import SpellPotionCard from "../../Components/SpellPotionCard/SpellPotionCard";
