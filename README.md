@@ -1,6 +1,10 @@
 # Wild Magic School
 
-Proudly presents: Wild Magic School, this app.
+Proudly presents: Wild Magic School, this app : https://wild-magic-school.netlify.app/.
+
+"Welcome to the Wild Magic School !
+Be ready to live an epic aventure inside the wonderful Harry Potter's world. The Sorting Hat choose your house. You now have to choose your character and begin your journey..."
+
 It was born from 4 individuals.
 It came as the second project for our training at Wild Code School (Nantes, Fr).
 
@@ -8,22 +12,18 @@ It came as the second project for our training at Wild Code School (Nantes, Fr).
 
 * [General Info](#general-info)
 * [Technologies Used](#technologies-used)
-* [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 
 
 ## General Information
 
-Provide general information about your project here.
-What problem does it (intend to) solve?
-What is the purpose of your project?
-Why did you undertake it?
+As part of our training we had to create a react-app based on an API.
+The team decided to make a game based on the wizarding world of Harry Potter.
 
 ## Technologies Used
 
@@ -32,23 +32,20 @@ For this project we used:
 - NPM for additional packages
 - Webpack to compile the final project.
 
-## Features
-
-List the ready features here:
-
-Awesome feature 1
-Awesome feature 2
-Awesome feature 3
-
 ## Screenshots
 
-Example screenshot
+<img src="./src/images/screenshot-readme.jpg" alt="home-page"/>
 
 ## Setup
 
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+Dependencies: 
+  - axios,
+  - bootstrap,
+  - framer-motion,
+  - react-router-dom,
+  - reactjs-popup,
+  - web-vitals.
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
 
 ## Usage
 
@@ -57,11 +54,7 @@ This project uses same commands like the basics create-react-app.
 
 ## Project Status
 
-Project is in progress.
-
-## Room for Improvement
-
-WPI
+Project is deployed.
 
 ## Acknowledgements
 
