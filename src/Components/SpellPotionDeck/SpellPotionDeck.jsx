@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect, useContext } from "react";
+import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./SpellPotionDeck.css";
@@ -40,21 +41,45 @@ export default function SpellPotionDeck() {
       });
   }, [type]);
   return (
-    <div>
-      {userHouse === "" ? <SearchBar filtervalue={filtervalue} onChangefilter={onChangefilter} /> : ""}
-      <div className="potionbackground">
-        {cards && (
-          <div className="card-group">
-            {cards
-              .filter((card) => card.name.toLowerCase().includes(filtervalue))
-            /* creation des cards avec le fetch api */
-              .map((card) => (
-                <SpellPotionCard key={card.id} card={card} type={type} house={house} earnedPotion={type === "potions" ? potions.some((potion) => potion.id === card.id) : spells.some((spell) => spell.id === card.id)} />
-              ))}
-          </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <div>
+        {userHouse === "" ? (
+          <SearchBar
+            filtervalue={filtervalue}
+            onChangefilter={onChangefilter}
+          />
+        ) : (
+          ""
         )}
+        <div className="potionbackground">
+          {cards && (
+            <div className="card-group">
+              {cards
+                .filter((card) => card.name.toLowerCase().includes(filtervalue))
+                /* creation des cards avec le fetch api */
+                .map((card) => (
+                  <SpellPotionCard
+                    key={card.id}
+                    card={card}
+                    type={type}
+                    house={house}
+                    earnedPotion={
+                      type === "potions"
+                        ? potions.some((potion) => potion.id === card.id)
+                        : spells.some((spell) => spell.id === card.id)
+                    }
+                  />
+                ))}
+            </div>
+          )}
+        </div>
+        {userHouse !== "" ? <ButtonReturnMap /> : ""}
       </div>
-      {userHouse !== "" ? <ButtonReturnMap /> : ""}
-    </div>
+    </motion.div>
   );
 }
