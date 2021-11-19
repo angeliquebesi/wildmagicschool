@@ -28,7 +28,7 @@ export default function MonsterCard({
                 src={padlock}
                 alt="monster1"
               />
-              <div className="card-text fs-5 text-center m-3  ">
+              <div className="card-text fs-3 text-center m-3  ">
                 You need to defeat the previous monster to unlock this one!!
               </div>
             </div>

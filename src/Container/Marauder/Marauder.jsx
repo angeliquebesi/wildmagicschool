@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import "./Marauder.css";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
 import CardHouse from "../../Components/CardHouse/CardHouse";
 import LessonCard from "../../Components/LessonCard/LessonCard";
+import "./Marauder.css";
 
 export default function Marauder() {
   const { userHouse } = useContext(UserContext);

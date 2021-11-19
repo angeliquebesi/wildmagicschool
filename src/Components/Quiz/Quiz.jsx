@@ -2,11 +2,11 @@ import React, { useEffect, useState, useContext } from "react";
 import { motion } from "framer-motion";
 import { useParams, useHistory, Link } from "react-router-dom";
 import Questions from "../../DATA/Questions";
-import "./Quizz.css";
-import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
 import UserContext from "../../Context/UserContext";
 import GameContext from "../../Context/GameContext";
+import ButtonReturnLesson from "../ButtonReturnLesson/ButtonReturnLesson";
 import ButtonReturnMap from "../ButtonReturnMap/ButtonReturnMap";
+import "./Quizz.css";
 
 export default function Quiz() {
   const { type } = useParams();
@@ -113,7 +113,7 @@ export default function Quiz() {
         </div>
       );
     }
-    if (point === 1 && type !== "spells" && type !== "potions" && !correct && canClickOnButton) {
+    if (point <= 1 && type !== "spells" && type !== "potions" && !correct && canClickOnButton) {
       return (
         <div>
           <p className="quiz-p"> Answer is wrong. </p>

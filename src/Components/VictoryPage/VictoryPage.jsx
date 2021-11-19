@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./VictoryPage.css";
+import BabyYoda from "../../images/BabyYoda.svg";
 
 export default function VictoryPage() {
   return (
@@ -30,6 +31,11 @@ export default function VictoryPage() {
             <button type="button" className="buttonstart">
               Go back Home
             </button>
+          </Link>
+        </div>
+        <div className="Babyyoda">
+          <Link to="/hat/:house/marauder/Fight/Victory/Bonus">
+            <img className="img-fluid" src={BabyYoda} alt="baby yoda" />
           </Link>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { motion } from "framer-motion";
+import HouseData from "../../DATA/HouseData";
 import CardDeck from "../CardDeck/CardDeck";
 import "./House.css";
-import HouseData from "../../DATA/HouseData";
 
 export default function Gryffindor() {
   const [personnages, setPersonnages] = useState([]);
