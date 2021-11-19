@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./VictoryPage.css";
+import BabyYoda from "../../images/BabyYoda.svg";
 
 export default function VictoryPage() {
   return (
@@ -9,7 +10,7 @@ export default function VictoryPage() {
         <p>
           Victory !
           <br />
-          You defeated Voldemort !
+          You defeated Lord Voldemort !
         </p>
       </div>
       <div className="VictoryGif">
@@ -21,6 +22,12 @@ export default function VictoryPage() {
             Go back Home
           </button>
         </Link>
+      </div>
+      <div className="Babyyoda">
+        <Link to="/hat/:house/marauder/Fight/Victory/Bonus">
+          <img className="img-fluid" src={BabyYoda} alt="baby yoda" />
+        </Link>
+
       </div>
     </div>
 

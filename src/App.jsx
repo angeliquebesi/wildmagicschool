@@ -19,6 +19,7 @@ import ContainerGame from "./Container/ContainerGame/ContainerGame";
 import SpellPotionGame from "./Container/SpellPotionGam/SpellPotionGame";
 import Teams from "./Container/Team/Teams";
 import VictoryPage from "./Components/VictoryPage/VictoryPage";
+import Bonus from "./Components/Bonus/Bonus";
 
 function App() {
   const { pathname } = useLocation();
@@ -73,6 +74,10 @@ function App() {
 
               <Route exact path="/hat/:house/Marauder/Fight/Victory">
                 <VictoryPage />
+              </Route>
+
+              <Route exact path="/hat/:house/Marauder/Fight/Victory/Bonus">
+                <Bonus />
               </Route>
 
               <Route exact path="/contact" component={Contact} />

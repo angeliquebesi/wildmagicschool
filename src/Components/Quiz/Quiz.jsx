@@ -137,7 +137,7 @@ export default function Quiz() {
         <div>
           <div className="text-center fs-3 ">`Well done, you&apos;ve kill Lord Voldemort `</div>
           <Link to={`/hat/${userHouse}/Marauder/Fight/Victory`}>
-            <button type="button" className="buttonstart px-2" onClick={addDefeatedMonster}>
+            <button type="button" className="buttonstart px-2">
               OK
             </button>
           </Link>
