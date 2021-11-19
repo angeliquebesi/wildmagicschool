@@ -23,7 +23,7 @@ const CardHouse = ({ pers, marauder = false }) => {
   };
   return (
     <div className="col-4 px-4">
-      <div className="perso">
+      <div className="character">
         <div className="card rounded-2 card-stretch text-center mx-auto">
           <img
             src={pers.image || defautAvatar}
