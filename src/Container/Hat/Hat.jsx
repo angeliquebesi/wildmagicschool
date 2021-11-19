@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { motion } from "framer-motion";
 import React, { useContext, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./Hat.css";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../Context/UserContext";
